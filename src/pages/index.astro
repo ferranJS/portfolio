@@ -4,8 +4,88 @@ import Layout from "../layouts/Layout.astro"
 
 <Layout title="FerranJS Portfolio">
   <main>
-    <h1>Ferran Ramirez</h1>
-    <h2 class="">Frontend Developer</h2>
+    <header class="fixed left-0 right-0 top-0 bg-white/30 p-4 pr-7">
+      <nav>
+        <div class="visible text-end text-2xl sm:hidden" id="menu-button">| | |</div>
+        <ul class="hidden justify-end gap-4 sm:flex">
+          <il>
+            <a class="underlined relative block overflow-hidden after:bg-indigo-400" href="/"> Home</a>
+          </il>
+          <il>
+            <a class="underlined relative block overflow-hidden after:bg-indigo-400" href="#projects">
+              Projects
+            </a>
+          </il>
+          <il>
+            <a class="underlined relative block overflow-hidden after:bg-indigo-400" href="contact">
+              Contact</a
+            >
+          </il>
+        </ul>
+      </nav>
+    </header>
+    <section class="flex h-screen w-screen items-center">
+      <div class="p-7 pr-10 sm:p-28 xl:p-48">
+        <h1 class="mb-3 text-7xl font-bold">Ferran Ramírez</h1>
+        <h2 class="mb-5 text-5xl font-medium">
+          <span class="underline decoration-indigo-400 decoration-wavy decoration-from-font">frontend</span> developer
+        </h2>
+        <p class="max-w-2xl text-xl font-thin text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima veniam, doloribus, accusantium
+          dolores ipsum perspiciatis ullam nesciunt ducimus, harum sapiente magni eum.
+        </p>
+      </div>
+    </section>
+    <section id="projects"></section>
   </main>
 </Layout>
-<style></style>
+<style is:global>
+  body {
+    animation: bg-color-shift 20s infinite alternate;
+  }
+  .curly-underline {
+    animation: curly-underline-color-shift 15s infinite alternate;
+  }
+  @keyframes bg-color-shift {
+    0%,
+    100% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(0, 208, 255, 0.12);
+    }
+    10% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(255, 0, 76, 0.2);
+    }
+    40% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(0, 72, 255, 0.12);
+    }
+    55% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(187, 255, 0, 0.2);
+    }
+    70% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(89, 0, 255, 0.12);
+    }
+    90% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(4, 255, 0, 0.2);
+    }
+  }
+  @keyframes curly-underline-color-shift {
+    0%,
+    100% {
+      text-decoration-color: rgb(0, 21, 177);
+    }
+    20% {
+      text-decoration-color: rgba(255, 0, 76);
+    }
+    30% {
+      text-decoration-color: rgb(0, 136, 255);
+    }
+    50% {
+      text-decoration-color: rgb(2, 160, 2);
+    }
+    70% {
+      text-decoration-color: rgba(149, 0, 255);
+    }
+    90% {
+      text-decoration-color: rgb(0, 166, 255);
+    }
+  }
+</style>

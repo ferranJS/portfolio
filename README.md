@@ -34,6 +34,8 @@ This landing was made in a few days with [Tailwind](https://tailwindcss.com/) as
 >     npm run prepare (husky install)
 >     npx husky add .husky/pre-commit "npx lint-staged --concurrent false"
 
+- Add plugins to the _.prettierrc_ file
+
 - Set up Github Actions in settings and add _.github/workflows/_[_deploy.yml_ configuration](https://github.com/ferranJS/portfolio/blob/main/.github/workflows/deploy.yml) to the root of the project.
 
 - Configure _astro.config.mjs_ following the [official docs](https://docs.astro.build/en/guides/deploy/github/) and add the base to all src in the project.
