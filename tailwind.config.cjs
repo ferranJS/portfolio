@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         heming: ["Heming Variable", "ui-monospace", "monospace"],
-      }
+      },
     },
   },
   plugins: [],

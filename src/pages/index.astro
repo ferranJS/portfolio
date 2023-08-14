@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Project from "../components/Project.astro"
 import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
 ---
 
 <Layout
@@ -10,8 +11,8 @@ import Header from "../components/Header.astro"
 >
   <main>
     <Header />
-    <section class="flex h-screen w-screen animate-[bg-color-shift_20s_infinite] items-center">
-      <div class="p-7 pr-10 sm:p-28 xl:p-48">
+    <section class="flex h-screen w-screen animate-[bg-color-shift_15s_infinite] items-center">
+      <div class="p-7 pr-10 sm:p-24 xl:p-48">
         <h1 class="mb-3 font-heming text-7xl font-bold">Ferran Ramírez</h1>
         <h2 class="mb-5 font-heming text-5xl font-medium">
           <span class="underline decoration-indigo-400 decoration-wavy decoration-from-font underline-offset-4"
@@ -42,28 +43,29 @@ import Header from "../components/Header.astro"
         description="Sunt esse odit cumque in libero officiis assumenda exercitationem quasi nemo ab tempora reiciendis"
       />
     </section>
+    <Footer />
   </main>
 </Layout>
 <style is:global>
   @keyframes bg-color-shift {
     0%,
     100% {
-      background: linear-gradient(145deg, white 40%, transparent), rgba(0, 208, 255, 0.12);
+      background: linear-gradient(145deg, white 40%, transparent), rgba(0, 208, 255, 0.26);
     }
-    10% {
-      background: linear-gradient(145deg, white 40%, transparent), rgba(255, 0, 76, 0.2);
+    17% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(255, 0, 76, 0.23);
     }
-    40% {
-      background: linear-gradient(145deg, white 40%, transparent), rgba(0, 72, 255, 0.12);
+    34% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(0, 72, 255, 0.18);
     }
-    55% {
-      background: linear-gradient(145deg, white 40%, transparent), rgba(187, 255, 0, 0.2);
+    51% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(187, 255, 0, 0.23);
     }
-    70% {
-      background: linear-gradient(145deg, white 40%, transparent), rgba(89, 0, 255, 0.12);
+    68% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(64, 0, 255, 0.27);
     }
-    90% {
-      background: linear-gradient(145deg, white 40%, transparent), rgba(4, 255, 0, 0.2);
+    85% {
+      background: linear-gradient(145deg, white 40%, transparent), rgba(0, 222, 52, 0.24);
     }
   }
 </style>

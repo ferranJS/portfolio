@@ -33,6 +33,9 @@ const { title, description } = Astro.props
   }
 
   /* anchor underlines */
+  .underlined {
+    @apply relative block overflow-hidden after:bg-indigo-400;
+  }
   .underlined::after {
     content: "";
     position: absolute;

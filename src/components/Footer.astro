@@ -1,0 +1,18 @@
+---
+// import { getLangFromUrl, useTranslations } from "../i18n/utils"
+
+// const lang = getLangFromUrl(Astro.url)
+// const t = useTranslations(lang)
+
+// const baseURL = import.meta.env.BASE_URL
+---
+
+<footer
+  id="footer"
+  class="flex flex-col items-center justify-center gap-4 p-5 text-sm text-gray-700 md:flex-row"
+>
+  <div class="pb-1">FerranJS © {new Date().getFullYear()}</div>
+  <a class="underlined pb-1" href="https://www.linkedin.com/in/ferran-ramirez/">LinkedIn</a>
+  <a class="underlined pb-1" href="https://github.com/ferranJS">Github</a>
+  <a class="underlined pb-1" href="https://twitter.com/ferran_dev">Twitter</a>
+</footer>
