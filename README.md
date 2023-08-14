@@ -1,8 +1,8 @@
 # [My portfolio](https://ferranjs.github.io/portfolio/) ⬅
 
-Features:
+<!-- Features:
 
-<!-- - Complex starting and hover animations
+ - Complex starting and hover animations
 - Only **800kB bundle size** including images
 - **Responsive** design
 - **SEO** friendly

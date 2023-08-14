@@ -2,7 +2,11 @@
 import Layout from "../layouts/Layout.astro"
 ---
 
-<Layout title="FerranJS Portfolio">
+<Layout
+  title="FerranJS Portfolio"
+  description="Engineer with 2 years of experience as a Full Stack developer. I have experience in Angular, RxJS, Firebase, Ionic, Capacitor and agile CSS with Tailwind ✅
+Applying the best practices and up to date with other technologies that make up Full Stack development, how they correlate with each other and their importance and power in the industry 🔎 Very interested in React, NextJS 13, tRPC, Vercel, etc. ❤️"
+>
   <main>
     <header class="fixed left-0 right-0 top-0 bg-white/30 p-4 pr-7">
       <nav>
@@ -36,15 +40,12 @@ import Layout from "../layouts/Layout.astro"
         </p>
       </div>
     </section>
-    <section id="projects"></section>
+    <section id="projects" class="flex h-screen w-screen flex-wrap"></section>
   </main>
 </Layout>
 <style is:global>
   body {
     animation: bg-color-shift 20s infinite alternate;
-  }
-  .curly-underline {
-    animation: curly-underline-color-shift 15s infinite alternate;
   }
   @keyframes bg-color-shift {
     0%,
@@ -65,27 +66,6 @@ import Layout from "../layouts/Layout.astro"
     }
     90% {
       background: linear-gradient(145deg, white 40%, transparent), rgba(4, 255, 0, 0.2);
-    }
-  }
-  @keyframes curly-underline-color-shift {
-    0%,
-    100% {
-      text-decoration-color: rgb(0, 21, 177);
-    }
-    20% {
-      text-decoration-color: rgba(255, 0, 76);
-    }
-    30% {
-      text-decoration-color: rgb(0, 136, 255);
-    }
-    50% {
-      text-decoration-color: rgb(2, 160, 2);
-    }
-    70% {
-      text-decoration-color: rgba(149, 0, 255);
-    }
-    90% {
-      text-decoration-color: rgb(0, 166, 255);
     }
   }
 </style>
