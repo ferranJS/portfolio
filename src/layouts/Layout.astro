@@ -17,7 +17,7 @@ const { title, description } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="text-gray-700">
+  <body class="overflow-x-hidden text-gray-700">
     <slot />
   </body>
 </html>
@@ -29,17 +29,17 @@ const { title, description } = Astro.props
     font-style: normal;
   }
   body {
-    font-family: "Heming Variable", ui-monospace, monospace;
+    /* font-family: "Heming Variable", ui-monospace, monospace; */
   }
 
   /* anchor underlines */
   .underlined::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     left: 0;
     width: 100%;
-    height: 1.5px;
+    height: 1.6px;
     opacity: 0;
     transition: 0.4s;
     opacity: 1;

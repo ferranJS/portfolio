@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import Project from "../components/Project.astro"
+import Header from "../components/Header.astro"
 ---
 
 <Layout
@@ -7,45 +9,42 @@ import Layout from "../layouts/Layout.astro"
   description="Engineer with 2 years of experience as a Full Stack developer. I have experience in Angular, RxJS Firebase, Ionic, Capacitor and agile CSS with Tailwind ✅ Applying the best practices and up to date with other technologies that make up Full Stack development, how they correlate with each other and their importance and power in the industry 🔎 Very interested in React, NextJS 13, tRPC, Vercel, etc. ❤️"
 >
   <main>
-    <header class="fixed left-0 right-0 top-0 bg-white/30 p-4 pr-7">
-      <nav>
-        <div class="visible text-end text-2xl sm:hidden" id="menu-button">| | |</div>
-        <ul class="hidden justify-end gap-4 sm:flex">
-          <li>
-            <a class="underlined relative block overflow-hidden after:bg-indigo-400" href="/"> Home</a>
-          </li>
-          <li>
-            <a class="underlined relative block overflow-hidden after:bg-indigo-400" href="#projects">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a class="underlined relative block overflow-hidden after:bg-indigo-400" href="contact">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section class="flex h-screen w-screen items-center">
+    <Header />
+    <section class="flex h-screen w-screen animate-[bg-color-shift_20s_infinite] items-center">
       <div class="p-7 pr-10 sm:p-28 xl:p-48">
-        <h1 class="mb-3 text-7xl font-bold">Ferran Ramírez</h1>
-        <h2 class="mb-5 text-5xl font-medium">
-          <span class="underline decoration-indigo-400 decoration-wavy decoration-from-font">frontend</span> developer
+        <h1 class="mb-3 font-heming text-7xl font-bold">Ferran Ramírez</h1>
+        <h2 class="mb-5 font-heming text-5xl font-medium">
+          <span class="underline decoration-indigo-400 decoration-wavy decoration-from-font underline-offset-4"
+            >frontend</span
+          > developer
         </h2>
-        <p class="max-w-2xl text-xl font-thin text-gray-600">
+        <p class="max-w-2xl text-xl font-thin text-gray-950">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima veniam, doloribus, accusantium
           dolores ipsum perspiciatis ullam nesciunt ducimus, harum sapiente magni eum.
         </p>
       </div>
     </section>
-    <section id="projects" class="flex h-screen w-screen flex-wrap"></section>
+    <section id="projects" class="flex w-screen flex-wrap">
+      <Project
+        title="Tesla Clone"
+        description="Dolorem minima, at alias tempora iste inventore modi eaque quod, rem sunt veniam nesciunt ad voluptate laborum numquam quas libero reprehenderit!"
+      />
+      <Project
+        title="laVelada.es remake"
+        description="Officiis modi necessitatibus quod tempore quibusdam expedita, ullam tempora corrupti dolor, nisi perferendis at esse architecto excepturi"
+      />
+      <Project
+        title="Discordish"
+        description="Porro enim labore numquam ea, dolore accusantium consectetur optio, praesentium itaque quam assumenda qui nam doloribus repudiandae, rem minus debitis. Libero, itaque!"
+      />
+      <Project
+        title="This website"
+        description="Sunt esse odit cumque in libero officiis assumenda exercitationem quasi nemo ab tempora reiciendis"
+      />
+    </section>
   </main>
 </Layout>
 <style is:global>
-  body {
-    animation: bg-color-shift 20s infinite alternate;
-  }
   @keyframes bg-color-shift {
     0%,
     100% {
