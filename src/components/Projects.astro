@@ -1,5 +1,9 @@
 ---
 import Project from "../components/Project.astro"
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section id="projects" class="mb-5 animate-[bg-color-shift-flipped_15s_infinite] scroll-mt-24 pt-6">
@@ -7,28 +11,16 @@ import Project from "../components/Project.astro"
   <div class="flex flex-wrap">
     <Project
       title="3D Potato Studios"
-      description="Digital art studio."
+      description={t("potatostudios")}
       imgUrl="3dpotatostudiosplaceholder.webp"
     />
-    <Project
-      title="Tasle"
-      description="Responsive and lighter Tesla page clone with automatic language detection and region selection."
-      imgUrl="tasle.webp"
-    />
-    <Project
-      title="La Velada 3 remake"
-      description="Revamped and interactive fighting match website featuring immersive animations upon hover. A modernized take on the original concept, enhancing user engagement and interactivity."
-      imgUrl="lavelada3remake.webp"
-    />
-    <Project
-      title="Discordish"
-      description="A Discord (messaging web app) clone focused on user experience and performance by creating a good architectural design and a well thought and designed database structure."
-      imgUrl="discordish.webp"
-    />
-    <Project
+    <Project title="Tasle" description={t("tasle")} imgUrl="tasle.webp" />
+    <Project title="La Velada 3 remake" description={t("lavelada3remake")} imgUrl="lavelada3remake.webp" />
+    <Project title="Discordish" description={t("discordish")} imgUrl="discordish.webp" />
+    <!-- <Project
       title="This website"
       description="Built almost in its totality in a few days."
       imgUrl="thiswebsite.webp"
-    />
+    /> -->
   </div>
 </section>

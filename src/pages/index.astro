@@ -1,97 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import Projects from "../components/Projects.astro"
+const baseURL = import.meta.env.BASE_URL
 ---
 
-<Layout
-  title="FerranJS Portfolio"
-  description="Engineer with 2 years of experience as a Full Stack developer. I have experience in Angular, RxJS Firebase, Ionic, Capacitor and agile CSS with Tailwind ✅ Applying the best practices and up-to-date with other technologies that make up Full Stack development, how they correlate with each other and their importance and power in the industry 🔎 Very interested in React, NextJS 13, tRPC, Vercel, etc. ❤️"
->
-  <main>
-    <Header />
-    <section class="flex h-screen animate-[bg-color-shift_15s_infinite] items-center">
-      <div
-        class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48 [&>p]:mb-1 [&>p]:max-w-2xl [&>p]:text-gray-950"
-      >
-        <h1 class="mb-2 font-heming text-7xl font-bold">Ferran Ramírez</h1>
-        <h2 class="mb-6 font-heming text-5xl font-medium leading-[1.15]">
-          <span class="u !decoration-[3px] !underline-offset-[5px]">
-            <!-- animate-[underline-color-shift_15s_infinite] -->
-            full stack</span
-          >
-          developer
-        </h2>
-        <p>
-          Software <span class="u !decoration-[1.3px]">Engineer</span> with 2 years of experience as a <span
-            class="u !decoration-[1.3px]">Full Stack developer</span
-          >, experienced in <span class="u !decoration-red-600">Angular</span>, <span
-            class="u !decoration-orange-400">Astro</span
-          >, <span class="u !decoration-sky-400">React</span>, Firebase, Ionic, Capacitor and Tailwind.
-        </p>
-        <p>
-          Committed to delivering top-notch solutions by adhering to industry best practices.
-          <!-- Actively dedicated to expanding my skill set by staying at the forefront of technological advancements. -->
-        </p>
-        <p>
-          From very light and fast landing pages to complex, secure and reactive native mobile applications.
-        </p>
-      </div>
-    </section>
-    <Projects />
-    <Footer />
-  </main>
-</Layout>
-<style is:global>
-  html {
-    /* scroll-snap-type: y mandatory;
-    scroll-snap-stop: always;
-    scroll-behavior: smooth; */
-  }
-  span.u {
-    @apply underline decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[2px];
-  }
-  @keyframes bg-color-shift {
-    0%,
-    100% {
-      background: linear-gradient(151deg, white 44%, transparent), rgba(0, 208, 255, 0.39);
-    }
-    17% {
-      background: linear-gradient(151deg, white 44%, transparent), rgba(255, 0, 76, 0.23);
-    }
-    34% {
-      background: linear-gradient(151deg, white 44%, transparent), rgba(0, 72, 255, 0.28);
-    }
-    51% {
-      background: linear-gradient(151deg, white 44%, transparent), rgba(121, 135, 255, 0.42);
-    }
-    68% {
-      background: linear-gradient(151deg, white 44%, transparent), rgba(64, 0, 255, 0.27);
-    }
-    85% {
-      background: linear-gradient(151deg, white 44%, transparent), rgba(255, 63, 46, 0.24);
-    }
-  }
-  @keyframes bg-color-shift-flipped {
-    0%,
-    100% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(0, 208, 255, 0.39);
-    }
-    17% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(255, 0, 76, 0.23);
-    }
-    34% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(0, 72, 255, 0.28);
-    }
-    51% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(121, 135, 255, 0.42);
-    }
-    68% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(64, 0, 255, 0.27);
-    }
-    85% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(255, 63, 46, 0.24);
-    }
-  }
-</style>
+<head>
+  <meta http-equiv="refresh" content={"0;url=" + baseURL + "en"} />
+  <script define:vars={{ baseURL }}>
+    document
+      .querySelector("meta")
+      .setAttribute("content", "0;url=" + baseURL + navigator.languages[0].split("-")[0])
+  </script>
+</head>
