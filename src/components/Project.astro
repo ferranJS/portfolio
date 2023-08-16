@@ -1,27 +1,36 @@
 ---
-const { title, description } = Astro.props
+const { title, description, imgUrl } = Astro.props
 ---
 
 <article
-  class="group relative aspect-[6/4] w-full duration-[.4s] hover:cursor-[url(White_dot.svg),auto] md:aspect-[4/3] md:w-[50%] xl:w-[33.33%]"
+  class="group relative aspect-[9/5] w-full duration-[.4s] hover:cursor-[url(White_dot.svg),auto] md:w-[50%] xl:w-[33.33%]"
 >
   <div
-    class="absolute z-10 flex h-full w-full items-center justify-center bg-black/80 text-white opacity-0 duration-[.4s] group-hover:opacity-100"
+    class="absolute z-10 flex h-full w-full items-center justify-center bg-black/80 text-sm text-white opacity-0 duration-[.4s] group-hover:opacity-100"
   >
-    <div class="h-4/6 w-5/6">
-      <h3
-        class="decoration-3 font-heming text-3xl font-medium underline decoration-indigo-400 decoration-dashed underline-offset-4"
-      >
-        {title}
-      </h3>
-      <p class="mt-2 text-sm">
-        {description}
-      </p>
-      <slot name="" />
+    <div class="flex h-[75%] w-10/12 flex-col justify-between">
+      <div>
+        <h3
+          class="decoration-3 font-heming text-2xl font-medium underline decoration-indigo-400 decoration-dashed underline-offset-4"
+        >
+          {title}
+        </h3>
+        <p class="mt-1">
+          {description}
+        </p>
+      </div>
+      <div class="flex items-baseline gap-7">
+        <div class="text-3xl">T</div>
+        <div class="text-3xl">E</div>
+        <div class="text-3xl">C</div>
+        <div class="text-3xl">H</div>
+        <div class="text-3xl">s</div>
+      </div>
+      <div class="absolute bottom-[10%] right-6 text-5xl">↗</div>
     </div>
   </div>
   <img
-    src="https://github.com/ferranJS/astro-tailwind-landing-0/blob/main/public/landing-screenshot.png?raw=true"
+    src={imgUrl}
     class="pointer-events-none absolute z-0 h-full w-full object-cover grayscale-[0.9] transition-all duration-[.4s] group-hover:blur-[2px]"
   />
 </article>
