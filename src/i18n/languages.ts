@@ -16,7 +16,7 @@ export const uiTranslations = {
     zaaxDescription:
       "Implemented a gallery module with functionality to draw and edit videos in real-time to create video analysis for coaches of various sports using the native JS API for a player management app for coaches.",
     milvDescription: `Implemented tournament and user management functionalities, auth, pos payments; and designed and implemented a landing. All this in direct contact with the client.`,
-    phrase1: "Committed to delivering top-notch solutions by adhering to industry best practices.",
+    phrase1: "Committed to delivering top-notch solutions by by follwoing industry best practices.",
     phrase2:
       "Actively dedicated to expanding my skill set by staying at the forefront of technological advancements.",
     phrase3:
