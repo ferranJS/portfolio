@@ -23,7 +23,7 @@ const t = useTranslations(lang)
 <Layout title="FerranJS Web" description={t("metaDescription")}>
   <main>
     <Header />
-    <section class="flex h-screen animate-[bg-color-shift_15s_infinite] items-center">
+    <section class="flex h-screen items-center">
       <div
         class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48 [&>p]:mb-1 [&>p]:max-w-2xl [&>p]:text-gray-950"
       >
@@ -97,46 +97,34 @@ const t = useTranslations(lang)
   span.u {
     @apply decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[2px];
   }
+  body {
+    animation: bg-color-shift 15s infinite;
+  }
   @keyframes bg-color-shift {
     0%,
     100% {
-      background: linear-gradient(147deg, white 44%, transparent), rgba(0, 208, 255, 0.39);
+      background: linear-gradient(160deg, white 20%, transparent),
+        linear-gradient(20deg, white 20%, transparent), rgb(0, 163, 155);
     }
     17% {
-      background: linear-gradient(147deg, white 44%, transparent), rgba(255, 0, 76, 0.23);
+      background: linear-gradient(160deg, white 20%, transparent),
+        linear-gradient(20deg, white 20%, transparent), rgb(255, 0, 76);
     }
     34% {
-      background: linear-gradient(147deg, white 44%, transparent), rgba(0, 72, 255, 0.28);
+      background: linear-gradient(160deg, white 20%, transparent),
+        linear-gradient(20deg, white 20%, transparent), rgb(0, 72, 255);
     }
     51% {
-      background: linear-gradient(147deg, white 44%, transparent), rgba(121, 135, 255, 0.42);
+      background: linear-gradient(160deg, white 20%, transparent),
+        linear-gradient(20deg, white 20%, transparent), rgb(121, 135, 255);
     }
     68% {
-      background: linear-gradient(147deg, white 44%, transparent), rgba(64, 0, 255, 0.27);
+      background: linear-gradient(160deg, white 20%, transparent),
+        linear-gradient(20deg, white 20%, transparent), rgb(64, 0, 255);
     }
     85% {
-      background: linear-gradient(147deg, white 44%, transparent), rgba(255, 63, 46, 0.24);
-    }
-  }
-  @keyframes bg-color-shift-flipped {
-    0%,
-    100% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(0, 208, 255, 0.39);
-    }
-    17% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(255, 0, 76, 0.23);
-    }
-    34% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(0, 72, 255, 0.28);
-    }
-    51% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(121, 135, 255, 0.42);
-    }
-    68% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(64, 0, 255, 0.27);
-    }
-    85% {
-      background: linear-gradient(30deg, white 44%, transparent), rgba(255, 63, 46, 0.24);
+      background: linear-gradient(160deg, white 20%, transparent),
+        linear-gradient(20deg, white 20%, transparent), rgb(198, 56, 44);
     }
   }
 </style>

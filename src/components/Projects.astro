@@ -6,78 +6,78 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
 const driverjsLogo = `
-  <a class="hover:scale-110 duration-200" href="https://driverjs.com/">
-    <img class="w-7" src="https://driverjs.com/driver-head.svg" alt="driverjs logo" />
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://driverjs.com/">
+    <img class="w-7" src="/driverjs-logo.svg" alt="driverjs logo" />
   </a>
 `
 const tailwindLogo = `
-  <a class="hover:scale-110 duration-200" href="https://tailwindcss.com/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://tailwindcss.com/">
     <i class="devicon-tailwindcss-plain text-3xl"></i>
   </a>
 `
 const angularLogo = `
-  <a class="hover:scale-110 duration-200" href="https://angular.io/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://angular.io/">
     <i class="devicon-angularjs-plain text-3xl"></i>
   </a>
 `
 const astroLogo = `
-  <a class="hover:scale-110 duration-200" href="https://astro.build/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://astro.build/">
     <img class="w-7" src="/astro-logo.svg" alt="driverjs logo" />
   </a>
 `
 const ionicLogo = `
-  <a class="hover:scale-110 duration-200" href="https://ionicframework.com/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://ionicframework.com/">
     <i class="devicon-ionic-original text-3xl"></i>
   </a>
 `
 const capacitorLogo = `
-  <a class="hover:scale-110 duration-200" href="https://capacitorjs.com/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://capacitorjs.com/">
     <img class="w-7" src="/capacitor-logo.svg" alt="capacitor logo" />
   </a>
 `
 const figmaLogo = `
-  <a class="hover:scale-110 duration-200" href="https://www.figma.com/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://www.figma.com/">
     <i class="devicon-figma-plain text-3xl"></i>
   </a>
 `
 const mySQLLogo = `
-  <a class="hover:scale-110 duration-200" href="https://www.mysql.com/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://www.mysql.com/">
     <i class="devicon-mysql-plain text-3xl"></i>
   </a>
 `
 const phpLogo = `
-  <a class="hover:scale-110 duration-200" href={"https://www.php.net/manual/en/intro-whatis.php"}>
+  <a class="hover:scale-110 duration-200" target="_blank" href={"https://www.php.net/manual/en/intro-whatis.php"}>
     <i class="devicon-php-plain text-3xl"></i>
   </a>
 `
 const firebaseLogo = `
-  <a class="hover:scale-110 duration-200" href="https://firebase.google.com/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://firebase.google.com/">
     <i class="devicon-firebase-plain text-3xl"></i>
   </a>
 `
 const javaLogo = `
-  <a class="hover:scale-110 duration-200" href="https://www.java.com/en/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://www.java.com/en/">
     <i class="devicon-java-plain text-3xl"></i>
   </a>
 `
 const androidStudioLogo = `
-  <a class="hover:scale-110 duration-200" href="https://developer.android.com/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://developer.android.com/">
     <i class="devicon-androidstudio-plain text-3xl"></i>
   </a>
 `
 const xcodeLogo = `
-  <a class="hover:scale-110 duration-200" href="https://developer.apple.com/xcode/">
+  <a class="hover:scale-110 duration-200" target="_blank" href="https://developer.apple.com/xcode/">
     <i class="devicon-xcode-plain text-3xl"></i>
   </a>
 `
 // const Logo = `
-//   <a class="hover:scale-110 duration-200" href="https://firebase.com">
+//   <a class="hover:scale-110 duration-200" target="_blank" href="https://firebase.com">
 //     <i class="devicon-firebase-plain text-3xl"></i>
 //   </a>
 // `
 ---
 
-<section id="projects" class="mb-5 animate-[bg-color-shift-flipped_15s_infinite] scroll-mt-24 pt-6">
+<section id="projects" class="mb-5 scroll-mt-24 pt-6">
   <h2 class="mb-12 text-center font-heming text-4xl font-medium">Projects</h2>
   <div class="flex flex-wrap">
     <Project
