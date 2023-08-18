@@ -12,6 +12,10 @@ export const defaultLang = "en"
 
 export const uiTranslations = {
   en: {
+    atumDescription: `Identified and fixed several complex issues in the synchronization system between a WooComerce store plugin and this native mobile app; created a system for managing teams and stores with data access control by devices plus subscriptions through a periodic checking system from the client with a REST API; and implemented a Capacitor barcode scanning plugin for the app in Java.`,
+    zaaxDescription:
+      "Implemented a gallery module with functionality to draw and edit videos in real-time to create video analysis for coaches of various sports using the native JS API for a player management app for coaches.",
+    milvDescription: `Implemented tournament and user management functionalities, auth, pos payments; and designed and implemented a landing. All this in direct contact with the client.`,
     phrase1: "Committed to delivering top-notch solutions by adhering to industry best practices.",
     phrase2:
       "Actively dedicated to expanding my skill set by staying at the forefront of technological advancements.",
@@ -28,6 +32,9 @@ export const uiTranslations = {
       "A Discord (messaging web app) clone focused on user experience and performance by creating a good architectural design and a well thought and designed database structure.",
   },
   es: {
+    atumDescription: "",
+    zaaxDescription: "",
+    milvDescription: "",
     Home: "Inicio",
     Projects: "Proyectos",
     Contact: "Contacto",

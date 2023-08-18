@@ -82,7 +82,7 @@ const xcodeLogo = `
   <div class="flex flex-wrap">
     <Project
       title="Atum Mobile App"
-      description={t("atumDescription in progress...")}
+      description={t("atumDescription")}
       imgUrl="/atum.webp"
       url="https://stockmanagementlabs.com/addons/atum-mobile-app/"
     >
@@ -95,7 +95,7 @@ const xcodeLogo = `
     </Project>
     <Project
       title="Zaax Golf App"
-      description={t("zaaxDescription in progress...")}
+      description={t("zaaxDescription")}
       imgUrl="/zaax.webp"
       url="https://zaaxsports.com/"
     >
@@ -105,7 +105,7 @@ const xcodeLogo = `
     </Project>
     <Project
       title="Milv.es"
-      description={t("milvDescription in progress...")}
+      description={t("milvDescription")}
       imgUrl="/milv.webp"
       url="https://milv.es/app/#/login"
     >
@@ -115,7 +115,12 @@ const xcodeLogo = `
       <Fragment slot="techs" set:html={figmaLogo} />
     </Project>
     <!-- ! https://milv.es/app/#/livescoring/75 -->
-    <Project title="Tasle" description={t("tasle")} imgUrl="/tasle.webp" url="">
+    <Project
+      title="Tasle"
+      description={t("tasle")}
+      imgUrl="/tasle.webp"
+      url="https://ferranjs.github.io/tasle/"
+    >
       <Fragment slot="techs" set:html={astroLogo} />
       <Fragment slot="techs" set:html={tailwindLogo} />
       <Fragment slot="techs" set:html={driverjsLogo} />
@@ -124,7 +129,7 @@ const xcodeLogo = `
       title="La Velada 3 remake"
       description={t("lavelada3remakeDescription")}
       imgUrl="/lavelada3remake.webp"
-      url=""
+      url="https://ferranjs.github.io/lavelada-remake/"
     >
       <Fragment slot="techs" set:html={astroLogo} />
       <Fragment slot="techs" set:html={tailwindLogo} />
@@ -141,7 +146,6 @@ const xcodeLogo = `
       title="3D Potato Studios"
       description={t("potatostudiosDescription")}
       imgUrl="/3dpotatostudiosplaceholder.webp"
-      url=""
     >
       <Fragment slot="techs" set:html={figmaLogo} />
     </Project>

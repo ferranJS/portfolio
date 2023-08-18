@@ -2,13 +2,26 @@
 const { title, description, imgUrl, url } = Astro.props
 ---
 
+<!-- <script>
+  document.querySelectorAll("article").forEach(article => {
+    article.addEventListener("touchstart", () => {
+      if (article.getBoundingClientRect().width < 768) {
+        article.classList.toggle("max-md:!aspect-[2/3]")
+        article.querySelector("div").classList.toggle("opacity-0")
+      }
+    })
+  })
+</script> -->
 <article
-  class="group relative aspect-[9/5] w-full duration-[.4s] hover:cursor-[url(White_dot.svg),auto] md:w-[50%] xl:w-[33.33%]"
+  class="group relative aspect-[9/7] w-full border-[1px] border-black/0 duration-[.4s] hover:cursor-[url(White_dot.svg),auto] hover:max-md:!aspect-[7/8] md:aspect-[9/6] md:w-[50%] xl:w-[33.33%]"
+  id={title}
 >
   <div
     class="absolute z-10 flex h-full w-full items-center justify-center bg-black/80 text-white opacity-0 duration-[.4s] group-hover:opacity-100 md:text-sm"
   >
-    <div class="flex h-[80%] w-10/12 flex-col justify-between">
+    <div
+      class="pointer-events-none hidden h-[80%] w-10/12 flex-col justify-between group-hover:pointer-events-auto group-hover:flex"
+    >
       <div>
         <h3
           class="decoration-3 pt-4 font-heming text-2xl font-medium underline decoration-indigo-400 decoration-dashed underline-offset-4 md:pt-2"
@@ -22,12 +35,16 @@ const { title, description, imgUrl, url } = Astro.props
       <div class="flex items-baseline gap-3 xl:gap-4">
         <slot name="techs" />
       </div>
-      <a
-        class="group/link absolute bottom-[10%] right-8 flex h-16 w-16 items-center justify-center text-4xl text-white duration-300 before:absolute before:h-16 before:w-16 before:rounded-full before:bg-white/30 before:duration-300 before:hover:scale-110 before:hover:bg-white/70 md:h-11 md:w-11 md:before:h-11 md:before:w-11"
-        href={url}
-      >
-        <img src="/external-link.svg" class="h-9 w-9 group-hover/link:invert md:h-7 md:w-7" />
-      </a>
+      {
+        url ? (
+          <a
+            class="group/link absolute bottom-[10%] right-8 flex h-16 w-16 items-center justify-center text-4xl text-white duration-300 before:absolute before:h-16 before:w-16 before:rounded-full before:bg-white/30 before:duration-300 before:hover:scale-110 before:hover:bg-white/70 md:h-11 md:w-11 md:before:h-11 md:before:w-11"
+            href={url}
+          >
+            <img src="/external-link.svg" class="h-9 w-9 group-hover/link:invert md:h-7 md:w-7" />
+          </a>
+        ) : null
+      }
     </div>
   </div>
   <img
