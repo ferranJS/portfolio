@@ -1,10 +1,10 @@
 export const languages = {
   en: "English",
   es: "Español",
-  ko: "한국어",
-  fr: "Français",
-  de: "Deutsch",
-  it: "Italiano",
+  // ko: "한국어",
+  // fr: "Français",
+  // de: "Deutsch",
+  // it: "Italiano",
   ru: "Русский",
 }
 
@@ -12,13 +12,15 @@ export const defaultLang = "en"
 
 export const uiTranslations = {
   en: {
-    atumDescription: `Identified and fixed several complex issues in the synchronization system between a WooComerce store plugin and this native mobile app; created a system for managing teams and stores with data access control by devices plus subscriptions through a periodic checking system from the client with a REST API; and implemented a Capacitor barcode scanning plugin for the app in Java.`,
+    atumDescription:
+      "Store management app with a synchronization system with their WooComerce plugin where I identified and fixed several complex issues in the sync process, created a system for managing teams and stores with data access control by subscriptions and number of devices with periodic checking through the REST API, and implemented a Capacitor barcode scanning plugin for the app in Java.",
     zaaxDescription:
-      "Implemented a gallery module with functionality to draw and edit videos in real-time to create video analysis for coaches of various sports using the native JS API for a player management app for coaches.",
-    milvDescription: `Implemented tournament and user management functionalities, auth, pos payments; and designed and implemented a landing. All this in direct contact with the client.`,
-    phrase1: "Committed to delivering top-notch solutions by by follwoing industry best practices.",
+      "Player management app directed to sportsmen and coaches where I implemented a gallery module with functionality to draw and edit videos in real-time for video analysis using the native JS API.",
+    milvDescription:
+      "Tournament and user management website where I implemented new functionalities in direct contact with the client, including: auth, POS payments, and the design and implementation of a landing page.",
+    phrase1: "Committed to delivering top-notch solutions by following industry best practices.",
     phrase2:
-      "Actively dedicated to expanding my skill set by staying at the forefront of technological advancements.",
+      "Dedicado activamente a ampliar mis conocimientos permaneciendo a la vanguardia de los avances tecnológicos.",
     phrase3:
       "From very light and fast landing pages to complex, secure and reactive native mobile applications.",
     metaDescription:
@@ -32,14 +34,16 @@ export const uiTranslations = {
       "A Discord (messaging web app) clone focused on user experience and performance by creating a good architectural design and a well thought and designed database structure.",
   },
   es: {
-    atumDescription: "",
-    zaaxDescription: "",
-    milvDescription: "",
+    atumDescription:
+      "Aplicación de gestión de tiendas con un sistema de sincronización con su plugin WooComerce donde identifiqué y solucioné varios problemas complejos en el proceso de sincronización, creé un sistema de gestión de equipos y tiendas con control de acceso a datos por suscripciones y número de dispositivos con comprobación periódica con una REST API, e implementé un plugin de escaneo de códigos de barras Capacitor para la aplicación en Java.",
+    zaaxDescription:
+      "Aplicación de gestión de jugadores dirigida a deportistas y entrenadores donde implementé un módulo de galería con funcionalidad para dibujar y editar videos en tiempo real para análisis de video utilizando la API nativa de Javascript.",
+    milvDescription:
+      "Sitio web de gestión de torneos y usuarios donde implementé nuevas funcionalidades en contacto directo con el cliente, incluyendo: autenticación, pagos POS, y el diseño e implementación de una landing page.",
     Home: "Inicio",
     Projects: "Proyectos",
     Contact: "Contacto",
-    phrase1:
-      "Comprometido a entregar soluciones de primera categoría al adherirse a las mejores prácticas de la industria.",
+    phrase1: "Comprometido a ofrecer soluciones de calidad aplicando las mejores prácticas de la industria.",
     phrase2:
       "Dedicado activamente a expandir mi conjunto de habilidades al mantenerme a la vanguardia de los avances tecnológicos.",
     phrase3:

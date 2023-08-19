@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro"
 import Projects from "../components/Projects.astro"
 import { getLangFromUrl, useTranslations } from "../i18n/utils"
 import { languages } from "../i18n/languages"
+import Background from "../components/Background.astro"
 
 const baseURL = import.meta.env.BASE_URL
 
@@ -24,10 +25,9 @@ const t = useTranslations(lang)
   <main>
     <Header />
     <section class="flex h-screen items-center">
-      <div
-        class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48 [&>p]:mb-1 [&>p]:max-w-2xl [&>p]:text-gray-950"
-      >
-        <h1 class="mb-2 font-heming text-7xl font-bold">Ferran Ramírez</h1>
+      <div class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48 [&>p]:mb-1 [&>p]:max-w-2xl">
+        <!-- [&>p]:text-gray-950 -->
+        <h1 class="mb-2 font-heming text-7xl font-bold">Ferran Ramirez</h1>
         <h2 class="mb-6 font-heming text-5xl font-medium leading-[1.15]">
           <span class="u underline !decoration-[3px] !underline-offset-[5px]">
             <!-- animate-[underline-color-shift_15s_infinite] -->
@@ -85,6 +85,7 @@ const t = useTranslations(lang)
     <Projects />
     <!-- <section id="contact" class="flex h-screen items-center justify-center"></section> -->
     <Footer />
+    <Background />
   </main>
 </Layout>
 
@@ -100,31 +101,29 @@ const t = useTranslations(lang)
   body {
     animation: bg-color-shift 15s infinite;
   }
+  :root {
+    --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
+    --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
+  }
   @keyframes bg-color-shift {
     0%,
     100% {
-      background: linear-gradient(160deg, white 20%, transparent),
-        linear-gradient(20deg, white 20%, transparent), rgb(0, 163, 155);
+      background: var(--gradient1), var(--gradient2), rgb(0, 163, 155);
     }
     17% {
-      background: linear-gradient(160deg, white 20%, transparent),
-        linear-gradient(20deg, white 20%, transparent), rgb(255, 0, 76);
+      background: var(--gradient1), var(--gradient2), green;
     }
     34% {
-      background: linear-gradient(160deg, white 20%, transparent),
-        linear-gradient(20deg, white 20%, transparent), rgb(0, 72, 255);
+      background: var(--gradient1), var(--gradient2), green;
     }
     51% {
-      background: linear-gradient(160deg, white 20%, transparent),
-        linear-gradient(20deg, white 20%, transparent), rgb(121, 135, 255);
+      background: var(--gradient1), var(--gradient2), green;
     }
     68% {
-      background: linear-gradient(160deg, white 20%, transparent),
-        linear-gradient(20deg, white 20%, transparent), rgb(64, 0, 255);
+      background: var(--gradient1), var(--gradient2), green;
     }
     85% {
-      background: linear-gradient(160deg, white 20%, transparent),
-        linear-gradient(20deg, white 20%, transparent), rgb(198, 56, 44);
+      background: var(--gradient1), var(--gradient2), rgb(198, 56, 44);
     }
   }
 </style>

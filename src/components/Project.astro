@@ -13,14 +13,14 @@ const { title, description, imgUrl, url } = Astro.props
   })
 </script> -->
 <article
-  class="group relative aspect-[9/7] w-full duration-[.4s] hover:cursor-[url(White_dot.svg),auto] hover:max-md:!aspect-[7/8] md:aspect-[9/6] md:w-[calc(50%-0.5px)] xl:w-[calc(33.33%-0.66px)]"
+  class="group/article relative aspect-[9/7] w-full duration-[.4s] hover:cursor-[url(White_dot.svg),auto] hover:max-md:!aspect-[4/5] sm:aspect-[9/7] md:aspect-square md:w-[calc(50%-0.5px)] lg:aspect-[8/5] xl:aspect-[9/8] xl:w-[calc(33.33%-0.66px)]"
   id={title}
 >
   <div
-    class="absolute z-10 flex h-full w-full items-center justify-center bg-black/80 text-white opacity-0 duration-[.4s] group-hover:opacity-100 md:text-sm"
+    class="absolute z-10 flex h-full w-full items-center justify-center bg-black/80 text-white opacity-0 duration-[.4s] group-hover/article:opacity-100 md:text-sm"
   >
     <div
-      class="pointer-events-none hidden h-[80%] w-10/12 flex-col justify-between group-hover:pointer-events-auto group-hover:flex"
+      class="pointer-events-none hidden h-[80%] w-10/12 flex-col justify-between group-hover/article:pointer-events-auto group-hover/article:flex"
     >
       <div>
         <h3
@@ -38,7 +38,7 @@ const { title, description, imgUrl, url } = Astro.props
       {
         url ? (
           <a
-            class="group/link absolute bottom-[10%] right-8 flex h-16 w-16 items-center justify-center text-4xl text-white duration-300 before:absolute before:h-16 before:w-16 before:rounded-full before:bg-white/30 before:duration-300 before:hover:scale-110 before:hover:bg-white/70 md:h-11 md:w-11 md:before:h-11 md:before:w-11"
+            class="group/link absolute  bottom-[10%] right-8 flex h-16 w-16 items-center justify-center text-4xl text-white duration-300 before:absolute before:h-16 before:w-16 before:rounded-full before:bg-white/30 before:duration-300 before:hover:scale-110 before:hover:bg-white/70  md:h-11 md:w-11 md:before:h-11 md:before:w-11"
             href={url}
             target="_blank"
           >
@@ -50,6 +50,6 @@ const { title, description, imgUrl, url } = Astro.props
   </div>
   <img
     src={imgUrl}
-    class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.8] transition-all duration-[.4s] group-hover:blur-[2px]"
+    class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.8] transition-all duration-[.4s] group-hover/article:blur-[2px]"
   />
 </article>
