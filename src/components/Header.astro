@@ -1,13 +1,21 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils"
+import Footer from "./Footer.astro"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<header class="fixed left-0 right-0 top-0 z-40 bg-white/40 p-4 pr-7 font-heming text-lg">
+<header class="fixed left-0 right-0 top-0 z-40 bg-white/40 p-4 font-heming text-lg sm:pr-7">
   <nav>
-    <div class="visible text-end text-2xl sm:hidden" id="menu-button">| | |</div>
+    <div class="visible flex justify-end text-end text-2xl sm:hidden" id="menu-button">
+      <button id="menu-button" class="group z-50 flex flex-col items-end" onclick="openCloseMenu()">
+        <!-- <img class="w-10 invert" src="https://raw.githubusercontent.com/ferranJS/ferranJS/main/media/fjs-logo.svg"> -->
+        <span class="m-1 block h-[2.5px] w-9 bg-indigo-400 duration-500 ease-in-out"></span>
+        <span class="m-1 block h-[2.5px] w-9 bg-indigo-300"></span>
+        <span class="m-1 block h-[2.5px] w-9 bg-indigo-200 duration-500 ease-in-out"></span>
+      </button>
+    </div>
     <ul class="hidden justify-end gap-5 sm:flex">
       <li>
         <a class="underlined" href="/">{t("Home")}</a>
@@ -24,3 +32,42 @@ const t = useTranslations(lang)
     </ul>
   </nav>
 </header>
+<aside
+  id="menu-container"
+  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 flex flex-col items-center justify-center bg-white/50 opacity-0 backdrop-blur-sm duration-500 sm:hidden"
+  onclick="openCloseMenu()"
+>
+  <div id="menu" class="z-50 font-heming text-2xl [&>ul>li]:mb-5">
+    <ul>
+      <li>
+        <a class="underlined" href="/">{t("Home")}</a>
+      </li>
+      <li>
+        <a class="underlined" href="#projects">{t("Projects")}</a>
+      </li>
+      <li>
+        <a class="underlined" href="#contact">{t("Contact")}</a>
+      </li>
+      <li>
+        <a class="underlined" target="_blank" href="https://github.com/ferranJS/portfolio">{t("Github")}</a>
+      </li>
+    </ul>
+  </div>
+  <Footer Classes=" fixed bottom-0 right-0 left-0 !flex-row" />
+</aside>
+
+<script is:inline>
+  const menuButton = document.querySelector("#menu-button")
+  const menuContainer = document.querySelector("#menu-container")
+
+  console.log("menuButton: ", menuButton)
+  const openCloseMenu = event => {
+    menuContainer.classList.toggle("opacity-0")
+    menuContainer.classList.toggle("pointer-events-none")
+    menuButton?.querySelectorAll("span").forEach((span, i) => {
+      if (i != 1) span.classList.toggle("opacity-0")
+      if (i == 0) span.classList.toggle("translate-y-3")
+      if (i == 2) span.classList.toggle("-translate-y-3")
+    })
+  }
+</script>

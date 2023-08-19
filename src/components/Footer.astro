@@ -5,11 +5,12 @@
 // const t = useTranslations(lang)
 
 // const baseURL = import.meta.env.BASE_URL
+const { Classes } = Astro.props
 ---
 
 <footer
   id="footer"
-  class="flex snap-start flex-col items-center justify-center gap-4 p-5 text-sm text-gray-700 md:flex-row"
+  class={Classes + " flex snap-start flex-col items-center justify-center gap-4 p-5 text-gray-700 md:flex-row"}
 >
   <div class="pb-1 md:pr-2">FerranJS © {new Date().getFullYear()}</div>
   <a class="underlined pb-1" href="https://www.linkedin.com/in/ferran-ramirez/">LinkedIn</a>
