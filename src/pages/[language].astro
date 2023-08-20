@@ -8,8 +8,6 @@ import { languages } from "../i18n/languages"
 import Background from "../components/Background.astro"
 import Contact from "../components/Contact.astro"
 
-const baseURL = import.meta.env.BASE_URL
-
 export function getStaticPaths() {
   const paths = []
   for (const language of Object.keys(languages)) {
@@ -41,23 +39,29 @@ const t = useTranslations(lang)
                 experiencia como desarrollador
                 <span class="u underline !decoration-[1.3px]">Full Stack</span>, experimentado en
               </>
-            ) : lang == "de" ? (
+              // ) : lang == "de" ? (
+              //   <>
+              //     Software <span class="u underline !decoration-[1.3px]">Ingenieur</span> mit 2 Jahren Erfahrung
+              //     als
+              //     <span class="u underline !decoration-[1.3px]">Full Stack</span> Entwickler, erfahren in
+              //   </>
+              // ) : lang == "fr" ? (
+              //   <>
+              //     <span class="u underline !decoration-[1.3px]">Ingénieur</span> logiciel avec 2 ans d'expérience
+              //     en tant que
+              //     <span class="u underline !decoration-[1.3px]">Full Stack</span> développeur, expérimenté en
+              //   </>
+              // ) : lang == "it" ? (
+              //   <>
+              //     <span class="u underline !decoration-[1.3px]">Ingegnere</span> software con 2 anni di
+              //     esperienza come
+              //     <span class="u underline !decoration-[1.3px]">Full Stack</span> developer, esperto in
+              //   </>
+            ) : lang == "ru" ? (
               <>
-                Software <span class="u underline !decoration-[1.3px]">Ingenieur</span> mit 2 Jahren Erfahrung
-                als
-                <span class="u underline !decoration-[1.3px]">Full Stack</span> Entwickler, erfahren in
-              </>
-            ) : lang == "fr" ? (
-              <>
-                <span class="u underline !decoration-[1.3px]">Ingénieur</span> logiciel avec 2 ans d'expérience
-                en tant que
-                <span class="u underline !decoration-[1.3px]">Full Stack</span> développeur, expérimenté en
-              </>
-            ) : lang == "it" ? (
-              <>
-                <span class="u underline !decoration-[1.3px]">Ingegnere</span> software con 2 anni di
-                esperienza come
-                <span class="u underline !decoration-[1.3px]">Full Stack</span> developer, esperto in
+                <span class="u underline !decoration-[1.3px]">Инженер</span> программного обеспечения с 2
+                годами
+                <span class="u underline !decoration-[1.3px]">Full Stack</span> разработчик, опытный в
               </>
             ) : (
               <>
@@ -126,3 +130,36 @@ const t = useTranslations(lang)
     }
   }
 </style>
+
+<script is:inline>
+  const menuButton = document.querySelector("#menu-button")
+  const menuContainer = document.querySelector("#menu-container")
+  const languageMenu = document.querySelector("#language-menu")
+
+  const toggleMenuButton = () => {
+    menuButton?.querySelectorAll("span").forEach((span, i) => {
+      if (i != 1) span.classList.toggle("opacity-0")
+      if (i == 0) span.classList.toggle("translate-y-3")
+      if (i == 2) span.classList.toggle("-translate-y-3")
+    })
+  }
+  const toggleMenu = event => {
+    if (isLanguageMenuOpen) {
+      toggleLanguageMenu()
+      return
+    }
+    menuContainer.classList.toggle("opacity-0")
+    menuContainer.classList.toggle("pointer-events-none")
+    toggleMenuButton()
+  }
+  let isLanguageMenuOpen = false
+  const toggleLanguageMenu = event => {
+    languageMenu.classList.toggle("opacity-0")
+    languageMenu.classList.toggle("pointer-events-none")
+
+    menuContainer.classList.add("opacity-0")
+    menuContainer.classList.add("pointer-events-none")
+    if (isLanguageMenuOpen) toggleMenuButton()
+    isLanguageMenuOpen = !isLanguageMenuOpen
+  }
+</script>

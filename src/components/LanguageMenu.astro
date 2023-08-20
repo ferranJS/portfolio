@@ -1,0 +1,58 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
+import Footer from "./Footer.astro"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<aside
+  id="language-menu"
+  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 flex flex-col items-center justify-center bg-white/50 opacity-0 backdrop-blur-sm duration-500"
+  onclick="toggleLanguageMenu(event.stopPropagation())"
+>
+  <div id="menu" class="z-50 font-heming text-2xl [&>ul>li]:mb-5">
+    <ul class="flex flex-col items-center">
+      {
+        lang == "es" ? (
+          <>
+            <li>
+              <a href="/es">Español</a>
+            </li>
+            <li>
+              <a href="/en">English</a>
+            </li>
+            <li>
+              <a href="/ru">Русский</a>
+            </li>
+          </>
+        ) : lang == "en" ? (
+          <>
+            <li>
+              <a href="/en">English</a>
+            </li>
+            <li>
+              <a href="/es">Español</a>
+            </li>
+            <li>
+              <a href="/ru">Русский</a>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <a href="/ru">Русский</a>
+            </li>
+            <li>
+              <a href="/en">English</a>
+            </li>
+            <li>
+              <a href="/es">Español</a>
+            </li>
+          </>
+        )
+      }
+    </ul>
+  </div>
+  <Footer Classes=" fixed bottom-0 right-0 left-0 !flex-row" />
+</aside>
