@@ -10,11 +10,16 @@ const { Classes } = Astro.props
 
 <footer
   id="footer"
-  class={Classes + " flex snap-start flex-col items-center justify-center gap-4 p-5 md:flex-row"}
+  class={Classes + " group flex snap-start flex-col items-center justify-center gap-4 p-5 md:flex-row"}
 >
   <!-- text-gray-700 text-white  -->
-  <div class="pb-1 md:pr-2">FerranJS © {new Date().getFullYear()}</div>
-  <a class="underlined pb-1" href="https://www.linkedin.com/in/ferran-ramirez/">LinkedIn</a>
+  <div class="pb-1 md:pr-2">
+    FerranJS <span
+      class="inline-block rotate-0 duration-1000 group-hover:rotate-[720deg] group-hover:scale-125">©</span
+    >
+    {new Date().getFullYear()}
+  </div>
+  <!-- <a class="underlined pb-1" href="https://www.linkedin.com/in/ferran-ramirez/">LinkedIn</a>
   <a class="underlined pb-1" href="https://github.com/ferranJS">Github</a>
-  <a class="underlined pb-1" href="https://twitter.com/ferran_dev">Twitter</a>
+  <a class="underlined pb-1" href="https://twitter.com/ferran_dev">Twitter</a> -->
 </footer>

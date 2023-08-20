@@ -39,7 +39,7 @@ const lang = getLangFromUrl(Astro.url)
 
   /* anchor underlines */
   .underlined {
-    @apply relative block overflow-hidden after:bg-indigo-400;
+    @apply relative inline-block overflow-hidden after:bg-indigo-400;
   }
   .underlined::after {
     content: "";
