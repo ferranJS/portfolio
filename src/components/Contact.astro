@@ -6,33 +6,37 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section id="contact" class="flex h-screen items-center justify-center">
-  <div>
-    <h2 class="mb-9 text-center font-heming text-5xl font-bold">{t("Get in touch !")}</h2>
-    <div
-      class="flex flex-col items-center justify-center px-12 text-[1.2rem] font-thin [&>p]:mb-1 [&>p]:max-w-2xl"
-    >
-      <p>
-        If you like my work and want to bring <span class="u underline !decoration-[1.3px]">your ideas</span> to
-        life online, let's collaborate!
-      </p>
-      <p>Contact me to let me know and discuss your app or website needs.</p>
-      <div class="mt-8 flex flex-col items-center justify-center gap-5 px-9 text-xl font-bold">
-        <a class="flex items-center gap-2" href="https://www.linkedin.com/in/ferran-ramirez/">
-          <i class="devicon-linkedin-plain"></i>
-          <span class="underlined">LinkedIn</span>
-        </a>
-        <a class="flex items-center gap-2" href="https://github.com/ferranJS">
-          <i class="devicon-github-plain"></i>
-          <span class="underlined">Github</span>
-        </a>
-        <a class="flex items-center gap-2" href="https://twitter.com/ferran_dev">
-          <i class="devicon-twitter-plain"></i>
-          <span class="underlined">Twitter</span>
-        </a>
-        <a class="mt-4 flex flex-col items-center gap-2" href="mailto:contact@ferran.tech">
-          Or send me an email: <span class="u underline !decoration-[1.3px]">contact@ferran.tech</span>
-        </a>
+<section id="contact" class="flex h-[calc(100vh-68px)] items-center justify-center">
+  <div class="flex flex-col gap-8">
+    <h2 class="text-center font-heming text-5xl font-bold">{t("Get in touch !")}</h2>
+    <div class="flex flex-col items-center justify-center gap-16 px-12 text-[1.2rem] font-thin">
+      <div class="flex max-w-2xl flex-col items-center justify-center gap-1">
+        <p>
+          If you like my work and want to bring <span class="u underline !decoration-[1.3px]">your ideas</span>
+          to life online, let's collaborate!
+        </p>
+        <p>Contact me to let me know and discuss your app or website needs.</p>
+      </div>
+      <div class="flex flex-col items-center gap-5 text-xl font-bold sm:px-9">
+        <div class="flex gap-5 max-sm:flex-col sm:flex-wrap sm:px-9">
+          <a class="flex items-center gap-2" href="https://www.linkedin.com/in/ferran-ramirez/">
+            <i class="devicon-linkedin-plain"></i>
+            <span class="underlined">LinkedIn</span>
+          </a>
+          <a class="flex items-center gap-2" href="https://github.com/ferranJS">
+            <i class="devicon-github-plain"></i>
+            <span class="underlined">Github</span>
+          </a>
+          <a class="flex items-center gap-2" href="https://twitter.com/ferran_dev">
+            <i class="devicon-twitter-plain"></i>
+            <span class="underlined">Twitter</span>
+          </a>
+        </div>
+        <div class="mt-4 flex flex-col items-center gap-2">
+          Or send me an email: <a href="mailto:contact@ferran.tech">
+            <span class="u underline !decoration-[1.3px]">contact@ferran.tech</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
