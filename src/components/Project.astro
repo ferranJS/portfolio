@@ -1,5 +1,5 @@
 ---
-const { title, description, imgUrl, url } = Astro.props
+const { title, description, imgName, url } = Astro.props
 ---
 
 <article
@@ -40,8 +40,12 @@ const { title, description, imgUrl, url } = Astro.props
       </div>
     </div>
   </div>
-  <img
-    src={imgUrl}
-    class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.8] transition-all duration-[.4s] group-hover/article:blur-[2px]"
-  />
+  <picture>
+    <source srcset={"/avif/" + imgName + ".avif"} type="avif" />
+    <source srcset={"/webp/" + imgName + ".webp"} type="webp" />
+    <img
+      src={"/avif/" + imgName + ".avif"}
+      class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.8] transition-all duration-[.4s] group-hover/article:blur-[2px]"
+    />
+  </picture>
 </article>

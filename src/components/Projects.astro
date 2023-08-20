@@ -70,11 +70,6 @@ const xcodeLogo = `
     <i class="devicon-xcode-plain text-3xl"></i>
   </a>
 `
-// const Logo = `
-//   <a class="hover:scale-110 duration-200" target="_blank" href="https://firebase.com">
-//     <i class="devicon-firebase-plain text-3xl"></i>
-//   </a>
-// `
 ---
 
 <section id="projects" class="mb-5 scroll-mt-24 pt-6">
@@ -83,7 +78,7 @@ const xcodeLogo = `
     <Project
       title="Atum Mobile App"
       description={t("atumDescription")}
-      imgUrl="/atum.webp"
+      imgName="atum"
       url="https://stockmanagementlabs.com/addons/atum-mobile-app/"
     >
       <Fragment slot="techs" set:html={ionicLogo} />
@@ -96,7 +91,7 @@ const xcodeLogo = `
     <Project
       title="Zaax Golf App"
       description={t("zaaxDescription")}
-      imgUrl="/zaax.webp"
+      imgName="zaax"
       url="https://zaaxsports.com/"
     >
       <Fragment slot="techs" set:html={angularLogo} />
@@ -106,7 +101,7 @@ const xcodeLogo = `
     <Project
       title="Milv.es"
       description={t("milvDescription")}
-      imgUrl="/milv.webp"
+      imgName="milv"
       url="https://milv.es/app/#/login"
     >
       <Fragment slot="techs" set:html={angularLogo} />
@@ -115,12 +110,7 @@ const xcodeLogo = `
       <Fragment slot="techs" set:html={figmaLogo} />
     </Project>
     <!-- ! https://milv.es/app/#/livescoring/75 -->
-    <Project
-      title="Tasle"
-      description={t("tasle")}
-      imgUrl="/tasle.webp"
-      url="https://ferranjs.github.io/tasle/"
-    >
+    <Project title="Tasle" description={t("tasle")} imgName="tasle" url="https://ferranjs.github.io/tasle/">
       <Fragment slot="techs" set:html={astroLogo} />
       <Fragment slot="techs" set:html={tailwindLogo} />
       <Fragment slot="techs" set:html={driverjsLogo} />
@@ -128,14 +118,14 @@ const xcodeLogo = `
     <Project
       title="La Velada 3 remake"
       description={t("lavelada3remakeDescription")}
-      imgUrl="/lavelada3remake.webp"
+      imgName="lavelada3remake"
       url="https://ferranjs.github.io/lavelada-remake/"
     >
       <Fragment slot="techs" set:html={astroLogo} />
       <Fragment slot="techs" set:html={tailwindLogo} />
       <Fragment slot="techs" set:html={driverjsLogo} />
     </Project>
-    <Project title="Discordish" description={t("discordishDescription")} imgUrl="/discordish.webp">
+    <Project title="Discordish" description={t("discordishDescription")} imgName="discordish">
       <Fragment slot="techs" set:html={angularLogo} />
       <Fragment slot="techs" set:html={firebaseLogo} />
       <Fragment slot="techs" set:html={capacitorLogo} />
@@ -145,14 +135,14 @@ const xcodeLogo = `
     <Project
       title="3D Potato Studios"
       description={t("potatostudiosDescription")}
-      imgUrl="/3dpotatostudiosplaceholder.webp"
+      imgName="3dpotatostudiosplaceholder"
     >
       <Fragment slot="techs" set:html={figmaLogo} />
     </Project>
     <!-- <Project
       title="This website"
       description="Built almost in its totality in a few days."
-      imgUrl="/thiswebsite.webp"
+      imgName="thiswebsite"
     > -->
   </div>
 </section>
