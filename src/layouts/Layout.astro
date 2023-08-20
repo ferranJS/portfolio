@@ -20,6 +20,19 @@ const lang = getLangFromUrl(Astro.url)
     <link rel="stylesheet" href="/styles/devicons.min.css" />
     <link rel="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta property="og:url" content="https://ferran.tech/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FerranJS" />
+    <meta property="og:description" content="Ferran Ramírez, full stack developer and software engineer." />
+    <meta property="og:image" content="https://ferran.tech/link-preview.jpg" />
+    <meta property="twitter:card" content="gallery" />
+    <meta property="twitter:title" content="FerranJS" />
+    <meta
+      property="twitter:description"
+      content="Ferran Ramírez, full stack developer and software engineer."
+    />
+    <meta property="twitter:url" content="https://ferran.tech/" />
+    <meta property="twitter:image" content="https://ferran.tech/link-preview.jpg" />
   </head>
   <body class="overflow text-gray-700">
     <slot />
