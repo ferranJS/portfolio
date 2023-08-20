@@ -16,7 +16,7 @@ Features:
 
 <p float="left">
   <a href="https://ferranjs.github.io/portfolio">
-    <img src="https://github.com/ferranJS/portfolio/blob/main/public/landing-screenshot-2.jpg" width="197px" alt="desktop view of ferranjs landing page screenshot">
+    <img src="https://github.com/ferranJS/portfolio/blob/main/public/landing-screenshot-mobile.jpg" width="197px" alt="desktop view of ferranjs landing page screenshot">
   </a>
   <a href="https://ferranjs.github.io/portfolio">
     <img src="https://github.com/ferranJS/portfolio/blob/main/public/landing-screenshot.jpg" width="627px" alt="mobile view of ferranjs landing page screenshot">
