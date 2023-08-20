@@ -20,7 +20,7 @@ export const uiTranslations = {
       "Tournament and user management website where I implemented new functionalities in direct contact with the client, including: auth, POS payments, and the design and implementation of a landing page.",
     phrase1: "Committed to delivering top-notch solutions by following industry best practices.",
     phrase2:
-      "Dedicado activamente a ampliar mis conocimientos permaneciendo a la vanguardia de los avances tecnológicos.",
+      "Actively dedicated to expanding my skill set by staying at the forefront of technological advances.",
     phrase3:
       "From very light and fast landing pages to complex, secure and reactive native mobile applications.",
     metaDescription:
