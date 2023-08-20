@@ -1,13 +1,12 @@
 # [My portfolio](https://ferranjs.github.io/portfolio/) ⬅
 
-<!-- Features:
+Features:
 
- - Complex starting and hover animations
-- Only **800kB bundle size** including images
+- Only **500kB total bundle size**
 - **Responsive** design
 - **SEO** friendly
-- Optimized images using **Avif** and **WebP** formats
-- Pre-commit Hooks with Husky & Lint-staged for a Prettier write -->
+- Optimized images and fonts using **Avif**, **WebP** and **Woff2** formats
+- Pre-commit Hooks with Husky & Lint-staged for a Prettier write
 
 <!-- Perfect [Google PageSpeed Insights Score]() -->
 
@@ -24,7 +23,7 @@
   </a>
 </p>
 
-This landing was made in a few days with [Tailwind](https://tailwindcss.com/) as an improvement for faster CSS coding and [Astro](https://astro.build/) for good performance (packs with [Vite](https://vitejs.dev/)) and comfortable web development.
+This landing was made in a few days with [Tailwind](https://tailwindcss.com/) and [Astro](https://astro.build/) (packs with [Vite](https://vitejs.dev/)).
 
 ## Setup roadmap
 

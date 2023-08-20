@@ -17,24 +17,20 @@ const lang = getLangFromUrl(Astro.url)
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+    <link rel="stylesheet" href="/styles/devicons.min.css" />
     <link rel="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body class="overflow text-gray-700">
-    <!-- text-gray-700 text-white -->
     <slot />
   </body>
 </html>
 <style is:global>
   @font-face {
     font-family: Heming Variable;
-    src: url("/heming.woff2") format("woff2");
+    src: url("/fonts/heming.woff2") format("woff2");
     font-weight: 100;
     font-style: normal;
-  }
-  body {
-    /* font-family: "Heming Variable", ui-monospace, monospace; */
   }
 
   /* anchor underlines */
