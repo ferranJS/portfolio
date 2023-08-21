@@ -4,10 +4,22 @@ import Menu from "./Menu.astro"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
+const { backButton } = Astro.props
 ---
 
 <header class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-heming text-lg sm:bg-white/40 sm:pr-7">
   <nav>
+    {
+      backButton ? (
+        <button
+          id="backbutton"
+          onclick="history.back()"
+          class="underlined absolute left-0 mx-6 mt-1 cursor-pointer"
+        >
+          go back
+        </button>
+      ) : null
+    }
     <div class="visible flex justify-end sm:hidden" id="menu-button">
       <button
         id="menu-button"
