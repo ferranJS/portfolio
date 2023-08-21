@@ -1,11 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
 import Projects from "../components/Projects.astro"
 import { getLangFromUrl, useTranslations } from "../i18n/utils"
 import { languages } from "../i18n/languages"
-import Background from "../components/Background.astro"
 import Contact from "../components/Contact.astro"
 
 export function getStaticPaths() {
@@ -22,7 +19,6 @@ const t = useTranslations(lang)
 
 <Layout title="FerranJS" description={t("metaDescription")}>
   <main>
-    <Header />
     <section class="flex h-screen items-center">
       <div class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48 [&>p]:mb-1 [&>p]:max-w-2xl">
         <h1 class="mb-2 font-heming text-6xl font-bold sm:text-[5rem]">
@@ -87,79 +83,5 @@ const t = useTranslations(lang)
     </section>
     <Projects />
     <Contact />
-    <Footer />
-    <Background />
   </main>
 </Layout>
-
-<style is:global>
-  html {
-    /* scroll-snap-type: y mandatory;
-    scroll-snap-stop: always; */
-    /* scroll-behavior: smooth; */
-  }
-  span.u {
-    @apply decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[2px];
-  }
-  body {
-    animation: bg-color-shift 15s infinite;
-  }
-  :root {
-    --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
-    --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
-  }
-  @keyframes bg-color-shift {
-    0%,
-    100% {
-      background: var(--gradient1), var(--gradient2), rgb(0, 163, 155);
-    }
-    17% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    34% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    51% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    68% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    85% {
-      background: var(--gradient1), var(--gradient2), rgb(198, 56, 44);
-    }
-  }
-</style>
-
-<script is:inline>
-  const menuButton = document.querySelector("#menu-button")
-  const menuContainer = document.querySelector("#menu-container")
-  const languageMenu = document.querySelector("#language-menu")
-
-  const toggleMenuButton = () => {
-    menuButton?.querySelectorAll("span").forEach((span, i) => {
-      if (i != 1) span.classList.toggle("opacity-0")
-      if (i == 0) span.classList.toggle("translate-y-3")
-      if (i == 2) span.classList.toggle("-translate-y-3")
-    })
-  }
-  const toggleMenu = event => {
-    if (isLanguageMenuOpen) {
-      toggleLanguageMenu()
-      return
-    }
-    menuContainer.classList.toggle("opacity-0")
-    menuContainer.classList.toggle("pointer-events-none")
-    toggleMenuButton()
-  }
-  let isLanguageMenuOpen = false
-  const toggleLanguageMenu = event => {
-    languageMenu.classList.toggle("opacity-0")
-    languageMenu.classList.toggle("pointer-events-none")
-
-    menuContainer.classList.add("opacity-0")
-    menuContainer.classList.add("pointer-events-none")
-    if (isLanguageMenuOpen) toggleMenuButton()
-    isLanguageMenuOpen = !isLanguageMenuOpen
-  }
-</script>

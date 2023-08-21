@@ -1,4 +1,7 @@
 ---
+import Background from "../components/Background.astro"
+import Footer from "../components/Footer.astro"
+import Header from "../components/Header.astro"
 import { getLangFromUrl } from "../i18n/utils"
 
 interface Props {
@@ -35,7 +38,11 @@ const lang = getLangFromUrl(Astro.url)
     <meta property="twitter:image" content="https://ferran.tech/link-preview.jpg" />
   </head>
   <body class="overflow text-gray-700">
+    <Header />
     <slot />
+
+    <Footer />
+    <Background />
   </body>
 </html>
 <style is:global>
@@ -45,8 +52,45 @@ const lang = getLangFromUrl(Astro.url)
     font-weight: 100;
     font-style: normal;
   }
+  html {
+    /* scroll-snap-type: y mandatory;
+    scroll-snap-stop: always; */
+    /* scroll-behavior: smooth; */
+  }
 
-  /* anchor underlines */
+  body {
+    animation: bg-color-shift 15s infinite;
+  }
+  :root {
+    --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
+    --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
+  }
+  @keyframes bg-color-shift {
+    0%,
+    100% {
+      background: var(--gradient1), var(--gradient2), rgb(0, 163, 155);
+    }
+    17% {
+      background: var(--gradient1), var(--gradient2), green;
+    }
+    34% {
+      background: var(--gradient1), var(--gradient2), green;
+    }
+    51% {
+      background: var(--gradient1), var(--gradient2), green;
+    }
+    68% {
+      background: var(--gradient1), var(--gradient2), green;
+    }
+    85% {
+      background: var(--gradient1), var(--gradient2), rgb(198, 56, 44);
+    }
+  }
+  /* inline wavy span text underline */
+  span.u {
+    @apply decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[2px];
+  }
+  /* anchor simple underlines */
   .underlined {
     @apply relative inline-block overflow-hidden after:bg-indigo-400;
   }
@@ -66,3 +110,36 @@ const lang = getLangFromUrl(Astro.url)
     transform: translate3d(0, 0, 0);
   }
 </style>
+
+<script is:inline>
+  const menuButton = document.querySelector("#menu-button")
+  const menuContainer = document.querySelector("#menu-container")
+  const languageMenu = document.querySelector("#language-menu")
+
+  const toggleMenuButton = () => {
+    menuButton?.querySelectorAll("span").forEach((span, i) => {
+      if (i != 1) span.classList.toggle("opacity-0")
+      if (i == 0) span.classList.toggle("translate-y-3")
+      if (i == 2) span.classList.toggle("-translate-y-3")
+    })
+  }
+  const toggleMenu = event => {
+    if (isLanguageMenuOpen) {
+      toggleLanguageMenu()
+      return
+    }
+    menuContainer.classList.toggle("opacity-0")
+    menuContainer.classList.toggle("pointer-events-none")
+    toggleMenuButton()
+  }
+  let isLanguageMenuOpen = false
+  const toggleLanguageMenu = event => {
+    languageMenu.classList.toggle("opacity-0")
+    languageMenu.classList.toggle("pointer-events-none")
+
+    menuContainer.classList.add("opacity-0")
+    menuContainer.classList.add("pointer-events-none")
+    if (isLanguageMenuOpen) toggleMenuButton()
+    isLanguageMenuOpen = !isLanguageMenuOpen
+  }
+</script>
