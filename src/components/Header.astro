@@ -1,8 +1,8 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils"
+import { useTranslations } from "../i18n/utils"
 import Menu from "./Menu.astro"
 
-const lang = getLangFromUrl(Astro.url)
+const lang = Astro.params.language
 const t = useTranslations(lang)
 const { backButton } = Astro.props
 ---

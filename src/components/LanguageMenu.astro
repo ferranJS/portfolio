@@ -1,8 +1,18 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils"
+import { useTranslations } from "../i18n/utils"
 import Footer from "./Footer.astro"
 
-const lang = getLangFromUrl(Astro.url)
+const lang = Astro.params.language
+const url = Astro.url.href
+const urlArray = url.split("/")
+const esUrl = urlArray.slice(0, 3).join("/") + "/es/" + urlArray.slice(4, urlArray.length).join("/")
+const enUrl = urlArray.slice(0, 3).join("/") + "/en/" + urlArray.slice(4, urlArray.length).join("/")
+const ruUrl = urlArray.slice(0, 3).join("/") + "/ru/" + urlArray.slice(4, urlArray.length).join("/")
+
+const esLiAnchor = '<li><a href="' + esUrl + '">Español</a></li>'
+const enLiAnchor = '<li><a href="' + enUrl + '">English</a></li>'
+const ruLiAnchor = '<li><a href="' + ruUrl + '">Русский</a></li>'
+
 const t = useTranslations(lang)
 ---
 
@@ -12,43 +22,25 @@ const t = useTranslations(lang)
   onclick="toggleLanguageMenu(event.stopPropagation())"
 >
   <div id="menu" class="z-50 font-heming text-2xl [&>ul>li]:mb-5">
-    <ul class="flex flex-col items-center">
+    <ul class="flex flex-col items-center" id="languages">
       {
         lang == "es" ? (
           <>
-            <li>
-              <a href="/es">Español</a>
-            </li>
-            <li>
-              <a href="/en">English</a>
-            </li>
-            <li>
-              <a href="/ru">Русский</a>
-            </li>
+            <Fragment set:html={esLiAnchor} />
+            <Fragment set:html={enLiAnchor} />
+            <Fragment set:html={ruLiAnchor} />
           </>
         ) : lang == "en" ? (
           <>
-            <li>
-              <a href="/en">English</a>
-            </li>
-            <li>
-              <a href="/es">Español</a>
-            </li>
-            <li>
-              <a href="/ru">Русский</a>
-            </li>
+            <Fragment set:html={enLiAnchor} />
+            <Fragment set:html={esLiAnchor} />
+            <Fragment set:html={ruLiAnchor} />
           </>
         ) : (
           <>
-            <li>
-              <a href="/ru">Русский</a>
-            </li>
-            <li>
-              <a href="/en">English</a>
-            </li>
-            <li>
-              <a href="/es">Español</a>
-            </li>
+            <Fragment set:html={ruLiAnchor} />
+            <Fragment set:html={enLiAnchor} />
+            <Fragment set:html={esLiAnchor} />
           </>
         )
       }
