@@ -110,7 +110,16 @@ const xcodeLogo = `
       <Fragment slot="techs" set:html={figmaLogo} />
     </Project>
     <!-- ! https://milv.es/app/#/livescoring/75 -->
-    <Project title="Tasle" description={t("tasle")} imgName="tasle" url="https://ferranjs.github.io/tasle/">
+    <Project title={t("My blog")} description={t("blogDescription")} imgName="blog" url={lang + "/blog"}>
+      <Fragment slot="techs" set:html={astroLogo} />
+      <Fragment slot="techs" set:html={tailwindLogo} />
+    </Project>
+    <Project
+      title="Tasle"
+      description={t("tasleDescription")}
+      imgName="tasle"
+      url="https://ferranjs.github.io/tasle/"
+    >
       <Fragment slot="techs" set:html={astroLogo} />
       <Fragment slot="techs" set:html={tailwindLogo} />
       <Fragment slot="techs" set:html={driverjsLogo} />

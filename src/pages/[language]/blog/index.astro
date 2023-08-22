@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro"
 import { getCollection } from "astro:content"
 import { languages } from "../../../i18n/languages"
+import { useTranslations } from "../../../i18n/utils"
 
 export function getStaticPaths() {
   const paths = []
@@ -11,21 +12,31 @@ export function getStaticPaths() {
   return paths
 }
 
+const lang = Astro.params.language
+const t = useTranslations(lang)
 const allBlogPosts = await getCollection("blogpost")
 ---
 
 <Layout title="FerranJS Blog" description="FerranJS blog" backButton={true}>
-  <main id="blogpost" class="flex h-[calc(100vh-68px)] flex-col items-center justify-center gap-2">
-    <h2 class="mb-10 text-center font-heming text-5xl font-bold">FerranJS Blog</h2>
+  <main id="blogpost" class="flex h-[calc(100vh-68px)] flex-col items-center justify-center gap-2 px-7">
+    <h2 class="mb-10 text-center font-heming text-5xl font-bold">
+      FerranJS <span class="indigo-wavy underline !decoration-[3px] !underline-offset-[6px]">Blog</span>
+    </h2>
     <p class="max-w-2xl text-xl font-thin">
-      Check out my abundant blog posts, half made with chatgpt and half made with my own brain.
+      {t("blogPageText")}
     </p>
-    <ul class="mt-6">
+    <ul class="mt-6 max-w-3xl">
       {
         allBlogPosts.map(blogpost => (
-          <li class="mb-6">
-            <a href={"blog/" + blogpost.slug} class="u underlined text-2xl font-bold">
-              {blogpost.data.title}
+          <li class="mb-6 list-disc">
+            <a href={"blog/" + blogpost.slug} class="group flex flex-col gap-1">
+              <span class="indigo-wavy text-2xl font-bold !decoration-white !decoration-2 duration-500 group-hover:underline group-hover:!decoration-indigo-400">
+                {blogpost.data.title}
+              </span>
+              <span class="text-sm font-thin">
+                {blogpost.data.author} · {t(blogpost.data.month)}
+                {blogpost.data.year} · {blogpost.data.readTimeMinutes} {t("min read")}
+              </span>
             </a>
           </li>
         ))

@@ -16,7 +16,7 @@ const { backButton } = Astro.props
           onclick="history.back()"
           class="underlined absolute left-0 mx-6 mt-1 cursor-pointer"
         >
-          go back
+          {t("go back")}
         </button>
       ) : null
     }
@@ -31,22 +31,29 @@ const { backButton } = Astro.props
         <span class="m-1 block h-[2.5px] w-9 bg-indigo-200 duration-500 ease-in-out"></span>
       </button>
     </div>
-    <ul class="hidden justify-end gap-5 sm:flex">
+    <ul
+      class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
+    >
       <li>
-        <a class="underlined" href="/">{t("Home")}</a>
+        <a class="underlined" href={"/" + lang + "#"}>{t("Home")}</a>
       </li>
       <li>
-        <a class="underlined" href="#projects">{t("Projects")}</a>
+        <a class="underlined" href={"/" + lang + "#projects"}>{t("Projects")}</a>
       </li>
       <li>
-        <a class="underlined" href="#contact">{t("Contact")}</a>
+        <a class="underlined" href={"/" + lang + "#contact"}>{t("Contact")}</a>
       </li>
       <li>
-        <a class="underlined" target="_blank" href="https://github.com/ferranJS/portfolio">{t("Github")}</a>
+        <a class="underlined" href={"/" + lang + "/blog"}>{t("Blog")}</a>
+      </li>
+      <li>
+        <a class="underlined" target="_blank" href="https://github.com/ferranJS/portfolio">
+          {t("Github")}
+        </a>
       </li>
       <li>
         <button onclick="toggleLanguageMenu(event.stopPropagation())">
-          <img src="/globe.svg" class="h-6 w-5 duration-200 hover:scale-110" alt="globe language icon" />
+          <img src="/globe.svg" class="mb-1 h-6 w-5 duration-200 hover:scale-110" alt="globe language icon" />
         </button>
       </li>
     </ul>
