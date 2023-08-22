@@ -26,7 +26,7 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content={t(description)} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <link rel="stylesheet" href="/styles/devicons.min.css" />
@@ -35,11 +35,11 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     <meta property="og:url" content="https://ferran.tech/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={ogDescription} />
+    <meta property="og:description" content={t(ogDescription)} />
     <meta property="og:image" content={ogImgUrl} />
     <meta property="twitter:card" content="gallery" />
     <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={ogDescription} />
+    <meta property="twitter:description" content={t(ogDescription)} />
     <meta property="twitter:url" content="https://ferran.tech/" />
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
@@ -92,8 +92,8 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     }
   }
   /* inline wavy span text underline */
-  span.indigo-wavy {
-    @apply decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[2px];
+  .indigo-wavy {
+    @apply underline decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[3px];
   }
   /* anchor simple underlines */
   .underlined {

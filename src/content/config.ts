@@ -22,6 +22,7 @@ const blogpostCollection = defineCollection({
     ]),
     year: z.number(),
     readTimeMinutes: z.number(),
+    hidden: z.boolean().optional(),
   }),
 })
 

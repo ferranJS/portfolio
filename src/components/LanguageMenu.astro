@@ -5,15 +5,22 @@ import Footer from "./Footer.astro"
 const lang = Astro.params.language
 const url = Astro.url.href
 const urlArray = url.split("/")
-const esUrl = urlArray.slice(0, 3).join("/") + "/es/" + urlArray.slice(4, urlArray.length).join("/")
-const enUrl = urlArray.slice(0, 3).join("/") + "/en/" + urlArray.slice(4, urlArray.length).join("/")
-const ruUrl = urlArray.slice(0, 3).join("/") + "/ru/" + urlArray.slice(4, urlArray.length).join("/")
-const caUrl = urlArray.slice(0, 3).join("/") + "/ca/" + urlArray.slice(4, urlArray.length).join("/")
+let rootUrl = import.meta.env.ROOT_URL
+console.log("import.meta.env.DEV: ", import.meta.env.DEV)
+console.log("import.meta.env.PROD: ", import.meta.env.PROD)
+if (import.meta.env.DEV) rootUrl = urlArray.slice(0, 3).join("/")
+
+const slugAfterLang = urlArray.slice(4, urlArray.length).join("/")
+
+const esUrl = rootUrl + "/es/" + slugAfterLang
+const enUrl = rootUrl + "/en/" + slugAfterLang
+const ruUrl = rootUrl + "/ru/" + slugAfterLang
+const caUrl = rootUrl + "/ca/" + slugAfterLang
 
 const esLiAnchor = '<li><a href="' + esUrl + '">Español</a></li>'
 const enLiAnchor = '<li><a href="' + enUrl + '">English</a></li>'
 const ruLiAnchor = '<li><a href="' + ruUrl + '">Русский</a></li>'
-const caLiAnchor = '<li><a href="' + ruUrl + '">Català</a></li>'
+const caLiAnchor = '<li><a href="' + caUrl + '">Català</a></li>'
 
 const t = useTranslations(lang)
 ---

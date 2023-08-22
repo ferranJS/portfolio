@@ -14,7 +14,7 @@ export function getStaticPaths() {
 
 const lang = Astro.params.language
 const t = useTranslations(lang)
-const allBlogPosts = await getCollection("blogpost")
+const allBlogPosts = (await getCollection("blogpost")).filter(post => !post.data.hidden)
 ---
 
 <Layout
@@ -25,9 +25,9 @@ const allBlogPosts = await getCollection("blogpost")
   ogImgUrl="https://ferran.tech/webp/blog.webp"
 >
   <main id="blogpost" class="flex h-[calc(100vh-68px)] flex-col items-center justify-center gap-2 px-7">
-    <h2 class="mb-10 text-center font-heming text-5xl font-bold">
-      FerranJS <span class="indigo-wavy underline !decoration-[3px] !underline-offset-[6px]">Blog</span>
-    </h2>
+    <h1 class="mb-10 text-center font-heming text-5xl font-bold">
+      FerranJS <span class="indigo-wavy !decoration-[3px] !underline-offset-[6px]">Blog</span>
+    </h1>
     <p class="max-w-2xl text-xl font-thin">
       {t("blogPageText")}
     </p>
@@ -35,12 +35,9 @@ const allBlogPosts = await getCollection("blogpost")
       {
         allBlogPosts.map(blogpost => (
           <li class="mb-6 list-disc">
-            <a href={"blog/" + blogpost.slug} class="group flex flex-col gap-1">
+            <a href={"/" + lang + "/blog/" + blogpost.slug} class="group flex flex-col gap-1">
               <span class="indigo-wavy text-2xl font-bold !decoration-white !decoration-2 duration-500 group-hover:underline group-hover:!decoration-indigo-400">
-                {blogpost.data.title}
-              </span>
-              <span class="text-sm font-thin">
-                {blogpost.data.author} · {t(blogpost.data.month)}
+                <Fragment set:html={blogpost.data.title} /> {blogpost.data.author} · {t(blogpost.data.month)}
                 {blogpost.data.year} · {blogpost.data.readTimeMinutes} {t("min read")}
               </span>
             </a>
