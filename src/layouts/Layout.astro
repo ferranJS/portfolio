@@ -2,15 +2,24 @@
 import Background from "../components/Background.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
+import { useTranslations } from "../i18n/utils"
 
 interface Props {
   title: string
   description: string
   backButton?: boolean
+  ogDescription?: string
+  ogImgUrl?: string
 }
 const { title, description, backButton } = Astro.props
+let { ogDescription, ogImgUrl } = Astro.props
 
 const lang = Astro.params.language
+const t = useTranslations(lang)
+
+if (ogDescription == undefined)
+  ogDescription = `Ferran Ramírez, ${t("full stack developer")} ${t("and")} ${t("software engineer")}.`
+if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
 ---
 
 <!DOCTYPE html>
@@ -25,17 +34,14 @@ const lang = Astro.params.language
     <title>{title}</title>
     <meta property="og:url" content="https://ferran.tech/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="FerranJS" />
-    <meta property="og:description" content="Ferran Ramírez, full stack developer and software engineer." />
-    <meta property="og:image" content="https://ferran.tech/link-preview.jpg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={ogImgUrl} />
     <meta property="twitter:card" content="gallery" />
-    <meta property="twitter:title" content="FerranJS" />
-    <meta
-      property="twitter:description"
-      content="Ferran Ramírez, full stack developer and software engineer."
-    />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={ogDescription} />
     <meta property="twitter:url" content="https://ferran.tech/" />
-    <meta property="twitter:image" content="https://ferran.tech/link-preview.jpg" />
+    <meta property="twitter:image" content={ogImgUrl} />
   </head>
   <body class="overflow text-gray-700">
     <Header {backButton} />
@@ -54,7 +60,7 @@ const lang = Astro.params.language
   html {
     /* scroll-snap-type: y mandatory;
     scroll-snap-stop: always; */
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
   }
 
   body {

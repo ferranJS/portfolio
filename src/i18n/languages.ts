@@ -40,6 +40,8 @@ export const uiTranslations = {
       "A Discord (messaging web app) clone focused on user experience and performance by creating a good architectural design and a well thought and designed database structure.",
   },
   es: {
+    "full stack developer": "desarrollador full stack",
+    "software engineer": "ingeniero de software",
     english: "Inglés",
     spanish: "Español",
     catalan: "Català",
@@ -97,6 +99,8 @@ export const uiTranslations = {
       "Un clon de Discord (aplicación web de mensajería) centrado en la experiencia del usuario y el rendimiento mediante la creación de un buen diseño arquitectónico y una estructura de base de datos bien pensada y diseñada.",
   },
   ca: {
+    "full stack developer": "desenvolupador full stack",
+    "software engineer": "enginyer de software",
     english: "Anglès",
     spanish: "Espanyol",
     catalan: "Català",
@@ -154,6 +158,8 @@ export const uiTranslations = {
       "Un clon de Discord (aplicació web de missatgeria) centrat en l'experiència de l'usuari i el rendiment mitjançant la creació d'un bon disseny arquitectònic i una estructura de base de dades ben pensada i dissenyada.",
   },
   ru: {
+    "full stack developer": "разработчик full stack",
+    "software engineer": "инженер-программист",
     english: "Английский",
     spanish: "Испанский",
     catalan: "Каталонский",

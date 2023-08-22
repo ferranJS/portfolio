@@ -17,7 +17,13 @@ const t = useTranslations(lang)
 const allBlogPosts = await getCollection("blogpost")
 ---
 
-<Layout title="FerranJS Blog" description="FerranJS blog" backButton={true}>
+<Layout
+  title="FerranJS Blog"
+  description="FerranJS blog"
+  backButton={true}
+  ogDescription="Ferran Ramírez Martí Tech & Software Dev Blog."
+  ogImgUrl="https://ferran.tech/webp/blog.webp"
+>
   <main id="blogpost" class="flex h-[calc(100vh-68px)] flex-col items-center justify-center gap-2 px-7">
     <h2 class="mb-10 text-center font-heming text-5xl font-bold">
       FerranJS <span class="indigo-wavy underline !decoration-[3px] !underline-offset-[6px]">Blog</span>
