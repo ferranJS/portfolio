@@ -1,0 +1,37 @@
+---
+import Layout from "../../../layouts/Layout.astro"
+import { getCollection } from "astro:content"
+import { useTranslations } from "../../../i18n/utils.ts"
+import { languages } from "../../../i18n/languages"
+
+export async function getStaticPaths() {
+  const allBlogPosts = await getCollection("blogpost")
+  const paths = []
+  for (const language of Object.keys(languages)) {
+    allBlogPosts.forEach(post => paths.push({ params: { language, blog_post: post.slug }, props: { post } }))
+  }
+  return paths
+}
+
+const { post } = Astro.props
+const { Content } = await post.render()
+
+const lang = Astro.params.language
+const t = useTranslations(lang)
+---
+
+<Layout title="FerranJS" description="metaDescription" backButton={true}>
+  <main id="blogpost" class="my-28 flex justify-center">
+    <div
+      class="px-7 text-lg font-thin sm:w-5/6 xl:w-4/6 [&>h3]:mb-3 [&>h3]:mt-9 [&>h3]:font-heming [&>h3]:text-2xl [&>p]:mb-3"
+    >
+      <h2 class="font-heming text-4xl font-bold lg:text-5xl">{post.data.title}</h2>
+      <p class="!mb-5 mt-3 text-base">
+        {post.data.author} · {t(post.data.month)}
+        {post.data.year} ·
+        {post.data.readTimeMinutes + " " + t("min read")}
+      </p>
+      <Content />
+    </div>
+  </main>
+</Layout>

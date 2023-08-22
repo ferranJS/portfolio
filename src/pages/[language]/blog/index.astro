@@ -1,6 +1,15 @@
 ---
-import Layout from "../../layouts/Layout.astro"
+import Layout from "../../../layouts/Layout.astro"
 import { getCollection } from "astro:content"
+import { languages } from "../../../i18n/languages"
+
+export function getStaticPaths() {
+  const paths = []
+  for (const language of Object.keys(languages)) {
+    paths.push({ params: { language } })
+  }
+  return paths
+}
 
 const allBlogPosts = await getCollection("blogpost")
 ---
@@ -15,7 +24,7 @@ const allBlogPosts = await getCollection("blogpost")
       {
         allBlogPosts.map(blogpost => (
           <li class="mb-6">
-            <a href={`/blog/${blogpost.slug}`} class="u underlined text-2xl font-bold">
+            <a href={"blog/" + blogpost.slug} class="u underlined text-2xl font-bold">
               {blogpost.data.title}
             </a>
           </li>

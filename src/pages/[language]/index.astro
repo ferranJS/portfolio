@@ -1,9 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Projects from "../components/Projects.astro"
-import { getLangFromUrl, useTranslations } from "../i18n/utils"
-import { languages } from "../i18n/languages"
-import Contact from "../components/Contact.astro"
+import Layout from "../../layouts/Layout.astro"
+import Projects from "../../components/Projects.astro"
+import { useTranslations } from "../../i18n/utils"
+import { languages } from "../../i18n/languages"
+import Contact from "../../components/Contact.astro"
 
 export function getStaticPaths() {
   const paths = []
@@ -13,7 +13,7 @@ export function getStaticPaths() {
   return paths
 }
 
-const lang = getLangFromUrl(Astro.url)
+const lang = Astro.params.language
 const t = useTranslations(lang)
 ---
 

@@ -5,7 +5,23 @@ const blogpostCollection = defineCollection({
   type: "content", // v2.5.0 and later
   schema: z.object({
     title: z.string(),
+    author: z.string(),
+    month: z.enum([
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ]),
     year: z.number(),
+    readTimeMinutes: z.number(),
   }),
 })
 
