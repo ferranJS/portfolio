@@ -6,8 +6,6 @@ const lang = Astro.params.language
 const url = Astro.url.href
 const urlArray = url.split("/")
 let rootUrl = import.meta.env.ROOT_URL
-console.log("import.meta.env.DEV: ", import.meta.env.DEV)
-console.log("import.meta.env.PROD: ", import.meta.env.PROD)
 if (import.meta.env.DEV) rootUrl = urlArray.slice(0, 3).join("/")
 
 const slugAfterLang = urlArray.slice(4, urlArray.length).join("/")
@@ -27,7 +25,7 @@ const t = useTranslations(lang)
 
 <aside
   id="language-menu"
-  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 flex flex-col items-center justify-center bg-white/50 opacity-0 backdrop-blur-sm duration-500"
+  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 flex flex-col items-center justify-center bg-blurred opacity-0 backdrop-blur-sm duration-500"
   onclick="toggleLanguageMenu(event.stopPropagation())"
 >
   <div id="menu" class="z-50 font-heming text-2xl [&>ul>li]:mb-5">

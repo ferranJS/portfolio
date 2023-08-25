@@ -23,7 +23,7 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={lang} class="bg-base">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={t(description)} />
@@ -43,13 +43,30 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     <meta property="twitter:url" content="https://ferran.tech/" />
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
-  <body class="overflow text-gray-700">
+  <body class="overflow text-color-base">
     <Header {backButton} />
     <slot />
     <Footer />
     <Background />
   </body>
 </html>
+<style is:inline>
+  @layer base {
+    :root {
+      --color-base-bg: white;
+      --color-blurred-bg: rgb(255 255 255 / 0.4);
+      --color-base-text: rgb(55 65 81);
+
+      --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
+      --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
+    }
+    :root[data-theme="dark"] {
+      --color-base-bg: rgb(34, 40, 50);
+      --color-blurred-bg: rgb(55 65 81 / 0.2);
+      --color-base-text: white;
+    }
+  }
+</style>
 <style is:global>
   @font-face {
     font-family: Heming Variable;
@@ -65,10 +82,6 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
 
   body {
     animation: bg-color-shift 15s infinite;
-  }
-  :root {
-    --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
-    --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
   }
   @keyframes bg-color-shift {
     0%,
@@ -114,9 +127,60 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
   .underlined:hover::after {
     transform: translate3d(0, 0, 0);
   }
+
+  .themeToggle {
+    z-index: 1;
+    --size: 1.3rem;
+
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+    border-radius: 999px;
+
+    transition: all 400ms;
+  }
+  .themeToggle.checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+
+    transform: scale(0.75);
+    box-shadow: inset 0 0 0 var(--size), calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+      var(--offset-orthogonal) 0 0 var(--ray-size), 0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+      0 var(--offset-orthogonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+  }
 </style>
 
 <script is:inline>
+  // On page load or when changing themes
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.dataset.theme = "dark"
+  } else {
+    document.querySelector(".themeToggle").classList.add("checked")
+    document.documentElement.dataset.theme = "light"
+  }
+  const toggleDarkMode = () => {
+    document.querySelectorAll(".themeToggle").forEach(el => el.classList.toggle("checked"))
+    if (localStorage.theme === "dark") {
+      document.documentElement.dataset.theme = "light"
+      localStorage.theme = "light"
+    } else {
+      document.documentElement.dataset.theme = "dark"
+      localStorage.theme = "dark"
+    }
+  }
+
   const menuButton = document.querySelector("#menu-button")
   const menuContainer = document.querySelector("#menu-container")
   const languageMenu = document.querySelector("#language-menu")

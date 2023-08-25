@@ -7,7 +7,7 @@ const t = useTranslations(lang)
 const { backButton } = Astro.props
 ---
 
-<header class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-heming text-lg sm:bg-white/40 sm:pr-7">
+<header class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-heming text-lg sm:bg-blurred">
   <nav>
     {
       backButton ? (
@@ -53,7 +53,21 @@ const { backButton } = Astro.props
       </li>
       <li>
         <button onclick="toggleLanguageMenu(event.stopPropagation())">
-          <img src="/globe.svg" class="mb-1 h-6 w-5 duration-200 hover:scale-110" alt="globe language icon" />
+          <img
+            src="/globe.svg"
+            class="mb-1 h-7 w-6 duration-200 hover:scale-110 dark:hidden"
+            alt="globe language icon"
+          />
+          <img
+            src="/globe-white.svg"
+            class="mb-1 hidden h-7 w-6 duration-200 hover:scale-110 dark:block"
+            alt="globe language icon"
+          />
+        </button>
+      </li>
+      <li>
+        <button onclick="toggleDarkMode(event.stopPropagation())" class="flex items-center">
+          <div type="checkbox" class="themeToggle mb-[5px] h-5 w-5"></div>
         </button>
       </li>
     </ul>

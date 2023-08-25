@@ -9,7 +9,7 @@ const t = useTranslations(lang)
 
 <aside
   id="menu-container"
-  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 flex flex-col items-center justify-center bg-white/50 opacity-0 backdrop-blur-sm duration-500 sm:hidden"
+  class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 flex flex-col items-center justify-center bg-blurred opacity-0 backdrop-blur-sm duration-500 sm:hidden"
   onclick="toggleMenu(event.stopPropagation())"
 >
   <div id="menu" class="z-50 font-heming text-2xl [&>ul>li]:mb-5">
@@ -34,8 +34,24 @@ const t = useTranslations(lang)
       </li>
       <li>
         <button onclick="toggleLanguageMenu(event.stopPropagation())" class="flex items-center gap-2">
-          <img src="/globe.svg" class="mb-0.5 w-6 duration-200 hover:scale-110" alt="globe language icon" />
+          <img
+            src="/globe.svg"
+            class="mb-1 h-7 w-6 duration-200 hover:scale-110 dark:hidden"
+            alt="globe language icon"
+          />
+          <img
+            src="/globe-white.svg"
+            class="mb-1 hidden h-7 w-6 duration-200 hover:scale-110 dark:block"
+            alt="globe language icon"
+          />
           <span>{t("Language")}</span>
+        </button>
+      </li>
+      <li>
+        <button onclick="toggleDarkMode(event.stopPropagation())" class="flex items-center gap-2">
+          <div class="themeToggle mb-[5px] h-5 w-5"></div>
+
+          <span>{t("Theme")}</span>
         </button>
       </li>
     </ul>

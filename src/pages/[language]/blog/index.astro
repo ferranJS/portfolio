@@ -36,7 +36,7 @@ const allBlogPosts = (await getCollection("blogpost")).filter(post => !post.data
         allBlogPosts.map(blogpost => (
           <li class="mb-6 list-disc">
             <a href={"/" + lang + "/blog/" + blogpost.slug} class="group flex flex-col gap-1">
-              <span class="indigo-wavy text-2xl font-bold !decoration-white !decoration-2 duration-500 group-hover:underline group-hover:!decoration-indigo-400">
+              <span class="indigo-wavy text-2xl font-bold !decoration-transparent !decoration-2 duration-500 group-hover:underline group-hover:!decoration-indigo-400">
                 <Fragment set:html={blogpost.data.title} /> {blogpost.data.author} · {t(blogpost.data.month)}
               </span>
               <span class="text-sm font-thin">

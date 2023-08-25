@@ -38,3 +38,9 @@ This landing was made in a few days with [Tailwind](https://tailwindcss.com/) an
 - Set up Github Actions in settings and add _.github/workflows/_[_deploy.yml_ configuration](https://github.com/ferranJS/portfolio/blob/main/.github/workflows/deploy.yml) to the root of the project.
 
 - Configure _astro.config.mjs_ following the [official docs](https://docs.astro.build/en/guides/deploy/github/) and add the base to all src in the project.
+
+- Dark mode: 
+  - set **darkMode: ["class", '[data-theme="dark"]']** in _tailwind.config.js_
+  - create variables in Layout > **style is:inline** > **@layout base** > :root and **:root[data-theme="dark"]**
+  - set variables in _tailwind.config.js_ > theme > extend > ...
+  - create **toogleDarkMode** function for header and menu buttons which set the **prefers-color-scheme** default and saves it in **localStorage**
