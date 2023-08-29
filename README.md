@@ -39,7 +39,7 @@ This landing was made in a few days with [Tailwind](https://tailwindcss.com/) an
 
 - Configure _astro.config.mjs_ following the [official docs](https://docs.astro.build/en/guides/deploy/github/) and add the base to all src in the project.
 
-- Dark mode: 
+- Dark mode:
   - set **darkMode: ["class", '[data-theme="dark"]']** in _tailwind.config.js_
   - create variables in Layout > **style is:inline** > **@layout base** > :root and **:root[data-theme="dark"]**
   - set variables in _tailwind.config.js_ > theme > extend > ...

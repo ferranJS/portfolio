@@ -168,7 +168,6 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     localStorage.theme = "dark"
   } else {
     document.querySelector(".themeToggle").classList.add("checked")
-    document.documentElement.dataset.theme = "light"
     localStorage.theme = "light"
   }
   const toggleDarkMode = () => {
