@@ -72,9 +72,9 @@ const xcodeLogo = `
 `
 ---
 
-<section id="projects" class="mb-5 scroll-mt-24 pt-6">
+<section id="projects" class="mb-5 scroll-mt-24 px-7 pt-6">
   <h2 class="mb-11 text-center font-heming text-5xl font-bold">{t("Projects")}</h2>
-  <div class="flex flex-wrap gap-px">
+  <div class="flex flex-wrap gap-3">
     <Project
       title="Atum Mobile App"
       description={t("atumDescription")}
@@ -92,7 +92,7 @@ const xcodeLogo = `
       title="Zaax Golf App"
       description={t("zaaxDescription")}
       imgName="zaax"
-      url="https://zaaxsports.com/"
+      url="https://play.google.com/store/apps/details?id=com.zaaxsports.golf"
     >
       <Fragment slot="techs" set:html={angularLogo} />
       <Fragment slot="techs" set:html={ionicLogo} />
@@ -134,7 +134,12 @@ const xcodeLogo = `
       <Fragment slot="techs" set:html={tailwindLogo} />
       <Fragment slot="techs" set:html={driverjsLogo} />
     </Project>
-    <Project title="Discordish" description={t("discordishDescription")} imgName="discordish">
+    <Project
+      title="Discordish"
+      description={t("discordishDescription")}
+      imgName="discordish"
+      url="https://github.com/ferranJS/discordish"
+    >
       <Fragment slot="techs" set:html={angularLogo} />
       <Fragment slot="techs" set:html={firebaseLogo} />
       <Fragment slot="techs" set:html={capacitorLogo} />

@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from "../i18n/utils"
+import Globe from "./Globe.astro"
 import Menu from "./Menu.astro"
 
 const lang = Astro.params.language
@@ -52,22 +53,16 @@ const { backButton } = Astro.props
         </a>
       </li>
       <li>
-        <button onclick="toggleLanguageMenu(event.stopPropagation())">
-          <img
-            src="/globe.svg"
-            class="mb-1 h-7 w-6 duration-200 hover:scale-110 dark:hidden"
-            alt="globe language icon"
-          />
-          <img
-            src="/globe-white.svg"
-            class="mb-1 hidden h-7 w-6 duration-200 hover:scale-110 dark:block"
-            alt="globe language icon"
-          />
+        <button onclick="toggleLanguageMenu(event.stopPropagation())" class="duration-200 hover:scale-110">
+          <Globe />
         </button>
       </li>
       <li>
-        <button onclick="toggleDarkMode(event.stopPropagation())" class="flex items-center">
-          <div type="checkbox" class="themeToggle mb-[5px] h-5 w-5"></div>
+        <button
+          onclick="toggleDarkMode(event.stopPropagation())"
+          class="flex items-center duration-200 hover:scale-110"
+        >
+          <div type="checkbox" class="themeToggle mb-[5px] h-5 w-5 duration-700 ease-out"></div>
         </button>
       </li>
     </ul>

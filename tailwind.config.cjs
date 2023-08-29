@@ -4,6 +4,9 @@ module.exports = {
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {
+      fill: {
+        base: "var(--color-base-text)",
+      },
       backgroundColor: {
         base: "var(--color-base-bg)",
         blurred: "var(--color-blurred-bg)",

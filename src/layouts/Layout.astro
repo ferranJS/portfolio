@@ -23,7 +23,7 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
 ---
 
 <!DOCTYPE html>
-<html lang={lang} class="bg-base">
+<html lang={lang} class="bg-base duration-1000 selection:bg-indigo-500 selection:text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={t(description)} />
@@ -43,7 +43,7 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     <meta property="twitter:url" content="https://ferran.tech/" />
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
-  <body class="overflow text-color-base">
+  <body class="overflow text-color-base duration-1000 ease-out">
     <Header {backButton} />
     <slot />
     <Footer />
@@ -53,6 +53,7 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
 <style is:inline>
   @layer base {
     :root {
+      /* --tw-drop-shadow: none !important; //doesnt work hmmm */
       --color-base-bg: white;
       --color-blurred-bg: rgb(255 255 255 / 0.4);
       --color-base-text: rgb(55 65 81);
@@ -140,8 +141,6 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     height: var(--size);
     box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
     border-radius: 999px;
-
-    transition: all 400ms;
   }
   .themeToggle.checked {
     --ray-size: calc(var(--size) * -0.4);
@@ -166,9 +165,11 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {
     document.documentElement.dataset.theme = "dark"
+    localStorage.theme = "dark"
   } else {
     document.querySelector(".themeToggle").classList.add("checked")
     document.documentElement.dataset.theme = "light"
+    localStorage.theme = "light"
   }
   const toggleDarkMode = () => {
     document.querySelectorAll(".themeToggle").forEach(el => el.classList.toggle("checked"))

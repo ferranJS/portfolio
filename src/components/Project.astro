@@ -1,16 +1,18 @@
 ---
+import ExternalLink from "./ExternalLink.astro"
+
 const { title, description, imgName, url } = Astro.props
 ---
 
 <article
-  class="group/article relative aspect-[9/6] w-full duration-[.4s] hover:cursor-[url(/White_dot.svg),auto] hover:max-md:!aspect-[3/4] sm:aspect-[9/7] md:aspect-square md:w-[calc(50%-0.5px)] lg:aspect-[8/5] xl:aspect-[9/8] xl:w-[calc(33.33%-0.66px)]"
+  class="group/article relative aspect-[9/6] w-full duration-[.4s] hover:cursor-[url(/White_dot.svg),auto] hover:max-md:!aspect-[3/4] sm:aspect-[9/7] md:aspect-square md:w-[calc(50%-0.5rem)] lg:aspect-[8/5] xl:aspect-[9/7] xl:w-[calc(33.33%-0.5rem)]"
   id={title}
 >
   <div
     class="absolute z-10 flex h-full w-full items-center justify-center bg-black/80 text-white opacity-0 duration-[.4s] group-hover/article:opacity-100 md:text-sm"
   >
     <div
-      class="pointer-events-none hidden h-[80%] w-10/12 flex-col justify-between group-hover/article:pointer-events-auto group-hover/article:flex"
+      class="pointer-events-none hidden h-[90%] w-10/12 flex-col justify-between group-hover/article:pointer-events-auto group-hover/article:flex lg:h-[80%]"
     >
       <div>
         <h3
@@ -33,7 +35,7 @@ const { title, description, imgName, url } = Astro.props
               href={url}
               target="_blank"
             >
-              <img src="/external-link.svg" class=" h-7 w-7 group-hover/link:invert" />
+              <ExternalLink />
             </a>
           ) : null
         }
@@ -45,7 +47,7 @@ const { title, description, imgName, url } = Astro.props
     <source srcset={"/webp/" + imgName + ".webp"} type="webp" />
     <img
       src={"/avif/" + imgName + ".avif"}
-      class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.8] transition-all duration-[.4s] group-hover/article:blur-[2px]"
+      class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.3] transition-all duration-[.4s] group-hover/article:blur-[2px]"
     />
   </picture>
 </article>
