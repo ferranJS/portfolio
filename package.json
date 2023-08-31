@@ -13,16 +13,16 @@
     "set-precommit": "npx husky add .husky/pre-commit \"npx lint-staged --concurrent false\""
   },
   "dependencies": {
-    "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.10.7",
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.0.5",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.10.0",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-tailwindcss": "^0.5.4"
   },
   "lint-staged": {
     "src/**/*": [
