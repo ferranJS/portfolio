@@ -3,6 +3,7 @@ import Background from "../components/Background.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import { useTranslations } from "../i18n/utils"
+import { ViewTransitions } from "astro:transitions"
 
 interface Props {
   title: string
@@ -22,7 +23,7 @@ if (ogDescription == undefined)
 if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang} class="bg-base duration-1000 selection:bg-indigo-500 selection:text-white">
   <head>
     <meta charset="UTF-8" />
@@ -32,6 +33,7 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     <link rel="stylesheet" href="/styles/devicons.min.css" />
     <link rel="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
     <meta property="og:url" content="https://ferran.tech/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -43,172 +45,177 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     <meta property="twitter:url" content="https://ferran.tech/" />
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
-  <body class="overflow text-color-base duration-1000 ease-out">
+  <body class="overflow flex h-screen flex-col justify-between text-color-base duration-1000 ease-out">
     <Header {backButton} />
     <slot />
     <Footer />
     <Background />
+    <style is:inline>
+      @layer base {
+        :root {
+          /* --tw-drop-shadow: none !important; //doesnt work hmmm */
+          --color-base-bg: rgb(255, 255, 255);
+          --color-blurred-bg: rgb(255 255 255 / 0.4);
+          --color-base-text: rgb(55 65 81);
+          --color-base-border: rgba(55, 65, 81, 0.6);
+
+          --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
+          --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
+        }
+        :root[data-theme="dark"] {
+          --color-base-bg: rgb(34, 40, 50);
+          --color-blurred-bg: rgb(55 65 81 / 0.2);
+          --color-base-text: rgb(255, 255, 255);
+          --color-base-border: rgba(255, 255, 255, 0.6);
+        }
+      }
+    </style>
+    <style is:global>
+      @font-face {
+        font-family: Heming Variable;
+        src: url("/fonts/heming.woff2") format("woff2");
+        font-weight: 100;
+        font-style: normal;
+      }
+      html {
+        /* scroll-snap-type: y mandatory;
+    scroll-snap-stop: always; */
+        scroll-behavior: smooth;
+      }
+
+      body {
+        animation: bg-color-shift 15s infinite;
+      }
+      @keyframes bg-color-shift {
+        0%,
+        100% {
+          background: var(--gradient1), var(--gradient2), rgb(0, 163, 155);
+        }
+        17% {
+          background: var(--gradient1), var(--gradient2), green;
+        }
+        34% {
+          background: var(--gradient1), var(--gradient2), green;
+        }
+        51% {
+          background: var(--gradient1), var(--gradient2), green;
+        }
+        68% {
+          background: var(--gradient1), var(--gradient2), green;
+        }
+        85% {
+          background: var(--gradient1), var(--gradient2), rgb(198, 56, 44);
+        }
+      }
+      /* inline wavy span text underline */
+      .indigo-wavy {
+        @apply underline decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[3px];
+      }
+      /* anchor simple underlines */
+      .underlined {
+        @apply relative inline-block overflow-hidden after:bg-indigo-400;
+      }
+      .underlined::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 100%;
+        height: 1.6px;
+        opacity: 0;
+        transition: 0.4s;
+        opacity: 1;
+        transform: translate3d(-101%, 0, 0);
+      }
+      .underlined:hover::after {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .themeToggle {
+        z-index: 1;
+        --size: 1.3rem;
+
+        appearance: none;
+        outline: none;
+        cursor: pointer;
+
+        width: var(--size);
+        height: var(--size);
+        box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+        border-radius: 999px;
+      }
+      .themeToggle.checked {
+        --ray-size: calc(var(--size) * -0.4);
+        --offset-orthogonal: calc(var(--size) * 0.65);
+        --offset-diagonal: calc(var(--size) * 0.45);
+
+        transform: scale(0.75);
+        box-shadow:
+          inset 0 0 0 var(--size),
+          calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+          var(--offset-orthogonal) 0 0 var(--ray-size),
+          0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+          0 var(--offset-orthogonal) 0 var(--ray-size),
+          calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+          var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+          calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+          var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+      }
+    </style>
+
+    <script is:inline>
+      // On page load or when changing themes
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.dataset.theme = "dark"
+        localStorage.theme = "dark"
+      } else {
+        document.querySelector(".themeToggle").classList.add("checked")
+        localStorage.theme = "light"
+      }
+      const toggleDarkMode = () => {
+        document.querySelectorAll(".themeToggle").forEach(el => el.classList.toggle("checked"))
+        if (localStorage.theme === "dark") {
+          document.documentElement.dataset.theme = "light"
+          localStorage.theme = "light"
+        } else {
+          document.documentElement.dataset.theme = "dark"
+          localStorage.theme = "dark"
+        }
+      }
+
+      const menuButton = document.querySelector("#menu-button")
+      const menuContainer = document.querySelector("#menu-container")
+      const languageMenu = document.querySelector("#language-menu")
+
+      const toggleMenuButton = () => {
+        menuButton?.querySelectorAll("span").forEach((span, i) => {
+          if (i != 1) span.classList.toggle("opacity-0")
+          if (i == 0) span.classList.toggle("translate-y-3")
+          if (i == 2) span.classList.toggle("-translate-y-3")
+        })
+      }
+      const toggleMenu = event => {
+        if (isLanguageMenuOpen) {
+          toggleLanguageMenu()
+          return
+        }
+        menuContainer.classList.toggle("opacity-0")
+        menuContainer.classList.toggle("pointer-events-none")
+        toggleMenuButton()
+      }
+      let isLanguageMenuOpen = false
+      const toggleLanguageMenu = event => {
+        languageMenu.classList.toggle("opacity-0")
+        languageMenu.classList.toggle("pointer-events-none")
+
+        menuContainer.classList.add("opacity-0")
+        menuContainer.classList.add("pointer-events-none")
+        if (isLanguageMenuOpen) toggleMenuButton()
+        isLanguageMenuOpen = !isLanguageMenuOpen
+      }
+    </script>
   </body>
 </html>
-<style is:inline>
-  @layer base {
-    :root {
-      /* --tw-drop-shadow: none !important; //doesnt work hmmm */
-      --color-base-bg: white;
-      --color-blurred-bg: rgb(255 255 255 / 0.4);
-      --color-base-text: rgb(55 65 81);
-
-      --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
-      --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
-    }
-    :root[data-theme="dark"] {
-      --color-base-bg: rgb(34, 40, 50);
-      --color-blurred-bg: rgb(55 65 81 / 0.2);
-      --color-base-text: white;
-    }
-  }
-</style>
-<style is:global>
-  @font-face {
-    font-family: Heming Variable;
-    src: url("/fonts/heming.woff2") format("woff2");
-    font-weight: 100;
-    font-style: normal;
-  }
-  html {
-    /* scroll-snap-type: y mandatory;
-    scroll-snap-stop: always; */
-    scroll-behavior: smooth;
-  }
-
-  body {
-    animation: bg-color-shift 15s infinite;
-  }
-  @keyframes bg-color-shift {
-    0%,
-    100% {
-      background: var(--gradient1), var(--gradient2), rgb(0, 163, 155);
-    }
-    17% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    34% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    51% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    68% {
-      background: var(--gradient1), var(--gradient2), green;
-    }
-    85% {
-      background: var(--gradient1), var(--gradient2), rgb(198, 56, 44);
-    }
-  }
-  /* inline wavy span text underline */
-  .indigo-wavy {
-    @apply underline decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[3px];
-  }
-  /* anchor simple underlines */
-  .underlined {
-    @apply relative inline-block overflow-hidden after:bg-indigo-400;
-  }
-  .underlined::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    height: 1.6px;
-    opacity: 0;
-    transition: 0.4s;
-    opacity: 1;
-    transform: translate3d(-101%, 0, 0);
-  }
-  .underlined:hover::after {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .themeToggle {
-    z-index: 1;
-    --size: 1.3rem;
-
-    appearance: none;
-    outline: none;
-    cursor: pointer;
-
-    width: var(--size);
-    height: var(--size);
-    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
-    border-radius: 999px;
-  }
-  .themeToggle.checked {
-    --ray-size: calc(var(--size) * -0.4);
-    --offset-orthogonal: calc(var(--size) * 0.65);
-    --offset-diagonal: calc(var(--size) * 0.45);
-
-    transform: scale(0.75);
-    box-shadow: inset 0 0 0 var(--size), calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
-      var(--offset-orthogonal) 0 0 var(--ray-size), 0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
-      0 var(--offset-orthogonal) 0 var(--ray-size),
-      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
-      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
-      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
-      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
-  }
-</style>
-
-<script is:inline>
-  // On page load or when changing themes
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.dataset.theme = "dark"
-    localStorage.theme = "dark"
-  } else {
-    document.querySelector(".themeToggle").classList.add("checked")
-    localStorage.theme = "light"
-  }
-  const toggleDarkMode = () => {
-    document.querySelectorAll(".themeToggle").forEach(el => el.classList.toggle("checked"))
-    if (localStorage.theme === "dark") {
-      document.documentElement.dataset.theme = "light"
-      localStorage.theme = "light"
-    } else {
-      document.documentElement.dataset.theme = "dark"
-      localStorage.theme = "dark"
-    }
-  }
-
-  const menuButton = document.querySelector("#menu-button")
-  const menuContainer = document.querySelector("#menu-container")
-  const languageMenu = document.querySelector("#language-menu")
-
-  const toggleMenuButton = () => {
-    menuButton?.querySelectorAll("span").forEach((span, i) => {
-      if (i != 1) span.classList.toggle("opacity-0")
-      if (i == 0) span.classList.toggle("translate-y-3")
-      if (i == 2) span.classList.toggle("-translate-y-3")
-    })
-  }
-  const toggleMenu = event => {
-    if (isLanguageMenuOpen) {
-      toggleLanguageMenu()
-      return
-    }
-    menuContainer.classList.toggle("opacity-0")
-    menuContainer.classList.toggle("pointer-events-none")
-    toggleMenuButton()
-  }
-  let isLanguageMenuOpen = false
-  const toggleLanguageMenu = event => {
-    languageMenu.classList.toggle("opacity-0")
-    languageMenu.classList.toggle("pointer-events-none")
-
-    menuContainer.classList.add("opacity-0")
-    menuContainer.classList.add("pointer-events-none")
-    if (isLanguageMenuOpen) toggleMenuButton()
-    isLanguageMenuOpen = !isLanguageMenuOpen
-  }
-</script>

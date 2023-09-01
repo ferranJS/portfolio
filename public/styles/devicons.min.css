@@ -41,6 +41,9 @@
 .devicon-tailwindcss-plain:before {
   content: "";
 }
+.devicon-javascript-plain:before {
+  content: "";
+}
 .devicon-ionic-original:before {
   content: "";
 }

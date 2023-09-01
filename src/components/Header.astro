@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from "../i18n/utils"
+import ExternalLink from "./ExternalLink.astro"
 import Globe from "./Globe.astro"
 import Menu from "./Menu.astro"
 
@@ -36,7 +37,7 @@ const { backButton } = Astro.props
       class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
     >
       <li>
-        <a class="underlined" href={"/" + lang + "#"}>{t("Home")}</a>
+        <a class="underlined" href={"/" + lang + "#home"}>{t("Home")}</a>
       </li>
       <li>
         <a class="underlined" href={"/" + lang + "#projects"}>{t("Projects")}</a>
@@ -50,6 +51,7 @@ const { backButton } = Astro.props
       <li>
         <a class="underlined" target="_blank" href="https://github.com/ferranJS/portfolio">
           {t("Github")}
+          <ExternalLink classes="w-5 h-5 inline ml-1" color="var(--color-base-text)" />
         </a>
       </li>
       <li>
