@@ -1,7 +1,8 @@
 @font-face {
   font-family: "devicon";
   src: url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/fonts/devicon.eot?biu5f3");
-  src: url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/fonts/devicon.eot?biu5f3#iefix")
+  src:
+    url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/fonts/devicon.eot?biu5f3#iefix")
       format("embedded-opentype"),
     url("/fonts/devicon.woff2") format("woff2"),
     url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/fonts/devicon.ttf?biu5f3") format("truetype"),
@@ -52,8 +53,8 @@
 .devicon-mysql-plain:before {
   content: "";
 }
-.devicon-cakephp-plain:before {
-  content: "";
+.devicon-php-plain:before {
+  content: "";
 }
 .devicon-firebase-plain:before {
   content: "";
