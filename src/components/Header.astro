@@ -9,7 +9,10 @@ const t = useTranslations(lang)
 const { backButton } = Astro.props
 ---
 
-<header class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-heming text-lg sm:bg-blurred">
+<header
+  class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-heming text-lg sm:bg-blurred"
+  transition:name="header"
+>
   <nav>
     {
       backButton ? (
