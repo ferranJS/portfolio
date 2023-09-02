@@ -41,19 +41,19 @@ let {
           localStorage.theme === "dark" ||
           (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
-          document.documentElement.dataset.theme = "dark"
+          // document.documentElement.dataset.theme = "dark"
           localStorage.theme = "dark"
         } else {
           document.querySelector(".themeToggle").classList.add("checked")
           localStorage.theme = "light"
         }
       }
-      const addTransitions = () =>
-        setTimeout(document.querySelector("html").classList.add("duration-1000"), 3000)
+      // const addTransitions = () =>
+      //   setTimeout(document.querySelector("html").classList.add("duration-1000"), 3000)
       setDarkMode()
       addTransitions()
       document.addEventListener("astro:after-swap", setDarkMode)
-      document.addEventListener("astro:page-load", addTransitions)
+      // document.addEventListener("astro:page-load", addTransitions)
       // if (history.scrollRestoration) {
       //   history.scrollRestoration = "auto"
       // }
