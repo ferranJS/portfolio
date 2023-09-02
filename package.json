@@ -9,8 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "prettify": "prettier --write .",
-    "prepare": "husky install",
-    "set-precommit": "npx husky add .husky/pre-commit \"npx lint-staged --concurrent false\""
+    "prepare": "husky install"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
