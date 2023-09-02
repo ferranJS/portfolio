@@ -13,12 +13,6 @@ export const defaultLang = "en"
 
 export const uiTranslations = {
   en: {
-    atumDescription:
-      "Store management app with a synchronization system with their WooComerce plugin where I identified and fixed several complex issues in the sync process, created a system for managing teams and stores with data access control by subscriptions and number of devices with periodic checking through the REST API, and implemented a Capacitor barcode scanning plugin for the app in Java.",
-    zaaxDescription:
-      "Player management app directed to sportsmen and coaches where I implemented a gallery module with functionality to draw and edit videos in real-time for video analysis using the native JS API.",
-    milvDescription:
-      "Tournament and user management website where I implemented new functionalities in direct contact with the client, including: auth, POS payments, and the design and implementation of a landing page.",
     phrase1: "Committed to delivering top-notch solutions by following industry best practices.",
     phrase2:
       "Actively dedicated to expanding my skill set by staying at the forefront of technological advances.",
@@ -29,17 +23,14 @@ export const uiTranslations = {
     blogPageText:
       "Check out my blog posts where I portray my thoughts about the everchanging tech world to whoever is interested ☺",
     metaDescription:
-      "Ferran Ramírez Martí is a software engineer, who graduated in Computer Science in UPV (Spain), with 2 years of experience as a Full Stack developer. Experience in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL, and CSS with Tailwind ✅ Applying the best practices and up-to-date with other technologies that make up Full Stack development, how they correlate with each other and their importance and power in the industry 🔎 FerranJS",
-
-    potatostudiosDescription: "Digital art studio.",
-    tasleDescription:
-      "Responsive and lighter Tesla page clone with automatic language detection and region selection.",
-    lavelada3remakeDescription:
-      "Revamped and interactive fighting match website featuring immersive animations upon hover. A modernized take on the original concept, enhancing user engagement and interactivity.",
-    discordishDescription:
-      "A Discord (messaging web app) clone focused on user experience and performance by creating a good architectural design and a well thought and designed database structure.",
+      "Ferran Ramírez Martí is a software engineer, who graduated in Computer Science in UPV (Spain), with 2 years of experience as a Full Stack developer. Experience in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL, and CSS with Tailwind ✅ Applying the best practices and up-to-date with other technologies that make up Full Stack development, how they correlate with each other and their importance and power in the industry 🔎 ferranJS",
   },
   es: {
+    "GolfCV Example": "GolfCV Ejemplo",
+    "RFEG Website": "RFEG Sitio web",
+    Website: "Sitio web",
+    "Anouncement Page": "Página de anuncio de la App",
+    "Used Technologies": "Tecnologías usadas",
     Theme: "Tema",
     "full stack developer": "desarrollador full stack",
     "software engineer": "ingeniero de software",
@@ -67,12 +58,6 @@ export const uiTranslations = {
     "to life online, let's collaborate!": "a la vida online, ¡colaboremos!",
     "Contact me to let me know and discuss your app or website needs.":
       "Contáctame para hacérmelo saber y discutir tus necesidades de aplicación o sitio web.",
-    atumDescription:
-      "Aplicación de gestión de tiendas con un sistema de sincronización con su plugin de WooComerce donde identifiqué y solucioné varios problemas complejos en el proceso de sincronización. Creé un sistema de gestión de equipos y tiendas con control de acceso a datos por suscripciones y número de dispositivos con comprobación periódica con una REST API. Además, implementé un plugin de escaneo de códigos de barras Capacitor para la aplicación en Java.",
-    zaaxDescription:
-      "Aplicación de gestión de jugadores dirigida a deportistas y entrenadores donde implementé un módulo de galería con funcionalidad para dibujar y editar videos en tiempo real para análisis de video utilizando la API nativa de Javascript.",
-    milvDescription:
-      "Sitio web de gestión de torneos y usuarios donde implementé nuevas funcionalidades en contacto directo con el cliente, incluyendo: autenticación, pagos TPV, y el diseño e implementación de una landing page.",
     Home: "Inicio",
     Projects: "Proyectos",
     Contact: "Contacto",
@@ -88,18 +73,16 @@ export const uiTranslations = {
     blogPageText:
       "Echa un vistazo a mis publicaciones en el blog donde retrato mis pensamientos sobre el cambiante mundo de la tecnología a quien esté interesado ☺",
     metaDescription:
-      "Ferran Ramírez Martí es un desarrollador de software, graduado en Ingeniería informatica Informática en la UPV (España), con 2 años de experiencia como desarrollador Full Stack. Experiencia en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL y CSS con Tailwind ✅ Aplicando las mejores prácticas y al día con otras tecnologías que componen el desarrollo Full Stack, cómo se correlacionan entre ellas y su importancia y potencia en la industria 🔎 FerranJS",
+      "Ferran Ramírez Martí es un desarrollador de software, graduado en Ingeniería informatica Informática en la UPV (España), con 2 años de experiencia como desarrollador Full Stack. Experiencia en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL y CSS con Tailwind ✅ Aplicando las mejores prácticas y al día con otras tecnologías que componen el desarrollo Full Stack, cómo se correlacionan entre ellas y su importancia y potencia en la industria 🔎 ferranJS",
     "Get in touch !": "Póngase en contacto",
     "Or send me an email:": "O envíeme un email:",
-    potatostudiosDescription: "Estudio de arte digital.",
-    tasleDescription:
-      "Clon de la página de Tesla, más ligera y responsive, con detección automática de idioma y selección de región.",
-    lavelada3remakeDescription:
-      "Sitio web de combates rediseñado e interactivo con animaciones inmersivas al pasar el ratón. Una versión modernizada del concepto original, mejorando la participación e interactividad del usuario.",
-    discordishDescription:
-      "Un clon de Discord (aplicación web de mensajería) centrado en la experiencia del usuario y el rendimiento mediante la creación de un buen diseño arquitectónico y una estructura de base de datos bien pensada y diseñada.",
   },
   ca: {
+    "GolfCV Example": "GolfCV Exemple",
+    "RFEG Website": "RFEG Lloc web",
+    "Used Technologies": "Tecnologies usades",
+    Website: "Lloc web",
+    "Anouncement Page": "Pàgina d'anunci de l'App",
     Theme: "Tema",
     "full stack developer": "desenvolupador full stack",
     "software engineer": "enginyer de software",
@@ -127,15 +110,9 @@ export const uiTranslations = {
     "to life online, let's collaborate!": "a la vida online, col·laborem!",
     "Contact me to let me know and discuss your app or website needs.":
       "Contacta'm per fer-m'ho saber i discutir les teves necessitats d'aplicació o lloc web.",
-    atumDescription:
-      "Aplicació de gestió de botigues amb un sistema de sincronització amb el seu plugin de WooComerce on vaig identificar i solucionar diversos problemes complexos en el procés de sincronització. Vaig crear un sistema de gestió d'equips i botigues amb control d'accés a dades per subscripcions i número de dispositius amb comprovació periòdica amb una REST API. Ademés, vaig implementar un plugin d'escaneig de codis de barres Capacitor per a l'aplicació en Java.",
-    zaaxDescription:
-      "Aplicació de gestió de jugadors dirigida a esportistes i entrenadors on vaig implementar un mòdul de galeria amb funcionalitat per dibuixar i editar vídeos en temps real per a anàlisi de vídeo utilitzant la API nativa de Javascript.",
-    milvDescription:
-      "Lloc web de gestió de tornejos i usuaris on vaig implementar noves funcionalitats en contacte directe amb el client, incloent: autenticació, pagaments TPV, i el disseny i implementació d'una landing page.",
     Home: "Inici",
     Projects: "Projectes",
-    Contact: "Contacta'm",
+    Contact: "Contacta",
     phrase1: "Compromès a oferir solucions de qualitat aplicant les millors pràctiques de la indústria.",
     phrase2:
       "Dedicat activament a expandir el meu conjunt d'habilitats en mantenir-me a l'avantguarda dels avenços tecnològics.",
@@ -148,18 +125,18 @@ export const uiTranslations = {
     blogPageText:
       "Fes una ullada a les meves publicacions al blog on retrato els meus pensaments sobre el canviant món de la tecnologia a qui estigui interessat ☺",
     metaDescription:
-      "Ferran Ramírez Martí és un desenvolupador de programari, graduat en Enginyeria informàtica Informàtica a la UPV (Espanya), amb 2 anys d'experiència com a desenvolupador Full Stack. Experiència en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL i CSS amb Tailwind ✅ Aplicant les millors pràctiques i al dia amb altres tecnologies que componen el desenvolupament Full Stack, com es correlacionen entre elles i la seva importància i potència en la indústria 🔎 FerranJS",
+      "Ferran Ramírez Martí és un desenvolupador de programari, graduat en Enginyeria informàtica Informàtica a la UPV (Espanya), amb 2 anys d'experiència com a desenvolupador Full Stack. Experiència en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL i CSS amb Tailwind ✅ Aplicant les millors pràctiques i al dia amb altres tecnologies que componen el desenvolupament Full Stack, com es correlacionen entre elles i la seva importància i potència en la indústria 🔎 ferranJS",
     "Get in touch !": "Posa't en contacte",
     "Or send me an email:": "O envia'm un email:",
-    potatostudiosDescription: "Estudi d'art digital.",
-    tasleDescription:
-      "Clon de la pàgina de Tesla, més lleuger i responsive, amb detecció automàtica d'idioma i selecció de regió.",
-    lavelada3remakeDescription:
-      "Lloc web de combats redissenyat i interactiu amb animacions immersives al passar el ratolí. Una versió modernitzada del concepte original, millorant la participació i interactivitat de l'usuari.",
-    discordishDescription:
-      "Un clon de Discord (aplicació web de missatgeria) centrat en l'experiència de l'usuari i el rendiment mitjançant la creació d'un bon disseny arquitectònic i una estructura de base de dades ben pensada i dissenyada.",
   },
   ru: {
+    "GolfCV Example": "GolfCV Пример",
+    "RFEG Website": "RFEG Веб-сайт",
+    Website: "Веб-сайт",
+    "Anouncement Page": "Страница объявлений",
+    "Play Store": "Плай Сторе",
+    Repo: "Репо",
+    "Used Technologies": "Используемые технологии",
     Theme: "Тема",
     "full stack developer": "разработчик full stack",
     "software engineer": "инженер-программист",
@@ -206,22 +183,9 @@ export const uiTranslations = {
     blogPageText:
       "Ознакомьтесь с моими постами в блоге, где я изображаю свои мысли о постоянно меняющемся мире технологий для тех, кто заинтересованы ☺",
     metaDescription:
-      "Ferran Ramírez Martí - инженер-программист, окончил факультет компьютерных наук в UPV (Испания), имеет двухлетний опыт работы в качестве Full Stack разработчика. Опыт работы с Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL и CSS с Tailwind ✅ Применение лучших практик и актуальное знакомство с другими технологиями, составляющими Full Stack разработку, их взаимосвязь между собой, важность и сила в индустрии 🔎 FerranJS",
+      "Ferran Ramírez Martí - инженер-программист, окончил факультет компьютерных наук в UPV (Испания), имеет двухлетний опыт работы в качестве Full Stack разработчика. Опыт работы с Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL и CSS с Tailwind ✅ Применение лучших практик и актуальное знакомство с другими технологиями, составляющими Full Stack разработку, их взаимосвязь между собой, важность и сила в индустрии 🔎 ferranJS",
     "Get in touch !": "Свяжитесь со мной",
     "Or send me an email:": "Или отправьте мне письмо:",
-    atumDescription:
-      "Приложение для управления магазином с системой синхронизации с плагином WooComerce, где я выявил и решил несколько сложных проблем в процессе синхронизации, создал систему управления оборудованием и магазином с контролем доступа к данным по подпискам и количеству устройств с периодической проверкой с помощью REST API, а также реализовал плагин сканирования штрих-кодов Capacitor для приложения на Java.",
-    zaaxDescription:
-      "Приложение для управления игроками, ориентированное на спортсменов и тренеров, в котором я реализовал модуль галереи с функцией рисования и редактирования видео в реальном времени для видеоанализа с использованием встроенного Javascript API.",
-    milvDescription:
-      "Сайт по управлению турнирами и пользователями, на котором я реализовал новые функциональные возможности при непосредственном контакте с клиентом, включая: аутентификацию, POS-платежи, а также дизайн и реализацию посадочной страницы.",
-    potatostudiosDescription: "Студия цифрового искусства.",
-    tasleDescription:
-      "Отзывчивый и более легкий клон страницы Tesla с автоматическим определением языка и выбором региона.",
-    lavelada3remakeDescription:
-      "Переработанный и интерактивный сайт боя с захватывающими анимациями при наведении. Современная версия оригинальной концепции, улучшающая вовлеченность и взаимодействие пользователя.",
-    discordishDescription:
-      "Клон Discord (веб-приложение для обмена сообщениями), сосредоточенный на пользовательском опыте и производительности, создающий хорошую архитектурную конструкцию и продуманную и спроектированную структуру базы данных.",
   },
   ko: {
     Home: "홈",
@@ -233,7 +197,7 @@ export const uiTranslations = {
       "매우 가볍고 빠른 랜딩 페이지부터 복잡하고 안전하며 반응성이 뛰어난 네이티브 모바일 애플리케이션까지.",
     and: "그리고",
     metaDescription:
-      "Ferran Ramírez Martí는 스페인 UPV에서 컴퓨터 공학을 전공한 소프트웨어 엔지니어로, 풀 스택 개발자로 2년의 경력을 보유하고 있습니다. 앵귤러, 아스트로, 리액트, RxJS 파이어베이스, 아이오닉, 커패시터, SQL 및 CSS와 테일윈드 경험 ✅ 풀 스택 개발을 구성하는 다른 기술에 대한 모범 사례 적용 및 최신 정보, 서로의 상관관계, 업계에서의 중요성 및 영향력 🔎 FerranJS",
+      "Ferran Ramírez Martí는 스페인 UPV에서 컴퓨터 공학을 전공한 소프트웨어 엔지니어로, 풀 스택 개발자로 2년의 경력을 보유하고 있습니다. 앵귤러, 아스트로, 리액트, RxJS 파이어베이스, 아이오닉, 커패시터, SQL 및 CSS와 테일윈드 경험 ✅ 풀 스택 개발을 구성하는 다른 기술에 대한 모범 사례 적용 및 최신 정보, 서로의 상관관계, 업계에서의 중요성 및 영향력 🔎 ferranJS",
 
     potatostudiosDescription: "디지털 아트 스튜디오.",
     tasleDescription: "자동 언어 감지 및 지역 선택이 포함된 반응형 및 가벼운 테슬라 페이지 복제본.",
@@ -254,7 +218,7 @@ export const uiTranslations = {
       "Von sehr leichten und schnellen Landing Pages bis hin zu komplexen, sicheren und reaktiven nativen mobilen Anwendungen.",
     and: "und",
     metaDescription:
-      "Ferran Ramírez Martí ist ein Software-Ingenieur mit einem Abschluss in Informatik an der UPV (Spanien) und 2 Jahren Erfahrung als Full-Stack-Entwickler. Erfahrung in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL und CSS mit Tailwind ✅ Anwendung der besten Praktiken und aktuell mit anderen Technologien, die die Full Stack Entwicklung ausmachen, wie sie miteinander korrelieren und ihre Bedeutung und Macht in der Industrie 🔎 FerranJS",
+      "Ferran Ramírez Martí ist ein Software-Ingenieur mit einem Abschluss in Informatik an der UPV (Spanien) und 2 Jahren Erfahrung als Full-Stack-Entwickler. Erfahrung in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL und CSS mit Tailwind ✅ Anwendung der besten Praktiken und aktuell mit anderen Technologien, die die Full Stack Entwicklung ausmachen, wie sie miteinander korrelieren und ihre Bedeutung und Macht in der Industrie 🔎 ferranJS",
 
     potatostudiosDescription: "Digitales Kunststudio.",
     tasleDescription:
@@ -275,7 +239,7 @@ export const uiTranslations = {
       "Da landing page molto leggere e veloci ad applicazioni mobili native complesse, sicure e reattive.",
     and: "e",
     metaDescription:
-      "Ferran Ramírez Martí è un ingegnere informatico, laureato in Informatica a UPV (Spagna), con 2 anni di esperienza come sviluppatore Full Stack. Esperienza in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL e CSS con Tailwind ✅ Applicazione delle migliori pratiche e aggiornamento con le altre tecnologie che compongono lo sviluppo Full Stack, come si correlano tra loro e la loro importanza e potenza nel settore 🔎 FerranJS",
+      "Ferran Ramírez Martí è un ingegnere informatico, laureato in Informatica a UPV (Spagna), con 2 anni di esperienza come sviluppatore Full Stack. Esperienza in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL e CSS con Tailwind ✅ Applicazione delle migliori pratiche e aggiornamento con le altre tecnologie che compongono lo sviluppo Full Stack, come si correlano tra loro e la loro importanza e potenza nel settore 🔎 ferranJS",
 
     potatostudiosDescription: "Studio di arte digitale.",
     tasleDescription:
@@ -297,7 +261,7 @@ export const uiTranslations = {
       "Des pages d'atterrissage très légères et rapides aux applications mobiles natives complexes, sécurisées et réactives.",
     and: "et",
     metaDescription:
-      "Ferran Ramírez Martí est un ingénieur logiciel, diplômé en informatique à UPV (Espagne), avec 2 ans d'expérience en tant que développeur Full Stack. Expérience en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL et CSS avec Tailwind ✅ Appliquer les meilleures pratiques et à jour avec d'autres technologies qui composent le développement Full Stack, comment ils sont en corrélation les uns avec les autres et leur importance et leur puissance dans l'industrie 🔎 FerranJS.",
+      "Ferran Ramírez Martí est un ingénieur logiciel, diplômé en informatique à UPV (Espagne), avec 2 ans d'expérience en tant que développeur Full Stack. Expérience en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL et CSS avec Tailwind ✅ Appliquer les meilleures pratiques et à jour avec d'autres technologies qui composent le développement Full Stack, comment ils sont en corrélation les uns avec les autres et leur importance et leur puissance dans l'industrie 🔎 ferranJS.",
 
     potatostudiosDescription: "Studio d'art numérique.",
     tasleDescription:

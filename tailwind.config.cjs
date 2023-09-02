@@ -10,9 +10,13 @@ module.exports = {
       backgroundColor: {
         base: "var(--color-base-bg)",
         blurred: "var(--color-blurred-bg)",
+        "main-span": "var(--color-main-span-bg)",
       },
       textColor: {
         "color-base": "var(--color-base-text)",
+      },
+      borderColor: {
+        "color-base": "var(--color-base-border)",
       },
       fontFamily: {
         heming: ["Heming Variable", "ui-monospace", "monospace"],

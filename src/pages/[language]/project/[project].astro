@@ -1,0 +1,87 @@
+---
+import Layout from "../../../layouts/Layout.astro"
+import { getCollection } from "astro:content"
+import { languages } from "../../../i18n/languages"
+import { useTranslations } from "../../../i18n/utils"
+import { Image } from "astro:assets"
+import techLogoAnchors from "../../../scripts/tech-logo-anchors"
+import ExternalLink from "../../../components/ExternalLink.astro"
+import ProjectLinks from "../../../components/ProjectLinks.astro"
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection("project")
+  const paths = []
+  for (const language of Object.keys(languages)) {
+    allProjects
+      .filter(project => !project.data.hidden)
+      .forEach(project => {
+        paths.push({ params: { language, project: project.slug }, props: { project } })
+      })
+  }
+  return paths
+}
+
+const { project } = Astro.props
+
+const lang = Astro.params.language
+const t = useTranslations(lang)
+---
+
+<Layout
+  title={"ferranJS Project: " + project.data.title}
+  description="ferranJS blog"
+  backButton="#projects"
+  ogDescription={project.data.smallDescription[lang]}
+>
+  <main id="project" class="mt-28 px-5 sm:mt-36 sm:px-16 lg:mt-36 lg:px-24 xl:px-36">
+    <h1 class="mb-10 font-heming text-4xl font-bold lg:hidden">
+      {project.data.title}
+    </h1>
+    <div class="flex flex-col justify-around gap-6 lg:flex-row-reverse lg:items-center lg:gap-16 xl:gap-32">
+      <section id="image" class="rounded sm:max-w-[70%] lg:mt-4 lg:max-w-[50%] xl:max-w-[40%]">
+        <!-- only webp - 462 kB transferred 546 kB resources -->
+        <Image
+          src={project.data.imageUrl}
+          alt={project.data.imageAlt}
+          transition:name={"project-image-" + project.slug}
+          class="h-full rounded border-y-2 border-color-base py-4 opacity-90"
+        />
+        <!-- 333kB transfered 409kB resources -->
+        <!-- <picture>
+          <source srcset={"/avif/" + project.data.imageName + ".avif"} type="avif" />
+          <source srcset={"/webp/" + project.data.imageName + ".webp"} type="webp" />
+          <img
+            src={"/webp/" + project.data.imageName + ".webp"}
+            alt={project.data.imageAlt}
+            transition:name={"project-image-" + project.data.slug}
+            class="border-color-base h-full rounded border-y-2 py-4 opacity-90"
+            loading="lazy" width="1200" height="900"
+            decoding="async"
+          />
+        </picture> -->
+        <div class="hidden lg:block">
+          <ProjectLinks {project} />
+        </div>
+      </section>
+      <section class="flex flex-col gap-2 px-1 lg:max-w-[60%]" id="description">
+        <h1 class="mb-10 hidden font-heming text-4xl font-bold lg:inline">
+          {project.data.title}
+        </h1>
+        {project.data.description[lang]}
+        <div class="mt-8 px-1" id="">
+          <h3 class="font-heming text-xl">{t("Used Technologies")} :</h3>
+          <div class="mt-2 flex flex-wrap items-baseline gap-5 px-1">
+            {
+              project.data.techLogoNames.map(techLogoName => (
+                <Fragment slot="techs" set:html={techLogoAnchors[techLogoName]} />
+              ))
+            }
+          </div>
+          <div class="lg:hidden">
+            <ProjectLinks {project} />
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>

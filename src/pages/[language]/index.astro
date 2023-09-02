@@ -17,9 +17,9 @@ const lang = Astro.params.language
 const t = useTranslations(lang)
 ---
 
-<Layout title="FerranJS" description="metaDescription">
+<Layout title="ferranJS" description="metaDescription">
   <main>
-    <section class="flex h-screen items-center">
+    <section class="flex h-screen items-center" id="home">
       <div class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48 [&>p]:mb-1 [&>p]:max-w-2xl">
         <h1 class="mb-2 font-heming text-6xl font-bold sm:text-[5rem]">
           Ferran Ram<span class="text-[3.88rem] font-normal sm:text-[5.2rem]">í</span>rez
@@ -55,10 +55,14 @@ const t = useTranslations(lang)
               </>
             )
           }
-          <span class="indigo-wavy no-underline md:underline md:!decoration-red-600">Angular</span>,
-          <span class="indigo-wavy no-underline md:underline md:!decoration-orange-400">Astro</span>,
-          <span class="indigo-wavy no-underline md:underline md:!decoration-sky-400">React</span>, Firebase,
-          Ionic, Capacitor
+          <span class="indigo-wavy no-underline md:underline md:decoration-red-400">Angular</span>,
+          <span
+            class="indigo-wavy no-underline md:underline md:decoration-orange-400 md:dark:decoration-orange-200"
+            >Astro</span
+          >,
+          <span class="indigo-wavy no-underline md:underline md:decoration-sky-400 md:dark:decoration-sky-200"
+            >React</span
+          >, Firebase, Ionic, Capacitor
           {t("and")} Tailwind.
         </p>
         <p>

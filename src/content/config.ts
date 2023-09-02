@@ -26,7 +26,40 @@ const blogpostCollection = defineCollection({
   }),
 })
 
+const projectCollection = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      position: z.number(),
+      title: z.string(),
+      urls: z.array(
+        z.object({
+          name: z.string(),
+          url: z.string(),
+        }),
+      ),
+      imageUrl: image().optional(),
+      imageName: z.string(),
+      imageAlt: z.string(),
+      techLogoNames: z.array(z.string()),
+      smallDescription: z.object({
+        en: z.string(),
+        es: z.string(),
+        ca: z.string(),
+        ru: z.string().optional(),
+      }),
+      description: z.object({
+        en: z.string(),
+        es: z.string(),
+        ca: z.string(),
+        ru: z.string().optional(),
+      }),
+      hidden: z.boolean().optional(),
+    }),
+})
+
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   blogpost: blogpostCollection,
+  project: projectCollection,
 }

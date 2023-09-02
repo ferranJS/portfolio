@@ -16,13 +16,13 @@ const t = useTranslations(lang)
   <div id="menu" class="z-50 font-heming text-2xl [&>ul>li]:mb-5">
     <ul class="flex flex-col items-center">
       <li>
-        <a href="/">{t("Home")}</a>
+        <a class="underlined" href={"/" + lang + "#home"}>{t("Home")}</a>
       </li>
       <li>
-        <a href="#projects">{t("Projects")}</a>
+        <a class="underlined" href={"/" + lang + "#projects"}>{t("Projects")}</a>
       </li>
       <li>
-        <a href="#contact">{t("Contact")}</a>
+        <a class="underlined" href={"/" + lang + "#contact"}>{t("Contact")}</a>
       </li>
       <li>
         <a class="underlined" href={"/" + lang + "/blog"}>{t("Blog")}</a>

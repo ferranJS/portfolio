@@ -5,22 +5,23 @@ import Header from "../components/Header.astro"
 import { useTranslations } from "../i18n/utils"
 import { ViewTransitions } from "astro:transitions"
 
-interface Props {
-  title: string
-  description: string
-  backButton?: boolean
-  ogDescription?: string
-  ogImgUrl?: string
-}
-const { title, description, backButton } = Astro.props
-let { ogDescription, ogImgUrl } = Astro.props
-
 const lang = Astro.params.language
 const t = useTranslations(lang)
 
-if (ogDescription == undefined)
-  ogDescription = `Ferran Ramírez, ${t("full stack developer")} ${t("and")} ${t("software engineer")}.`
-if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
+interface Props {
+  title: string
+  description: string
+  backButton?: string
+  ogDescription?: string
+  ogImgUrl?: string
+}
+
+const { title, description, backButton } = Astro.props
+
+let {
+  ogDescription = `Ferran Ramírez, ${t("full stack developer")} ${t("and")} ${t("software engineer")}.`,
+  ogImgUrl = "https://ferran.tech/link-preview.jpg",
+} = Astro.props
 ---
 
 <!doctype html>
@@ -34,6 +35,16 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     <link rel="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
+    <script is:inline>
+      const setDarkMode = () => {
+        if (localStorage.theme == "dark") document.documentElement.dataset.theme = "dark"
+      }
+      setDarkMode()
+      document.addEventListener("astro:after-swap", setDarkMode)
+      // if (history.scrollRestoration) {
+      //   history.scrollRestoration = "auto"
+      // }
+    </script>
     <meta property="og:url" content="https://ferran.tech/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -53,20 +64,21 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
     <style is:inline>
       @layer base {
         :root {
-          /* --tw-drop-shadow: none !important; //doesnt work hmmm */
+          /* --tw-drop-shadow: none !important; // project backdrop shadow is white */
+          --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
+          --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
           --color-base-bg: rgb(255, 255, 255);
           --color-blurred-bg: rgb(255 255 255 / 0.4);
           --color-base-text: rgb(55 65 81);
           --color-base-border: rgba(55, 65, 81, 0.6);
-
-          --gradien1: linear-gradient(160deg, rgba(255, 255, 255, 0) 30%, transparent);
-          --gradien2: linear-gradient(20deg, rgba(255, 255, 255, 0) 20%, transparent);
+          --color-main-span: rgba(255, 255, 255, 0.4);
         }
         :root[data-theme="dark"] {
           --color-base-bg: rgb(34, 40, 50);
           --color-blurred-bg: rgb(55 65 81 / 0.2);
           --color-base-text: rgb(255, 255, 255);
           --color-base-border: rgba(255, 255, 255, 0.6);
+          --color-main-span: rgba(55, 65, 81, 0.07);
         }
       }
     </style>
@@ -80,7 +92,7 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
       html {
         /* scroll-snap-type: y mandatory;
     scroll-snap-stop: always; */
-        scroll-behavior: smooth;
+        /* scroll-behavior: smooth; */
       }
 
       body {
@@ -162,60 +174,5 @@ if (ogImgUrl == undefined) ogImgUrl = "https://ferran.tech/link-preview.jpg"
           var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
       }
     </style>
-
-    <script is:inline>
-      // On page load or when changing themes
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.dataset.theme = "dark"
-        localStorage.theme = "dark"
-      } else {
-        document.querySelector(".themeToggle").classList.add("checked")
-        localStorage.theme = "light"
-      }
-      const toggleDarkMode = () => {
-        document.querySelectorAll(".themeToggle").forEach(el => el.classList.toggle("checked"))
-        if (localStorage.theme === "dark") {
-          document.documentElement.dataset.theme = "light"
-          localStorage.theme = "light"
-        } else {
-          document.documentElement.dataset.theme = "dark"
-          localStorage.theme = "dark"
-        }
-      }
-
-      const menuButton = document.querySelector("#menu-button")
-      const menuContainer = document.querySelector("#menu-container")
-      const languageMenu = document.querySelector("#language-menu")
-
-      const toggleMenuButton = () => {
-        menuButton?.querySelectorAll("span").forEach((span, i) => {
-          if (i != 1) span.classList.toggle("opacity-0")
-          if (i == 0) span.classList.toggle("translate-y-3")
-          if (i == 2) span.classList.toggle("-translate-y-3")
-        })
-      }
-      const toggleMenu = event => {
-        if (isLanguageMenuOpen) {
-          toggleLanguageMenu()
-          return
-        }
-        menuContainer.classList.toggle("opacity-0")
-        menuContainer.classList.toggle("pointer-events-none")
-        toggleMenuButton()
-      }
-      let isLanguageMenuOpen = false
-      const toggleLanguageMenu = event => {
-        languageMenu.classList.toggle("opacity-0")
-        languageMenu.classList.toggle("pointer-events-none")
-
-        menuContainer.classList.add("opacity-0")
-        menuContainer.classList.add("pointer-events-none")
-        if (isLanguageMenuOpen) toggleMenuButton()
-        isLanguageMenuOpen = !isLanguageMenuOpen
-      }
-    </script>
   </body>
 </html>

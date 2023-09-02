@@ -1,11 +1,12 @@
 ---
 import ExternalLink from "./ExternalLink.astro"
 
-const { title, description, imgName, url } = Astro.props
+const { title, description, imageName, imageUrl, imageAlt, url, slug } = Astro.props
+import { Image } from "astro:assets"
 ---
 
 <article
-  class="group/article relative aspect-[9/6] w-full duration-[.4s] hover:cursor-[url(/White_dot.svg),auto] hover:max-md:!aspect-[3/4] sm:aspect-[9/7] md:aspect-square md:w-[calc(50%-0.5rem)] lg:aspect-[8/5] xl:aspect-[9/7] xl:w-[calc(33.33%-0.5rem)]"
+  class="group/article relative aspect-[9/7] w-full duration-[.4s] hover:cursor-[url(/White_dot.svg),auto] sm:aspect-[9/5] md:w-[calc(50%-0.5rem)] xl:w-[calc(33.33%-0.5rem)]"
   id={title}
 >
   <div
@@ -33,21 +34,33 @@ const { title, description, imgName, url } = Astro.props
             <a
               class="group/link flex h-11 w-11 items-center justify-center text-4xl text-white duration-300 before:absolute before:h-11 before:w-11 before:rounded-full before:bg-white/30 before:duration-300  before:hover:scale-110 before:hover:bg-white/70"
               href={url}
-              target="_blank"
             >
-              <ExternalLink />
+              <ExternalLink applyDarkMode={false} classes="w-7 h-7 " />
             </a>
           ) : null
         }
       </div>
     </div>
   </div>
-  <picture>
-    <source srcset={"/avif/" + imgName + ".avif"} type="avif" />
-    <source srcset={"/webp/" + imgName + ".webp"} type="webp" />
+  <!-- only webp - 462 kB transferred 546 kB resources -->
+  <Image
+    src={imageUrl}
+    alt={imageAlt}
+    transition:name={"project-image-" + slug}
+    class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.3] transition-all duration-[.4s] group-hover/article:blur-[2px]"
+  />
+
+  <!-- 333kB transfered 409kB resources -->
+  <!-- <picture>
+    <source srcset={"/avif/" + imageName + ".avif"} type="avif" />
+    <source srcset={"/webp/" + imageName + ".webp"} type="webp" />
     <img
-      src={"/avif/" + imgName + ".avif"}
+      src={"/webp/" + imageName + ".webp"}
+      alt={imageAlt}
+      transition:name={"project-image-" + slug}
       class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.3] transition-all duration-[.4s] group-hover/article:blur-[2px]"
+      loading="lazy" width="1200" height="900"
+      decoding="async"
     />
-  </picture>
+  </picture> -->
 </article>

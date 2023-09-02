@@ -13,9 +13,11 @@ const t = useTranslations(lang)
     <div class="flex flex-col items-center justify-center gap-14 px-12 text-[1.2rem] font-thin">
       <div class="flex max-w-2xl flex-col items-center justify-center gap-1">
         <p>
-          {t("If you like my work and want to bring")}
-          <span class="indigo-wavy !decoration-[1.3px]">{t("your ideas")}</span>
-          {t("to life online, let's collaborate!")}
+          {t("If you like my work and want to bring") + " "}
+          <span class="indigo-wavy !decoration-[1.3px]">
+            {t("your ideas")}
+          </span>
+          {" " + t("to life online, let's collaborate!")}
         </p>
         <p>{t("Contact me to let me know and discuss your app or website needs.")}</p>
       </div>
@@ -25,21 +27,21 @@ const t = useTranslations(lang)
           <span class="underlined">
             {t("Linkedin")}
           </span>
-          <ExternalLink classes="w-5 h-5" />
+          <ExternalLink />
         </a>
         <a class="flex items-center gap-2" href="https://github.com/ferranJS">
           <i class="devicon-github-plain"></i>
           <span class="underlined">
             {t("Github")}
           </span>
-          <ExternalLink classes="w-5 h-5" />
+          <ExternalLink />
         </a>
         <a class="flex items-center gap-2" href="https://twitter.com/ferran_dev">
           <i class="devicon-twitter-plain"></i>
           <span class="underlined">
             {t("Twitter")}
           </span>
-          <ExternalLink classes="w-5 h-5" />
+          <ExternalLink />
         </a>
       </div>
       <div class="mt-4 flex flex-col items-center gap-2 text-xl font-bold">

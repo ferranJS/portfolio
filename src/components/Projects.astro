@@ -1,158 +1,48 @@
 ---
+import { getCollection } from "astro:content"
 import Project from "../components/Project.astro"
 import { useTranslations } from "../i18n/utils"
+import techLogoAnchors from "../scripts/tech-logo-anchors"
 
 const lang = Astro.params.language
 const t = useTranslations(lang)
 
-const driverjsLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://driverjs.com/">
-    <img class="w-7" src="/driverjs-logo.svg" alt="driverjs logo" />
-  </a>
-`
-const tailwindLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://tailwindcss.com/">
-    <i class="devicon-tailwindcss-plain text-3xl"></i>
-  </a>
-`
-const angularLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://angular.io/">
-    <i class="devicon-angularjs-plain text-3xl"></i>
-  </a>
-`
-const astroLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://astro.build/">
-    <img class="w-7" src="/astro-logo.svg" alt="driverjs logo" />
-  </a>
-`
-const ionicLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://ionicframework.com/">
-    <i class="devicon-ionic-original text-3xl"></i>
-  </a>
-`
-const capacitorLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://capacitorjs.com/">
-    <img class="w-7" src="/capacitor-logo.svg" alt="capacitor logo" />
-  </a>
-`
-const figmaLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://www.figma.com/">
-    <i class="devicon-figma-plain text-3xl"></i>
-  </a>
-`
-const mySQLLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://www.mysql.com/">
-    <i class="devicon-mysql-plain text-3xl"></i>
-  </a>
-`
-const phpLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href={"https://www.php.net/manual/en/intro-whatis.php"}>
-    <i class="devicon-php-plain text-3xl"></i>
-  </a>
-`
-const firebaseLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://firebase.google.com/">
-    <i class="devicon-firebase-plain text-3xl"></i>
-  </a>
-`
-const javaLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://www.java.com/en/">
-    <i class="devicon-java-plain text-3xl"></i>
-  </a>
-`
-const androidStudioLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://developer.android.com/">
-    <i class="devicon-androidstudio-plain text-3xl"></i>
-  </a>
-`
-const xcodeLogo = `
-  <a class="hover:scale-110 duration-200" target="_blank" href="https://developer.apple.com/xcode/">
-    <i class="devicon-xcode-plain text-3xl"></i>
-  </a>
-`
+const allProjects = (await getCollection("project")).sort((p0, p1) => p0.data.position - p1.data.position)
 ---
 
 <section id="projects" class="mb-5 scroll-mt-24 px-7 pt-6">
   <h2 class="mb-11 text-center font-heming text-5xl font-bold">{t("Projects")}</h2>
   <div class="flex flex-wrap gap-3">
-    <Project
-      title="Atum Mobile App"
-      description={t("atumDescription")}
-      imgName="atum"
-      url="https://stockmanagementlabs.com/addons/atum-mobile-app/"
-    >
-      <Fragment slot="techs" set:html={ionicLogo} />
-      <Fragment slot="techs" set:html={angularLogo} />
-      <Fragment slot="techs" set:html={capacitorLogo} />
-      <Fragment slot="techs" set:html={firebaseLogo} />
-      <Fragment slot="techs" set:html={xcodeLogo} />
-      <Fragment slot="techs" set:html={androidStudioLogo} />
-    </Project>
-    <Project
-      title="Zaax Golf App"
-      description={t("zaaxDescription")}
-      imgName="zaax"
-      url="https://play.google.com/store/apps/details?id=com.zaaxsports.golf"
-    >
-      <Fragment slot="techs" set:html={angularLogo} />
-      <Fragment slot="techs" set:html={ionicLogo} />
-      <Fragment slot="techs" set:html={capacitorLogo} />
-    </Project>
-    <Project
-      title="Milv.es"
-      description={t("milvDescription")}
-      imgName="milv"
-      url="https://milv.es/app/#/login"
-    >
-      <Fragment slot="techs" set:html={angularLogo} />
-      <Fragment slot="techs" set:html={phpLogo} />
-      <Fragment slot="techs" set:html={mySQLLogo} />
-      <Fragment slot="techs" set:html={figmaLogo} />
-    </Project>
-    <!-- ! https://milv.es/app/#/livescoring/75 -->
-    <Project title={t("My blog")} description={t("blogDescription")} imgName="blog" url={lang + "/blog"}>
-      <Fragment slot="techs" set:html={astroLogo} />
-      <Fragment slot="techs" set:html={tailwindLogo} />
-    </Project>
-    <Project
-      title="Tasle"
-      description={t("tasleDescription")}
-      imgName="tasle"
-      url="https://ferranjs.github.io/tasle/"
-    >
-      <Fragment slot="techs" set:html={astroLogo} />
-      <Fragment slot="techs" set:html={tailwindLogo} />
-      <Fragment slot="techs" set:html={driverjsLogo} />
-    </Project>
-    <Project
-      title="La Velada 3 remake"
-      description={t("lavelada3remakeDescription")}
-      imgName="lavelada3remake"
-      url="https://ferranjs.github.io/lavelada-remake/"
-    >
-      <Fragment slot="techs" set:html={astroLogo} />
-      <Fragment slot="techs" set:html={tailwindLogo} />
-      <Fragment slot="techs" set:html={driverjsLogo} />
-    </Project>
-    <Project
-      title="Discordish"
-      description={t("discordishDescription")}
-      imgName="discordish"
-      url="https://github.com/ferranJS/discordish"
-    >
-      <Fragment slot="techs" set:html={angularLogo} />
-      <Fragment slot="techs" set:html={firebaseLogo} />
-      <Fragment slot="techs" set:html={capacitorLogo} />
-      <Fragment slot="techs" set:html={tailwindLogo} />
-      <Fragment slot="techs" set:html={driverjsLogo} />
-    </Project>
-    <Project
-      title="3D Potato Studios"
-      description={t("potatostudiosDescription")}
-      imgName="3dpotatostudiosplaceholder"
-    >
-      <Fragment slot="techs" set:html={figmaLogo} />
-    </Project>
+    {
+      allProjects.map(project => (
+        <Project
+          title={project.data.title}
+          description={project.data.smallDescription[lang]}
+          imageUrl={project.data.imageUrl}
+          imageName={project.data.imageName}
+          imageAlt={project.data.imageAlt}
+          url={"/" + lang + "/project/" + project.slug}
+          slug={project.slug}
+        >
+          {project.data.techLogoNames.map(techLogoName => {
+            let logo =
+              techLogoName == "capacitor"
+                ? techLogoAnchors.capacitorWhite
+                : techLogoName == "vercel"
+                ? techLogoAnchors.vercelWhite
+                : techLogoName == "astro"
+                ? techLogoAnchors.astroWhite
+                : techLogoAnchors[techLogoName]
+            return <Fragment slot="techs" set:html={logo} />
+          })}
+        </Project>
+      ))
+    }
+    <!-- <Project title={t("My blog")} description={t("blogDescription")} imgName="blog" url={lang + "/blog"}>
+      <Fragment slot="techs" set:html={techLogoAnchors.astroLogo} />
+      <Fragment slot="techs" set:html={techLogoAnchors.tailwindLogo} />
+    </Project> -->
+
     <!-- <Project
       title="This website"
       description="Built almost in its totality in a few days."
