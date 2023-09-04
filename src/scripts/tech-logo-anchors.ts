@@ -83,21 +83,21 @@ export default {
   // fill="var(--color-base-text)
   vercel: `
   <a class="hover:scale-110 duration-200" target="_blank" href="https://vercel.com/">
-    <svg viewBox="0 0 1155 1000" fill="none" class="w-6 sm:w-7" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1155 1000" fill="none" class="w-5 sm:w-6" xmlns="http://www.w3.org/2000/svg">
       <path fill="var(--color-base-text)" d="M577.344 0L1154.69 1000H0L577.344 0Z" />
     </svg>
   </a>
 `,
   vercelWhite: `
   <a class="hover:scale-110 duration-200" target="_blank" href="https://vercel.com/">
-    <svg viewBox="0 0 1155 1000" fill="none" class="w-6 sm:w-7" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1155 1000" fill="none" class="w-5 sm:w-6" xmlns="http://www.w3.org/2000/svg">
       <path fill="white" d="M577.344 0L1154.69 1000H0L577.344 0Z"/>
     </svg>
   </a>
 `,
   figma: `
   <a class="hover:scale-110 duration-200" target="_blank" href="https://www.figma.com/">
-    <i class="devicon-figma-plain text-2xl sm:text-3xl"></i>
+    <i class="devicon-figma-plain text-[1.35rem] sm:text-[1.7rem]"></i>
   </a>
 `,
   mySQL: `
