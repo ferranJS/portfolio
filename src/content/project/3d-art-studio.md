@@ -1,11 +1,11 @@
 ---
-position: 6
+position: 2.5
 title: 3D Art Studios
 urls: [{ name: "Website", url: "https://3d-art-studio-landing.vercel.app/" }]
-imageUrl: "../../local-images/webp/3dpotatostudiosplaceholder.webp"
+imageUrl: "../../local-images/unprocessed/3dpotatostudiosplaceholder.JPG"
 imageName: "3dpotatostudiosplaceholder"
 imageAlt: "3d art studio landing page"
-techLogoNames: ["vercel", "figma"]
+techLogoNames: ["astro", "vercel", "tailwind", "figma"]
 smallDescription:
   {
     en: "Digital art studio.",
