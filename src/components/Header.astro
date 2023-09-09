@@ -10,8 +10,9 @@ const { backButton } = Astro.props
 ---
 
 <header
-  class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-heming text-lg sm:bg-blurred"
+  class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-heming text-lg duration-200"
   transition:name="header"
+  id="header"
 >
   <nav>
     {
@@ -39,9 +40,9 @@ const { backButton } = Astro.props
     <ul
       class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
     >
-      <!-- <li>
-        <a class="underlined" href={"/" + lang + "#home"}>{t("Home")}</a>
-      </li> -->
+      <li class="!hidden" id="home-link">
+        <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
+      </li>
       <li>
         <a class="underlined" href={"/" + lang + "#projects"}>{t("Projects")}</a>
       </li>
@@ -53,21 +54,25 @@ const { backButton } = Astro.props
       </li>
       <li class="-mr-1">
         <a class="group mb-1 flex items-center" target="_blank" href="https://github.com/ferranJS/portfolio">
-          <i class="devicon-github-plain text-2xl duration-200 group-hover:scale-110"></i>
+          <i class="devicon-github-plain text-2xl transition-transform duration-200 group-hover:scale-110"></i>
           <ExternalLink classes="w-5 h-5 inline ml-1 " />
         </a>
       </li>
       <li>
-        <button onclick="toggleLanguageMenu(event.stopPropagation())" class="duration-200 hover:scale-110">
+        <button
+          onclick="toggleLanguageMenu(event.stopPropagation())"
+          class="transition-transform duration-200 hover:scale-110"
+        >
           <Globe />
         </button>
       </li>
       <li>
         <button
           onclick="toggleDarkMode(event.stopPropagation())"
-          class="flex items-center duration-200 hover:scale-110"
+          class="flex items-center transition-transform duration-200 hover:scale-110"
         >
-          <div type="checkbox" class="themeToggle mb-[5px] h-5 w-5 duration-700 ease-out"></div>
+          <div type="checkbox" class="themeToggle mb-[5px] h-5 w-5 transition-shadow duration-700 ease-out">
+          </div>
         </button>
       </li>
     </ul>
@@ -140,5 +145,35 @@ const { backButton } = Astro.props
     menuContainer.classList.add("pointer-events-none")
     if (isLanguageMenuOpen) toggleMenuButton()
     isLanguageMenuOpen = !isLanguageMenuOpen
+  }
+</script>
+
+<script>
+  // change header color from black to white and viceversa on scroll of the first section
+  const header = document.querySelector("header")
+  const hero = document.querySelector("#hero")!
+  const homeLinks = document.querySelectorAll("#home-link")
+  if (window.screen.width > 640) {
+    setInterval(() => {
+      const rect = hero.getBoundingClientRect()
+      if (rect.bottom >= 10) {
+        header!.classList.remove("sm:bg-blurred")
+        homeLinks[0].classList.add("!hidden")
+      } else {
+        header!.classList.add("sm:bg-blurred")
+        homeLinks[0].classList.remove("!hidden")
+      }
+    }, 500)
+  } else {
+    setInterval(() => {
+      const rect = hero.getBoundingClientRect()
+      if (rect.bottom >= 10) {
+        header!.classList.remove("sm:bg-blurred")
+        homeLinks[1].classList.add("!hidden")
+      } else {
+        header!.classList.add("sm:bg-blurred")
+        homeLinks[1].classList.remove("!hidden")
+      }
+    }, 500)
   }
 </script>

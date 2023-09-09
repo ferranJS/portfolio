@@ -10,7 +10,7 @@ module.exports = {
       backgroundColor: {
         base: "var(--color-base-bg)",
         blurred: "var(--color-blurred-bg)",
-        "main-span": "var(--color-main-span-bg)",
+        "main-span": "var(--color-main-span)",
       },
       textColor: {
         "color-base": "var(--color-base-text)",

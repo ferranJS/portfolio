@@ -24,29 +24,11 @@ const allProjects = (await getCollection("project")).sort((p0, p1) => p0.data.po
           url={"/" + lang + "/project/" + project.slug}
           slug={project.slug}
         >
-          {project.data.techLogoNames.map(techLogoName => {
-            let logo =
-              techLogoName == "capacitor"
-                ? techLogoAnchors.capacitorWhite
-                : techLogoName == "vercel"
-                ? techLogoAnchors.vercelWhite
-                : techLogoName == "astro"
-                ? techLogoAnchors.astroWhite
-                : techLogoAnchors[techLogoName]
-            return <Fragment slot="techs" set:html={logo} />
-          })}
+          {project.data.techLogoNames.map(techLogoName => (
+            <Fragment slot="techs" set:html={techLogoAnchors[techLogoName]} />
+          ))}
         </Project>
       ))
     }
-    <!-- <Project title={t("My blog")} description={t("blogDescription")} imgName="blog" url={lang + "/blog"}>
-      <Fragment slot="techs" set:html={techLogoAnchors.astroLogo} />
-      <Fragment slot="techs" set:html={techLogoAnchors.tailwindLogo} />
-    </Project> -->
-
-    <!-- <Project
-      title="This website"
-      description="Built almost in its totality in a few days."
-      imgName="thiswebsite"
-    > -->
   </div>
 </section>

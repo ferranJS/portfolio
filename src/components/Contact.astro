@@ -22,21 +22,21 @@ const t = useTranslations(lang)
         <p>{t("Contact me to let me know and discuss your app or website needs.")}</p>
       </div>
       <div class="flex flex-col items-center gap-6 text-xl font-bold sm:flex-wrap sm:px-9">
-        <a class="flex items-center gap-2" href="https://www.linkedin.com/in/ferran-ramirez/">
+        <a class="flex items-center gap-2" target="_blank" href="https://www.linkedin.com/in/ferran-ramirez/">
           <i class="devicon-linkedin-plain"></i>
           <span class="underlined">
             {t("Linkedin")}
           </span>
           <ExternalLink />
         </a>
-        <a class="flex items-center gap-2" href="https://github.com/ferranJS">
+        <a class="flex items-center gap-2" target="_blank" href="https://github.com/ferranJS">
           <i class="devicon-github-plain"></i>
           <span class="underlined">
             {t("Github")}
           </span>
           <ExternalLink />
         </a>
-        <a class="flex items-center gap-2" href="https://twitter.com/ferran_dev">
+        <a class="flex items-center gap-2" target="_blank" href="https://twitter.com/ferran_dev">
           <i class="devicon-twitter-plain"></i>
           <span class="underlined">
             {t("Twitter")}
@@ -46,7 +46,7 @@ const t = useTranslations(lang)
       </div>
       <div class="mt-4 flex flex-col items-center gap-2 text-xl font-bold">
         <span class="font-normal">{t("Or send me an email:")}</span>
-        <a href="mailto:contact@ferran.tech">
+        <a target="_blank" href="mailto:contact@ferran.tech">
           <span class="indigo-wavy !decoration-[1.3px]">contact@ferran.tech</span>
         </a>
       </div>
