@@ -9,7 +9,7 @@ module.exports = {
       },
       backgroundColor: {
         base: "var(--color-base-bg)",
-        blurred: "var(--color-blurred-bg)",
+        translucent: "var(--color-translucent-bg)",
         "main-span": "var(--color-main-span)",
       },
       textColor: {
