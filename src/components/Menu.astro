@@ -15,7 +15,7 @@ const t = useTranslations(lang)
 >
   <div id="menu" class="z-[60] font-heming text-2xl [&>ul>li]:mb-5">
     <ul class="flex flex-col items-center">
-      <li class="!hidden" id="home-link">
+      <li class="pointer-events-none opacity-0 duration-300" id="home-link">
         <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
       </li>
       <li>

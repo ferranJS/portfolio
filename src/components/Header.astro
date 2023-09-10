@@ -40,7 +40,7 @@ const { backButton } = Astro.props
     <ul
       class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
     >
-      <li class="!hidden" id="home-link">
+      <li class="pointer-events-none opacity-0 duration-300" id="home-link">
         <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
       </li>
       <li>
@@ -156,19 +156,26 @@ const { backButton } = Astro.props
   if (window.screen.width > 640) {
     setInterval(() => {
       const rect = hero.getBoundingClientRect()
-      if (rect.bottom >= 10) {
+      if (rect.bottom >= 300) {
         header!.classList.remove("sm:bg-translucent")
-        homeLinks[0].classList.add("!hidden")
+        homeLinks[0].classList.add("opacity-0")
+        homeLinks[0].classList.add("pointer-events-none")
       } else {
         header!.classList.add("sm:bg-translucent")
-        homeLinks[0].classList.remove("!hidden")
+        homeLinks[0].classList.remove("opacity-0")
+        homeLinks[0].classList.remove("pointer-events-none")
       }
     }, 500)
   } else {
     setInterval(() => {
       const rect = hero.getBoundingClientRect()
-      if (rect.bottom >= 10) homeLinks[1].classList.add("!hidden")
-      else homeLinks[1].classList.remove("!hidden")
+      if (rect.bottom >= 300) {
+        homeLinks[1].classList.add("opacity-0")
+        homeLinks[1].classList.add("pointer-events-none")
+      } else {
+        homeLinks[1].classList.remove("opacity-0")
+        homeLinks[1].classList.remove("pointer-events-none")
+      }
     }, 500)
   }
 </script>
