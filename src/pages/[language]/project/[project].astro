@@ -67,7 +67,7 @@ const t = useTranslations(lang)
         <h1 class="mb-10 hidden font-heming text-4xl font-bold lg:inline">
           {project.data.title}
         </h1>
-        {project.data.description[lang]}
+        <p><Fragment set:html={project.data.description[lang]} /></p>
         <div class="mt-8 px-1" id="">
           <h3 class="font-heming text-xl">{t("Used Technologies")} :</h3>
           <div class="mt-2 flex flex-wrap items-baseline gap-5 px-1">
