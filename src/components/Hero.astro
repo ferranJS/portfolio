@@ -14,57 +14,114 @@ const lang = Astro.params.language
 const t = useTranslations(lang)
 ---
 
+<style>
+  /* .typewriter h1 {
+    transition: none !important;
+    white-space: nowrap;
+    animation:
+      typing 1.5s steps(15, end),
+      blink-caret 0.75s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    40% {
+      width: 40%;
+    }
+    50% {
+      width: 40%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(129 140 248);
+    }
+  } */
+  @keyframes appear-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      transform: translate(0);
+      opacity: 1;
+    }
+  }
+  @keyframes appear {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
 <section class="flex h-screen items-center" id="hero">
-  <div class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48 [&>p]:mb-1 [&>p]:max-w-2xl">
-    <h1 class="mb-2 font-heming text-6xl font-bold sm:text-[5rem]">
-      Ferran Ram<span class="text-[3.88rem] font-normal sm:text-[5.2rem]">í</span>rez
+  <div class="px-7 pr-10 text-[1.2rem] font-thin sm:px-24 xl:px-48">
+    <h1
+      class="mb-2 animate-[appear-up_1s_ease-in-out_both] font-heming text-6xl font-bold opacity-0 sm:text-[5rem]"
+    >
+      <!-- typewriter !ml-0 w-max text-left -->
+       Ferran Ram<span class="text-[3.88rem] font-normal sm:text-[5.2rem]">í</span
+      >rez<!-- <span
+        class="inline-block w-2"></span> -->
     </h1>
-    <h2 class="mb-6 font-heming text-4xl font-medium leading-[1.15] sm:text-5xl">
+    <h2
+      class="mb-6 animate-[appear-up_1s_ease-in-out_both_.2s] font-heming text-4xl font-medium leading-[1.15] opacity-0 sm:text-5xl"
+    >
       <span class="indigo-wavy !decoration-[3px] !underline-offset-[5px]"> full stack</span> developer
     </h2>
-    <p>
-      {
-        lang == "es" ? (
-          <>
-            <span class="indigo-wavy !decoration-[1.3px]">Ingeniero</span> de Software con 2 años de
-            experiencia como desarrollador
-            <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span>, experimentado en
-          </>
-        ) : lang == "ca" ? (
-          <>
-            <span class="indigo-wavy !decoration-[1.3px]">Enginyer</span> de Software amb 2 anys d'experiència
-            com a desenvolupador
-            <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span>, experimentat en
-          </>
-        ) : lang == "ru" ? (
-          <>
-            <span class="indigo-wavy !decoration-[1.3px]">Инженер</span>-программист с двумя годами опыта
-            работы в качестве
-            <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span> разработчика, имеющего опыт с
-          </>
-        ) : (
-          <>
-            Software <span class="indigo-wavy !decoration-[1.3px]">Engineer</span> with 2 years of experience
-            as a <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span> developer, experienced in
-          </>
-        )
-      }
-      <span class="indigo-wavy !no-underline md:!underline md:!decoration-red-400">Angular</span>,
-      <span
-        class="indigo-wavy !no-underline md:!underline md:!decoration-orange-400 md:dark:!decoration-orange-200"
-        >Astro</span
-      >,
-      <span class="indigo-wavy !no-underline md:!underline md:!decoration-sky-400 md:dark:!decoration-sky-200"
-        >React</span
-      >, Firebase, Ionic, Capacitor
-      {t("and")} Tailwind.
-    </p>
-    <p>
-      {t("phrase1")}
-      <!-- {t("phrase2")} -->
-    </p>
-    <p>
-      {t("phrase3")}
-    </p>
+    <div class="animate-[appear_1s_ease-in-out_both_.35s] opacity-0 [&>p]:mb-1 [&>p]:max-w-2xl">
+      <p>
+        {
+          lang == "es" ? (
+            <>
+              <span class="indigo-wavy !decoration-[1.3px]">Ingeniero</span> de Software con 2 años de
+              experiencia como desarrollador
+              <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span>, experimentado en
+            </>
+          ) : lang == "ca" ? (
+            <>
+              <span class="indigo-wavy !decoration-[1.3px]">Enginyer</span> de Software amb 2 anys
+              d'experiència com a desenvolupador
+              <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span>, experimentat en
+            </>
+          ) : lang == "ru" ? (
+            <>
+              <span class="indigo-wavy !decoration-[1.3px]">Инженер</span>-программист с двумя годами опыта
+              работы в качестве
+              <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span> разработчика, имеющего опыт с
+            </>
+          ) : (
+            <>
+              Software <span class="indigo-wavy !decoration-[1.3px]">Engineer</span> with 2 years of experience
+              as a <span class="indigo-wavy !decoration-[1.3px]">Full Stack</span> developer, experienced in
+            </>
+          )
+        }
+        <span class="indigo-wavy !no-underline md:!underline md:!decoration-red-400">Angular</span>,
+        <span
+          class="indigo-wavy !no-underline md:!underline md:!decoration-orange-400 md:dark:!decoration-orange-200"
+          >Astro</span
+        >,
+        <span
+          class="indigo-wavy !no-underline md:!underline md:!decoration-sky-400 md:dark:!decoration-sky-200"
+          >React</span
+        >, Firebase, Ionic, Capacitor
+        {t("and")} Tailwind.
+      </p>
+      <p>
+        {t("phrase1")}
+        <!-- {t("phrase2")} -->
+      </p>
+      <p>
+        {t("phrase3")}
+      </p>
+    </div>
   </div>
 </section>

@@ -6,7 +6,7 @@ urls:
     { name: "GolfCV Example", url: "https://milv.es/app/#/livescoring/75" },
     { name: "RFEG Website", url: "https://rfeg.es/" },
   ]
-imageUrl: "../../local-images/webp/milv.webp"
+imageUrl: "../../local-images/unprocessed/milv.png"
 imageName: "milv"
 imageAlt: "milv golf web logo"
 techLogoNames: ["angular", "php", "mySQL", "figma"]

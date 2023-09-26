@@ -1,5 +1,5 @@
 ---
-position: 2.5
+position: 0
 title: Digital Dispersion Studio
 urls: [{ name: "Website", url: "https://digitaldispersion.studio/" }]
 imageUrl: "../../local-images/unprocessed/3dpotatostudiosplaceholder.JPG"
