@@ -7,7 +7,7 @@ urls:
     { name: "Ez Zaax App", url: "https://play.google.com/store/apps/details?id=com.zaaxsports.ezzaax" },
     { name: "Zaax Sports Website", url: "https://zaaxsports.com/" },
   ]
-imageUrl: "../../local-images/webp/zaax.webp"
+imageUrl: "../../local-images/unprocessed/zaax.png"
 imageName: "zaax"
 imageAlt: "zaax golf app logo"
 techLogoNames: ["javascript", "ionic", "angular", "capacitor"]

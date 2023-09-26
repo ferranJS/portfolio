@@ -1,11 +1,11 @@
 ---
-position: 0
+position: 0.1
 title: Atum Mobile App
 urls: [
     # { name: "Play Store", url: "https://play.google.com/store/apps/details?id=com.stockmanagementlabs.atum&hl=es_VE" },
     { name: "Anouncement Page", url: "https://stockmanagementlabs.com/addons/atum-mobile-app/" },
   ]
-imageUrl: "../../local-images/webp/atum.webp"
+imageUrl: "../../local-images/unprocessed/atum.png"
 imageName: "atum"
 imageAlt: "atum mobile app logo"
 techLogoNames: ["ionic", "angular", "capacitor", "firebase", "xcode", "androidStudio"]
