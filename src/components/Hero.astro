@@ -129,11 +129,11 @@ const t = useTranslations(lang)
         {t("and")} Tailwind.
       </p>
       <p>
-        {t("phrase1")}
+        <Fragment set:html={t("phrase1")} />
         <!-- {t("phrase2")} -->
       </p>
       <p>
-        {t("phrase3")}
+        <Fragment set:html={t("phrase3")} />
       </p>
     </div>
   </div>
