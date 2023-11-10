@@ -26,7 +26,8 @@ const allBlogPosts = (await getCollection("blogpost")).filter(post => !post.data
 >
   <main id="blogpost" class="flex h-[calc(100vh-68px)] flex-col items-center justify-center gap-2 px-7">
     <h1 class="mb-10 text-center font-heming text-5xl font-bold">
-      ferranJS <span class="indigo-wavy !decoration-[3px] !underline-offset-[6px]">Blog</span>
+      <strong>ferranJS</strong>
+      <span class="indigo-wavy !decoration-[3px] !underline-offset-[6px]">Blog</span>
     </h1>
     <p class="max-w-2xl text-xl font-thin">
       {t("blogPageText")}
