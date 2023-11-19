@@ -14,5 +14,6 @@ node_modules
 *.ico
 *.woff2
 *.ttf
+*.otf
 *prettierignore
 .gitignore

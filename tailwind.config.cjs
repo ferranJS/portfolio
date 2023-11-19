@@ -19,7 +19,8 @@ module.exports = {
         "color-base": "var(--color-base-border)",
       },
       fontFamily: {
-        primary: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
+        // primary: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
+        primary: ["GothicA1", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["var(--font-geist-mono)"],
         heming: ["Heming Variable", "ui-monospace", "monospace"],
       },
