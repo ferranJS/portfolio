@@ -14,37 +14,39 @@ const lang = Astro.params.language
 const t = useTranslations(lang)
 ---
 
-<style>
+{
   /* .typewriter h1 {
-    transition: none !important;
-    white-space: nowrap;
-    animation:
-      typing 1.5s steps(15, end),
-      blink-caret 0.75s step-end infinite;
+  transition: none !important;
+  white-space: nowrap;
+  animation:
+    typing 1.5s steps(15, end),
+    blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
   }
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    40% {
-      width: 40%;
-    }
-    50% {
-      width: 40%;
-    }
-    to {
-      width: 100%;
-    }
+  40% {
+    width: 40%;
   }
-  @keyframes blink-caret {
-    from,
-    to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: rgb(129 140 248);
-    }
-  } */
+  50% {
+    width: 40%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(129 140 248);
+  }
+} */
+}
+<style>
   @keyframes appear-up {
     from {
       opacity: 0;
@@ -66,10 +68,7 @@ const t = useTranslations(lang)
     <h1
       class="mb-2 animate-[appear-up_1s_ease-in-out_both] font-primary text-6xl font-medium opacity-0 sm:text-[5rem]"
     >
-      <!-- typewriter !ml-0 w-max text-left -->
-       Ferran Ram<span class="text-[3.88rem] sm:text-[5.2rem]">í</span
-      >rez<!-- <span
-        class="inline-block w-2"></span> -->
+      Ferran Ramírez
     </h1>
     <h2
       class="mb-6 animate-[appear-up_1s_ease-in-out_both_.2s] font-primary text-4xl leading-[1.15] opacity-0 sm:text-5xl"
@@ -117,7 +116,7 @@ const t = useTranslations(lang)
       </p>
       <p>
         {t("phrase1")}
-        <!-- {t("phrase2")} -->
+        {/*t("phrase2")*/}
       </p>
       <p>
         {t("phrase3")}

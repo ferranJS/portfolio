@@ -39,15 +39,16 @@ const t = useTranslations(lang)
     </h1>
     <div class="flex flex-col justify-around gap-6 lg:flex-row-reverse lg:items-center lg:gap-16 xl:gap-32">
       <section id="image" class="rounded sm:max-w-[70%] lg:mt-4 lg:max-w-[50%] xl:max-w-[40%]">
-        <!-- only webp - 462 kB transferred 546 kB resources -->
+        {/* <!-- only webp - 462 kB transferred 546 kB resources --> */}
         <Image
           src={project.data.imageUrl}
           alt={project.data.imageAlt}
           transition:name={"project-image-" + project.slug}
           class="h-full rounded opacity-90"
         />
-        <!-- 333kB transfered 409kB resources -->
-        <!-- <picture>
+        {/* <!-- 333kB transfered 409kB resources --> */}
+        {
+          /* <picture>
           <source srcset={"/avif/" + project.data.imageName + ".avif"} type="avif" />
           <source srcset={"/webp/" + project.data.imageName + ".webp"} type="webp" />
           <img
@@ -58,7 +59,8 @@ const t = useTranslations(lang)
             loading="lazy" width="1200" height="900"
             decoding="async"
           />
-        </picture> -->
+        </picture>} */
+        }
         <div class="hidden lg:block">
           <ProjectLinks {project} />
         </div>

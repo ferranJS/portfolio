@@ -26,7 +26,6 @@ let {
 
 <!doctype html>
 <html lang={lang} class=`bg-base selection:bg-indigo-500 selection:text-white`>
-  <!-- ${GeistMono.variable} ${GeistSans.variable} -->
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={t(description)} />
@@ -78,13 +77,15 @@ let {
         }
       }
     </style>
-    <style is:global>
+    {
       /* @font-face {
         font-family: Heming Variable;
         src: url("/fonts/heming.woff2") format("woff2");
         font-weight: 100;
         font-style: normal;
       } */
+    }
+    <style is:global>
       @font-face {
         font-family: Geist;
         src: url("/fonts/geist/woff2/GeistVariableVF.woff2") format("woff2");
@@ -93,8 +94,8 @@ let {
       }
       html {
         /* scroll-snap-type: y mandatory;
-    scroll-snap-stop: always; */
-        /* scroll-behavior: smooth; */
+        scroll-snap-stop: always; 
+        scroll-behavior: smooth; */
       }
 
       body {
