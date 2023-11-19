@@ -34,7 +34,7 @@ const t = useTranslations(lang)
   ogDescription={project.data.smallDescription[lang]}
 >
   <main id="project" class="mt-28 px-5 sm:mt-36 sm:px-16 lg:mt-36 lg:px-24 xl:px-36">
-    <h1 class="mb-10 font-heming text-4xl font-bold lg:hidden">
+    <h1 class="mb-10 font-primary text-4xl font-bold lg:hidden">
       {project.data.title}
     </h1>
     <div class="flex flex-col justify-around gap-6 lg:flex-row-reverse lg:items-center lg:gap-16 xl:gap-32">
@@ -64,12 +64,12 @@ const t = useTranslations(lang)
         </div>
       </section>
       <section class="flex flex-col gap-2 px-1 lg:max-w-[60%]" id="description">
-        <h1 class="mb-10 hidden font-heming text-4xl font-bold lg:inline">
+        <h1 class="mb-10 hidden font-primary text-4xl font-bold lg:inline">
           {project.data.title}
         </h1>
         <p><Fragment set:html={project.data.description[lang]} /></p>
         <div class="mt-8 px-1" id="">
-          <h3 class="font-heming text-xl">{t("Used Technologies")} :</h3>
+          <h3 class="font-primary text-xl">{t("Used Technologies")} :</h3>
           <div class="mt-2 flex flex-wrap items-baseline gap-5 px-1">
             {
               project.data.techLogoNames.map(techLogoName => (
