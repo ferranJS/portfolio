@@ -49,9 +49,11 @@ const { backButton } = Astro.props
       <li>
         <a class="underlined" href={"/" + lang + "#contact"}>{t("Contact")}</a>
       </li>
-      <li>
+      {
+        /* <li>
         <a class="underlined" href={"/" + lang + "/blog"}>{t("Blog")}</a>
-      </li>
+      </li> */
+      }
       <li class="-mr-1">
         <a class="group mb-1 flex items-center" target="_blank" href="https://github.com/ferranJS/portfolio">
           <i class="devicon-github-plain text-2xl transition-transform duration-200 group-hover:scale-110"></i>
