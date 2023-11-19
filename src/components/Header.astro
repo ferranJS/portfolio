@@ -19,10 +19,10 @@ const { backButton } = Astro.props
       backButton ? (
         <a
           id="backbutton"
-          class="underlined !absolute left-0 mx-6 mt-1 cursor-pointer"
+          class="!absolute left-0 mx-6 mt-1 cursor-pointer"
           href={"/" + lang + "/" + backButton}
         >
-          {t("go back")}
+          <Fragment set:text="<-" />
         </a>
       ) : null
     }
