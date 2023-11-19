@@ -34,20 +34,21 @@ const t = useTranslations(lang)
   ogDescription={project.data.smallDescription[lang]}
 >
   <main id="project" class="mt-28 px-5 sm:mt-36 sm:px-16 lg:mt-36 lg:px-24 xl:px-36">
-    <h1 class="mb-10 font-heming text-4xl font-bold lg:hidden">
+    <h1 class="mb-10 font-primary text-4xl font-bold lg:hidden">
       {project.data.title}
     </h1>
     <div class="flex flex-col justify-around gap-6 lg:flex-row-reverse lg:items-center lg:gap-16 xl:gap-32">
       <section id="image" class="rounded sm:max-w-[70%] lg:mt-4 lg:max-w-[50%] xl:max-w-[40%]">
-        <!-- only webp - 462 kB transferred 546 kB resources -->
+        {/* <!-- only webp - 462 kB transferred 546 kB resources --> */}
         <Image
           src={project.data.imageUrl}
           alt={project.data.imageAlt}
           transition:name={"project-image-" + project.slug}
           class="h-full rounded opacity-90"
         />
-        <!-- 333kB transfered 409kB resources -->
-        <!-- <picture>
+        {/* <!-- 333kB transfered 409kB resources --> */}
+        {
+          /* <picture>
           <source srcset={"/avif/" + project.data.imageName + ".avif"} type="avif" />
           <source srcset={"/webp/" + project.data.imageName + ".webp"} type="webp" />
           <img
@@ -58,18 +59,19 @@ const t = useTranslations(lang)
             loading="lazy" width="1200" height="900"
             decoding="async"
           />
-        </picture> -->
+        </picture>} */
+        }
         <div class="hidden lg:block">
           <ProjectLinks {project} />
         </div>
       </section>
       <section class="flex flex-col gap-2 px-1 lg:max-w-[60%]" id="description">
-        <h1 class="mb-10 hidden font-heming text-4xl font-bold lg:inline">
+        <h1 class="mb-10 hidden font-primary text-4xl font-bold lg:inline">
           {project.data.title}
         </h1>
         <p><Fragment set:html={project.data.description[lang]} /></p>
         <div class="mt-8 px-1" id="">
-          <h3 class="font-heming text-xl">{t("Used Technologies")} :</h3>
+          <h3 class="font-primary text-xl">{t("Used Technologies")} :</h3>
           <div class="mt-2 flex flex-wrap items-baseline gap-5 px-1">
             {
               project.data.techLogoNames.map(techLogoName => (

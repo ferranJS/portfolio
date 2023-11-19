@@ -27,9 +27,9 @@ const t = useTranslations(lang)
 <Layout title="ferranJS" description="blogDescription" backButton="blog">
   <main id="blogpost" class="my-28 flex justify-center">
     <div
-      class="px-7 text-lg font-thin sm:w-5/6 xl:w-4/6 [&>h2]:mb-3 [&>h2]:mt-9 [&>h2]:font-heming [&>h2]:text-2xl [&>p]:mb-3"
+      class="px-7 text-lg font-thin sm:w-5/6 xl:w-4/6 [&>h2]:mb-3 [&>h2]:mt-9 [&>h2]:font-primary [&>h2]:text-2xl [&>p]:mb-3"
     >
-      <h1 class="font-heming text-4xl font-bold lg:text-5xl" transition:name={"project-image-" + post.slug}>
+      <h1 class="font-primary text-4xl font-bold lg:text-5xl" transition:name={"project-image-" + post.slug}>
         <Fragment set:html={post.data.title} />
       </h1>
       <p class="!mb-5 mt-3 text-base">

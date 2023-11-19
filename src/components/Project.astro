@@ -17,7 +17,7 @@ import { Image } from "astro:assets"
     >
       <div>
         <h3
-          class="decoration-3 pt-4 font-heming text-2xl font-medium underline decoration-indigo-400 decoration-dashed underline-offset-4 md:pt-2"
+          class="decoration-3 pt-4 font-primary text-2xl font-medium underline decoration-indigo-400 decoration-dashed underline-offset-4 md:pt-2"
         >
           {title}
         </h3>
@@ -42,7 +42,7 @@ import { Image } from "astro:assets"
       </div>
     </div>
   </div>
-  <!-- only webp - 462 kB transferred 546 kB resources -->
+  {/*<!-- only webp - 462 kB transferred 546 kB resources -->*/}
   <Image
     src={imageUrl}
     alt={imageAlt}
@@ -50,8 +50,9 @@ import { Image } from "astro:assets"
     class="pointer-events-none absolute z-0 h-full w-full object-cover opacity-90 grayscale-[0.3] transition-all duration-[.4s] group-hover/article:blur-[2px]"
   />
 
-  <!-- 333kB transfered 409kB resources -->
-  <!-- <picture>
+  {
+    /*<!-- 333kB transfered 409kB resources -->
+  <picture>
     <source srcset={"/avif/" + imageName + ".avif"} type="avif" />
     <source srcset={"/webp/" + imageName + ".webp"} type="webp" />
     <img
@@ -62,5 +63,6 @@ import { Image } from "astro:assets"
       loading="lazy" width="1200" height="900"
       decoding="async"
     />
-  </picture> -->
+  </picture>*/
+  }
 </article>
