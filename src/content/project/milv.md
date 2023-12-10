@@ -1,6 +1,6 @@
 ---
 position: 2
-title: GolfCV Intranet
+title: GolfCV Intranet (Milv)
 urls:
   [
     { name: "GolfCV Example", url: "https://milv.es/app/#/livescoring/75" },

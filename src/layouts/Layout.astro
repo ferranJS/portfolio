@@ -98,30 +98,6 @@ let {
         scroll-behavior: smooth; */
       }
 
-      body {
-        animation: bg-color-shift 15s infinite;
-      }
-      @keyframes bg-color-shift {
-        0%,
-        100% {
-          background: var(--gradient1), var(--gradient2), rgb(0, 163, 155);
-        }
-        17% {
-          background: var(--gradient1), var(--gradient2), green;
-        }
-        34% {
-          background: var(--gradient1), var(--gradient2), green;
-        }
-        51% {
-          background: var(--gradient1), var(--gradient2), green;
-        }
-        68% {
-          background: var(--gradient1), var(--gradient2), green;
-        }
-        85% {
-          background: var(--gradient1), var(--gradient2), rgb(198, 56, 44);
-        }
-      }
       /* inline wavy span text underline */
       .indigo-wavy {
         @apply underline decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[3px];

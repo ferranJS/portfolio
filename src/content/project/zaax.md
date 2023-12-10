@@ -1,13 +1,14 @@
 ---
 position: 1
 title: Zaax Golf App
-urls:
-  [
+urls: [
+    { name: "Inbounds Golf App", url: "https://apps.apple.com/es/app/inbounds-golf/id1632902980" },
     { name: "Zaax App", url: "https://play.google.com/store/apps/details?id=com.zaaxsports.golf" },
-    { name: "Ez Zaax App", url: "https://play.google.com/store/apps/details?id=com.zaaxsports.ezzaax" },
+    # { name: "Ez Zaax App", url: "https://play.google.com/store/apps/details?id=com.zaaxsports.ezzaax" },
     { name: "Zaax Sports Website", url: "https://zaaxsports.com/" },
+    { name: "Inbounds Golf Instagram", url: "https://www.instagram.com/inboundsgolf/" },
   ]
-imageUrl: "../../local-images/unprocessed/zaax.png"
+imageUrl: "../../local-images/unprocessed/inbounds-app.jpg"
 imageName: "zaax"
 imageAlt: "zaax golf app logo"
 techLogoNames: ["javascript", "ionic", "angular", "capacitor"]
