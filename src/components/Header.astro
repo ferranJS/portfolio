@@ -9,12 +9,58 @@ const t = useTranslations(lang)
 const { backButton } = Astro.props
 ---
 
+<style>
+  .themeToggle {
+    z-index: 1;
+    --size: 1.3rem;
+
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+    border-radius: 999px;
+  }
+  .themeToggle.checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+
+    transform: scale(0.75);
+    box-shadow:
+      inset 0 0 0 var(--size),
+      calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+      var(--offset-orthogonal) 0 0 var(--ray-size),
+      0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+      0 var(--offset-orthogonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size),
+      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+  }
+  nav.fade-in {
+    animation-delay: 1.3s;
+  }
+  @media (min-width: 640px) {
+    @keyframes scroll-transparent-header {
+      to {
+        @apply bg-translucent;
+      }
+    }
+    header {
+      animation: scroll-transparent-header ease-in both;
+      animation-timeline: scroll(root);
+      animation-range: 560px 640px;
+    }
+  }
+</style>
 <header
   class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-primary text-lg duration-200"
   transition:name="header"
-  id="header"
 >
-  <nav>
+  <nav class="fade-in">
     {
       backButton ? (
         <a
@@ -40,7 +86,7 @@ const { backButton } = Astro.props
     <ul
       class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
     >
-      <li class="pointer-events-none opacity-0 duration-300" id="home-link">
+      <li class="scroll-home-btn-fade-out">
         <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
       </li>
       <li>
@@ -150,37 +196,5 @@ const { backButton } = Astro.props
     menuContainer.classList.add("pointer-events-none")
     if (isLanguageMenuOpen) toggleMenuButton()
     isLanguageMenuOpen = !isLanguageMenuOpen
-  }
-</script>
-
-<script>
-  // change header color from black to white and viceversa on scroll of the first section
-  const header = document.querySelector("header")
-  const hero = document.querySelector("#hero")!
-  const homeLinks = document.querySelectorAll("#home-link")
-  if (window.screen.width > 640) {
-    setInterval(() => {
-      const rect = hero.getBoundingClientRect()
-      if (rect.bottom >= 300) {
-        header!.classList.remove("sm:bg-translucent")
-        homeLinks[0].classList.add("opacity-0")
-        homeLinks[0].classList.add("pointer-events-none")
-      } else {
-        header!.classList.add("sm:bg-translucent")
-        homeLinks[0].classList.remove("opacity-0")
-        homeLinks[0].classList.remove("pointer-events-none")
-      }
-    }, 500)
-  } else {
-    setInterval(() => {
-      const rect = hero.getBoundingClientRect()
-      if (rect.bottom >= 300) {
-        homeLinks[1].classList.add("opacity-0")
-        homeLinks[1].classList.add("pointer-events-none")
-      } else {
-        homeLinks[1].classList.remove("opacity-0")
-        homeLinks[1].classList.remove("pointer-events-none")
-      }
-    }, 500)
   }
 </script>
