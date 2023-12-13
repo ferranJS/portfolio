@@ -50,7 +50,8 @@ let {
     <meta property="twitter:description" content={t(ogDescription)} />
     <meta property="twitter:url" content="https://ferran.tech/" />
     <meta property="twitter:image" content={ogImgUrl} />
-
+    <!-- delete when 95% supported https://caniuse.com/?search=animation-timeline -->
+    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" async></script>
     <style is:inline>
       @layer base {
         :root {
@@ -72,7 +73,6 @@ let {
         }
       }
     </style>
-
     <style is:global>
       strong {
         @apply !font-semibold;
