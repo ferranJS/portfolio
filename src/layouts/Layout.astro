@@ -25,7 +25,7 @@ let {
 ---
 
 <!doctype html>
-<html lang={lang} class=`bg-base selection:bg-indigo-500 selection:text-white`>
+<html lang={lang} class="bg-base selection:bg-indigo-500 selection:text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={t(description)} />
@@ -125,25 +125,15 @@ let {
       .fade-in-up {
         animation: fade-in-up 1s ease-in-out both;
       }
-      .scroll-fade-out {
-        animation: fade-out ease-out both;
-        animation-timeline: view();
-        animation-range: cover 58% contain 111%;
-      }
-      .scroll-fade-out.right {
-        animation: fade-out-right ease-in both;
-        animation-timeline: view();
-        animation-range: cover 60% cover 99%;
-      }
-      .scroll-fade-out.left {
-        animation: fade-out-left ease-in both;
-        animation-timeline: view();
-        animation-range: cover 65% cover 99%;
-      }
       .scroll-home-btn-fade-out {
         animation: fade-in ease-in both;
         animation-timeline: scroll(root);
-        animation-range: 580px 640px;
+        animation-range: 600px 640px;
+      }
+      .scroll-fade-in {
+        animation: fade-in-up ease-in-out both;
+        animation-timeline: view();
+        animation-range: cover 0% cover 30%;
       }
       /* inline wavy span text underline */
       .indigo-wavy {

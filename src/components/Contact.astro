@@ -7,21 +7,14 @@ const t = useTranslations(lang)
 ---
 
 <style>
-  .scroll-fade-in {
-    animation: fade-in-up ease-in-out both;
-    animation-timeline: view();
-    animation-range: cover 0% cover 30%;
-  }
-  .scroll-fade-in.later {
-    animation: fade-in-up ease-in-out both;
-    animation-timeline: view();
-    animation-range: cover 20% cover 50%;
+  .fade-in.later {
+    animation-delay: 0.7s;
   }
 </style>
 <section id="contact" class="flex h-[calc(100vh-68px)] items-center justify-center">
   <div class="flex flex-col gap-6">
     <h2 class="fade-in-up text-center font-primary text-4xl font-semibold">
-      <div class="scroll-fade-in">{t("Get in touch !")}</div>
+      <span class="scroll-fade-in">{t("Get in touch !")}</span>
     </h2>
     <div class="scroll-fade-in">
       <div class="fade-in later flex flex-col items-center justify-center gap-14 px-12 text-[1.2rem]">

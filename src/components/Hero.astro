@@ -24,9 +24,24 @@ const t = useTranslations(lang)
   div.fade-in {
     animation-delay: 1.3s;
   }
+  .scroll-fade-out {
+    animation: fade-out ease-out both;
+    animation-timeline: view();
+    animation-range: cover 58% cover 90%;
+  }
+  .scroll-fade-out.right {
+    animation: fade-out-right ease-in both;
+    animation-timeline: view();
+    animation-range: cover 60% cover 99%;
+  }
+  .scroll-fade-out.left {
+    animation: fade-out-left ease-in both;
+    animation-timeline: view();
+    animation-range: cover 65% cover 99%;
+  }
 </style>
 <section class="flex h-screen items-center" id="hero">
-  <div class="mt-10 px-7 pr-10 text-[1.2rem] sm:px-24 xl:px-48">
+  <div class="mt-10 overflow-clip px-7 pr-10 text-[1.2rem] sm:px-24 xl:px-48">
     <h1 class="fade-in-up mb-2 font-primary text-6xl font-medium sm:text-[5rem]">
       <strong class="scroll-fade-out left block">Ferran Ramírez</strong>
     </h1>
