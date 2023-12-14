@@ -9,12 +9,28 @@ const t = useTranslations(lang)
 const { backButton } = Astro.props
 ---
 
+<style>
+  nav.fade-in {
+    animation-delay: 1.3s;
+  }
+  @media (min-width: 640px) {
+    @keyframes scroll-transparent-header {
+      to {
+        @apply bg-translucent;
+      }
+    }
+    header {
+      animation: scroll-transparent-header ease-in both;
+      animation-timeline: scroll(root);
+      animation-range: 520px 700px;
+    }
+  }
+</style>
 <header
   class="fixed left-0 right-0 top-0 z-40 p-4 pr-5 font-primary text-lg duration-200"
   transition:name="header"
-  id="header"
 >
-  <nav>
+  <nav class="fade-in">
     {
       backButton ? (
         <a
@@ -40,7 +56,7 @@ const { backButton } = Astro.props
     <ul
       class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
     >
-      <li class="pointer-events-none opacity-0 duration-300" id="home-link">
+      <li class="scroll-home-btn-fade-out">
         <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
       </li>
       <li>
@@ -58,7 +74,12 @@ const { backButton } = Astro.props
       </li> */
       }
       <li class="-mr-1">
-        <a class="group mb-1 flex items-center" target="_blank" href="https://github.com/ferranJS/portfolio">
+        <a
+          class="group mb-1 flex items-center"
+          target="_blank"
+          aria-label="ferranJS Github profile"
+          href="https://github.com/ferranJS/portfolio"
+        >
           <i class="devicon-github-plain text-2xl transition-transform duration-200 group-hover:scale-110"></i>
           <ExternalLink classes="w-5 h-5 inline ml-1 " />
         </a>
@@ -67,6 +88,7 @@ const { backButton } = Astro.props
         <button
           onclick="toggleLanguageMenu(event.stopPropagation())"
           class="transition-transform duration-200 hover:scale-110"
+          aria-label="Language"
         >
           <Globe />
         </button>
@@ -75,6 +97,7 @@ const { backButton } = Astro.props
         <button
           onclick="toggleDarkMode(event.stopPropagation())"
           class="flex items-center transition-transform duration-200 hover:scale-110"
+          aria-label="Dark Mode"
         >
           <div type="checkbox" class="themeToggle mb-[5px] h-5 w-5 transition-shadow duration-700 ease-out">
           </div>
@@ -106,9 +129,6 @@ const { backButton } = Astro.props
     "astro:after-swap",
     document.querySelector("html").classList.remove("duration-1000"),
   )
-  // if (history.scrollRestoration) {
-  //   history.scrollRestoration = "auto"
-  // }
 
   var toggleDarkMode = () => {
     document.querySelectorAll(".themeToggle").forEach(el => el.classList.toggle("checked"))
@@ -150,37 +170,5 @@ const { backButton } = Astro.props
     menuContainer.classList.add("pointer-events-none")
     if (isLanguageMenuOpen) toggleMenuButton()
     isLanguageMenuOpen = !isLanguageMenuOpen
-  }
-</script>
-
-<script>
-  // change header color from black to white and viceversa on scroll of the first section
-  const header = document.querySelector("header")
-  const hero = document.querySelector("#hero")!
-  const homeLinks = document.querySelectorAll("#home-link")
-  if (window.screen.width > 640) {
-    setInterval(() => {
-      const rect = hero.getBoundingClientRect()
-      if (rect.bottom >= 300) {
-        header!.classList.remove("sm:bg-translucent")
-        homeLinks[0].classList.add("opacity-0")
-        homeLinks[0].classList.add("pointer-events-none")
-      } else {
-        header!.classList.add("sm:bg-translucent")
-        homeLinks[0].classList.remove("opacity-0")
-        homeLinks[0].classList.remove("pointer-events-none")
-      }
-    }, 500)
-  } else {
-    setInterval(() => {
-      const rect = hero.getBoundingClientRect()
-      if (rect.bottom >= 300) {
-        homeLinks[1].classList.add("opacity-0")
-        homeLinks[1].classList.add("pointer-events-none")
-      } else {
-        homeLinks[1].classList.remove("opacity-0")
-        homeLinks[1].classList.remove("pointer-events-none")
-      }
-    }, 500)
   }
 </script>

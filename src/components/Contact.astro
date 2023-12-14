@@ -3,52 +3,64 @@ import { useTranslations } from "../i18n/utils"
 import ExternalLink from "./ExternalLink.astro"
 
 const lang = Astro.params.language
-
 const t = useTranslations(lang)
 ---
 
+<style>
+  .fade-in.later {
+    animation-delay: 0.7s;
+  }
+</style>
 <section id="contact" class="flex h-[calc(100vh-68px)] items-center justify-center">
   <div class="flex flex-col gap-6">
-    <h2 class="text-center font-primary text-4xl font-semibold">{t("Get in touch !")}</h2>
-    <div class="flex flex-col items-center justify-center gap-14 px-12 text-[1.2rem] font-thin">
-      <div class="flex max-w-2xl flex-col items-center justify-center gap-1">
-        <p>
-          {t("If you like my work and want to bring") + " "}
-          <span class="indigo-wavy !decoration-[1.3px]">
-            {t("your ideas")}
-          </span>
-          {" " + t("to life online, let's collaborate!")}
-        </p>
-        <p>{t("Contact me to let me know and discuss your app or website needs.")}</p>
-      </div>
-      <div class="flex flex-col items-center gap-6 text-xl font-bold sm:flex-wrap sm:px-9">
-        <a class="flex items-center gap-2" target="_blank" href="https://www.linkedin.com/in/ferran-ramirez/">
-          <i class="devicon-linkedin-plain"></i>
-          <span class="underlined">
-            {t("Linkedin")}
-          </span>
-          <ExternalLink />
-        </a>
-        <a class="flex items-center gap-2" target="_blank" href="https://github.com/ferranJS">
-          <i class="devicon-github-plain"></i>
-          <span class="underlined">
-            {t("Github")}
-          </span>
-          <ExternalLink />
-        </a>
-        <a class="flex items-center gap-2" target="_blank" href="https://twitter.com/ferran_dev">
-          <i class="devicon-twitter-plain"></i>
-          <span class="underlined">
-            {t("Twitter")}
-          </span>
-          <ExternalLink />
-        </a>
-      </div>
-      <div class="mt-4 flex flex-col items-center gap-2 text-xl font-bold">
-        <span class="font-normal">{t("Or send me an email:")}</span>
-        <a target="_blank" href="mailto:contact@ferran.tech">
-          <span class="indigo-wavy !decoration-[1.3px]">contact@ferran.tech</span>
-        </a>
+    <h2 class="fade-in-up text-center font-primary text-4xl font-semibold">
+      <span class="scroll-fade-in">{t("Get in touch !")}</span>
+    </h2>
+    <div class="scroll-fade-in">
+      <div class="fade-in later flex flex-col items-center justify-center gap-14 px-12 text-[1.2rem]">
+        <div class="flex max-w-2xl flex-col items-center justify-center gap-1">
+          <p>
+            {t("If you like my work and want to bring") + " "}
+            <span class="indigo-wavy !decoration-[1.3px]">
+              {t("your ideas")}
+            </span>
+            {" " + t("to life online, let's collaborate!")}
+          </p>
+          <p>{t("Contact me to let me know and discuss your app or website needs.")}</p>
+        </div>
+        <div class="flex flex-col items-center gap-6 text-xl font-bold sm:flex-wrap sm:px-9">
+          <a
+            class="flex items-center gap-2"
+            target="_blank"
+            href="https://www.linkedin.com/in/ferran-ramirez/"
+          >
+            <i class="devicon-linkedin-plain"></i>
+            <span class="underlined">
+              {t("Linkedin")}
+            </span>
+            <ExternalLink />
+          </a>
+          <a class="flex items-center gap-2" target="_blank" href="https://github.com/ferranJS">
+            <i class="devicon-github-plain"></i>
+            <span class="underlined">
+              {t("Github")}
+            </span>
+            <ExternalLink />
+          </a>
+          <a class="flex items-center gap-2" target="_blank" href="https://twitter.com/ferran_dev">
+            <i class="devicon-twitter-plain"></i>
+            <span class="underlined">
+              {t("Twitter")}
+            </span>
+            <ExternalLink />
+          </a>
+        </div>
+        <div class="mt-4 flex flex-col items-center gap-2 text-xl font-bold">
+          <span class="font-normal">{t("Or send me an email:")}</span>
+          <a target="_blank" href="mailto:contact@ferran.tech">
+            <span class="indigo-wavy !decoration-[1.3px]">contact@ferran.tech</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -25,7 +25,7 @@ let {
 ---
 
 <!doctype html>
-<html lang={lang} class=`bg-base selection:bg-indigo-500 selection:text-white`>
+<html lang={lang} class="bg-base selection:bg-indigo-500 selection:text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={t(description)} />
@@ -34,7 +34,7 @@ let {
     <link rel="stylesheet" href="/styles/devicons.min.css" />
     <link rel="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <!-- <ViewTransitions /> -->
     <link rel="alternate" href="https://ferran.tech/en" hreflang="en" />
     <link rel="alternate" href="https://ferran.tech/es" hreflang="es" />
     <link rel="alternate" href="https://ferran.tech/ca" hreflang="ca" />
@@ -50,12 +50,8 @@ let {
     <meta property="twitter:description" content={t(ogDescription)} />
     <meta property="twitter:url" content="https://ferran.tech/" />
     <meta property="twitter:image" content={ogImgUrl} />
-  </head>
-  <body class="overflow flex h-screen flex-col justify-between text-color-base duration-1000 ease-out">
-    <Header {backButton} />
-    <slot />
-    <Footer />
-    <Background />
+    <!-- delete when 95% supported https://caniuse.com/?search=animation-timeline -->
+    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js" defer></script>
     <style is:inline>
       @layer base {
         :root {
@@ -77,27 +73,68 @@ let {
         }
       }
     </style>
-    {
-      /* @font-face {
-        font-family: Heming Variable;
-        src: url("/fonts/heming.woff2") format("woff2");
-        font-weight: 100;
-        font-style: normal;
-      } */
-    }
     <style is:global>
+      strong {
+        @apply !font-semibold;
+      }
       @font-face {
         font-family: Geist;
         src: url("/fonts/geist/woff2/GeistVariableVF.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
       }
-      html {
-        /* scroll-snap-type: y mandatory;
-        scroll-snap-stop: always; 
-        scroll-behavior: smooth; */
+      @keyframes fade-in {
+        from {
+          pointer-events: none;
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
-
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          translate: 0 10px;
+        }
+        to {
+          translate: 0;
+          opacity: 1;
+        }
+      }
+      @keyframes fade-out {
+        to {
+          opacity: 0;
+        }
+      }
+      @keyframes fade-out-right {
+        to {
+          translate: 140px 0;
+          opacity: 0;
+        }
+      }
+      @keyframes fade-out-left {
+        to {
+          translate: -100px 0;
+          opacity: 0;
+        }
+      }
+      .fade-in {
+        animation: fade-in 1s ease-in-out both;
+      }
+      .fade-in-up {
+        animation: fade-in-up 1s ease-in-out both;
+      }
+      .scroll-home-btn-fade-out {
+        animation: fade-in ease-in both;
+        animation-timeline: scroll(root);
+        animation-range: 600px 640px;
+      }
+      .scroll-fade-in {
+        animation: fade-in-up ease-in-out both;
+        animation-timeline: view();
+        animation-range: cover 0% cover 30%;
+      }
       /* inline wavy span text underline */
       .indigo-wavy {
         @apply underline decoration-indigo-400 decoration-wavy decoration-[1.1px] underline-offset-[3px];
@@ -153,5 +190,11 @@ let {
           var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
       }
     </style>
+  </head>
+  <body class="overflow flex h-screen flex-col justify-between text-color-base duration-1000 ease-out">
+    <Header {backButton} />
+    <slot />
+    <Footer />
+    <Background />
   </body>
 </html>
