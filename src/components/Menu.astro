@@ -13,7 +13,7 @@ const t = useTranslations(lang)
   class="pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-30 flex flex-col items-center justify-center bg-translucent opacity-0 backdrop-blur-sm transition-opacity duration-500 sm:hidden"
   onclick="toggleMenu()"
 >
-  <div id="menu" class="z-[60] font-primary text-2xl [&>ul>li]:mb-5">
+  <nav id="menu" class="z-[60] font-primary text-2xl [&>ul>li]:mb-5">
     <ul class="flex flex-col items-center">
       <li class="scroll-home-btn-fade-out">
         <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
@@ -55,7 +55,7 @@ const t = useTranslations(lang)
         </button>
       </li>
     </ul>
-  </div>
+  </nav>
   <Footer Classes=" fixed bottom-0 right-0 left-0 !flex-row" />
 </aside>
 <Language />

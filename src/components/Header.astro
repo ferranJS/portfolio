@@ -42,9 +42,10 @@ const { backButton } = Astro.props
         </a>
       ) : null
     }
-    <div class="visible flex justify-end sm:hidden" id="menu-button">
+    <div class="visible flex justify-end sm:hidden">
       <button
         id="menu-button"
+        aria-label="toggle menu"
         class="group z-50 flex flex-col items-end"
         onclick="toggleMenu(event.stopPropagation())"
       >
@@ -53,57 +54,64 @@ const { backButton } = Astro.props
         <span class="m-1 block h-[2.5px] w-9 bg-indigo-200 duration-500 ease-in-out"></span>
       </button>
     </div>
-    <ul
-      class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
-    >
-      <li class="scroll-home-btn-fade-out">
-        <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
-      </li>
-      <li>
-        <a class="underlined" href={"/" + lang + "#projects"}>{t("Projects")}</a>
-      </li>
-      <li>
-        <a class="underlined" href={"/" + lang + "/cv"}>{t("CV")}</a>
-      </li>
-      <li>
-        <a class="underlined" href={"/" + lang + "#contact"}>{t("Contact")}</a>
-      </li>
-      {
-        /* <li>
-        <a class="underlined" href={"/" + lang + "/blog"}>{t("Blog")}</a>
-      </li> */
-      }
-      <li class="-mr-1">
-        <a
-          class="group mb-1 flex items-center"
-          target="_blank"
-          aria-label="ferranJS Github profile"
-          href="https://github.com/ferranJS/portfolio"
-        >
-          <i class="devicon-github-plain text-2xl transition-transform duration-200 group-hover:scale-110"></i>
-          <ExternalLink classes="w-5 h-5 inline ml-1 " />
-        </a>
-      </li>
-      <li>
-        <button
-          onclick="toggleLanguageMenu(event.stopPropagation())"
-          class="transition-transform duration-200 hover:scale-110"
-          aria-label="Language"
-        >
-          <Globe />
-        </button>
-      </li>
-      <li>
-        <button
-          onclick="toggleDarkMode(event.stopPropagation())"
-          class="flex items-center transition-transform duration-200 hover:scale-110"
-          aria-label="Dark Mode"
-        >
-          <div type="checkbox" class="themeToggle mb-[5px] h-5 w-5 transition-shadow duration-700 ease-out">
-          </div>
-        </button>
-      </li>
-    </ul>
+    <nav>
+      <ul
+        class="[&>li]:underlined hidden items-center justify-end gap-6 sm:flex [&>li]:flex [&>li]:items-center"
+      >
+        <li class="scroll-home-btn-fade-out">
+          <a class="underlined" href={"/" + lang + "#hero"}>{t("Home")}</a>
+        </li>
+        <li>
+          <a class="underlined" href={"/" + lang + "#projects"}>{t("Projects")}</a>
+        </li>
+        <li>
+          <a class="underlined" href={"/" + lang + "/cv"}>{t("CV")}</a>
+        </li>
+        <li>
+          <a class="underlined" href={"/" + lang + "#contact"}>{t("Contact")}</a>
+        </li>
+        {
+          /* <li>
+          <a class="underlined" href={"/" + lang + "/blog"}>{t("Blog")}</a>
+        </li> */
+        }
+        <li class="-mr-1">
+          <a
+            class="group mb-1 flex items-center"
+            target="_blank"
+            aria-label="ferranJS Github profile"
+            href="https://github.com/ferranJS/portfolio"
+          >
+            <i class="devicon-github-plain text-2xl transition-transform duration-200 group-hover:scale-110"
+            ></i>
+            <ExternalLink classes="w-5 h-5 inline ml-1 " />
+          </a>
+        </li>
+        <li>
+          <button
+            onclick="toggleLanguageMenu(event.stopPropagation())"
+            class="transition-transform duration-200 hover:scale-110"
+            id="language-button"
+            aria-label="select language"
+          >
+            <Globe />
+          </button>
+        </li>
+        <li>
+          <button
+            onclick="toggleDarkMode(event.stopPropagation())"
+            class="flex items-center transition-transform duration-200 hover:scale-110"
+            id="theme-button"
+            aria-label="toggle theme"
+          >
+            <input
+              type="checkbox"
+              class="themeToggle mb-[5px] h-5 w-5 transition-shadow duration-700 ease-out"
+            />
+          </button>
+        </li>
+      </ul>
+    </nav>
   </nav>
 </header>
 <Menu />
