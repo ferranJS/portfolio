@@ -1,5 +1,6 @@
 ---
 position: 5
+hidden: true
 title: Discordish
 urls: [
     # { name: "Website", url: "https://ferranjs.github.io/discordish/" },

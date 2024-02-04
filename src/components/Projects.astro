@@ -7,7 +7,9 @@ import techLogoAnchors from "../scripts/tech-logo-anchors"
 const lang = Astro.params.language
 const t = useTranslations(lang)
 
-const allProjects = (await getCollection("project")).sort((p0, p1) => p0.data.position - p1.data.position)
+const allProjects = (await getCollection("project"))
+  .filter(project => !project.data.hidden)
+  .sort((p0, p1) => p0.data.position - p1.data.position)
 ---
 
 <style is:global>
