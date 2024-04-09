@@ -23,7 +23,7 @@ export const uiTranslations = {
     blogPageText:
       "Check out my blog posts where I portray my thoughts about the everchanging tech world to whoever is interested ☺",
     metaDescription:
-      "Ferran Ramírez Martí is a software engineer, who graduated in Computer Science in UPV (Spain), with 2 years of experience as a Full Stack developer. Experience in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL, and CSS with Tailwind ✅ Applying the best practices and up-to-date with other technologies that make up Full Stack development, how they correlate with each other and their importance and power in the industry 🔎 ferranJS",
+      "Ferran Ramírez Martí is a software engineer, who graduated in Computer Science in UPV (Spain), with 3 years of experience as a Full Stack developer. Experience in Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL, and CSS with Tailwind ✅ Applying the best practices and up-to-date with other technologies that make up Full Stack development, how they correlate with each other and their importance and power in the industry 🔎 ferranJS",
   },
   es: {
     "GolfCV Example": "GolfCV Ejemplo",
@@ -73,7 +73,7 @@ export const uiTranslations = {
     blogPageText:
       "Echa un vistazo a mis publicaciones en el blog donde retrato mis pensamientos sobre el cambiante mundo de la tecnología a quien esté interesado ☺",
     metaDescription:
-      "Ferran Ramírez Martí es un desarrollador de software, graduado en Ingeniería informatica Informática en la UPV (España), con 2 años de experiencia como desarrollador Full Stack. Experiencia en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL y CSS con Tailwind ✅ Aplicando las mejores prácticas y al día con otras tecnologías que componen el desarrollo Full Stack, cómo se correlacionan entre ellas y su importancia y potencia en la industria 🔎 ferranJS",
+      "Ferran Ramírez Martí es un desarrollador de software, graduado en Ingeniería informatica Informática en la UPV (España), con 3 años de experiencia como desarrollador Full Stack. Experiencia en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL y CSS con Tailwind ✅ Aplicando las mejores prácticas y al día con otras tecnologías que componen el desarrollo Full Stack, cómo se correlacionan entre ellas y su importancia y potencia en la industria 🔎 ferranJS",
     "Get in touch !": "Póngase en contacto",
     "Or send me an email:": "O envíeme un email:",
   },
@@ -125,7 +125,7 @@ export const uiTranslations = {
     blogPageText:
       "Fes una ullada a les meves publicacions al blog on retrato els meus pensaments sobre el canviant món de la tecnologia a qui estigui interessat ☺",
     metaDescription:
-      "Ferran Ramírez Martí és un desenvolupador de programari, graduat en Enginyeria informàtica Informàtica a la UPV (Espanya), amb 2 anys d'experiència com a desenvolupador Full Stack. Experiència en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL i CSS amb Tailwind ✅ Aplicant les millors pràctiques i al dia amb altres tecnologies que componen el desenvolupament Full Stack, com es correlacionen entre elles i la seva importància i potència en la indústria 🔎 ferranJS",
+      "Ferran Ramírez Martí és un desenvolupador de programari, graduat en Enginyeria informàtica Informàtica a la UPV (Espanya), amb 3 anys d'experiència com a desenvolupador Full Stack. Experiència en Angular, Astro, React, RxJS Firebase, Ionic, Capacitor, SQL i CSS amb Tailwind ✅ Aplicant les millors pràctiques i al dia amb altres tecnologies que componen el desenvolupament Full Stack, com es correlacionen entre elles i la seva importància i potència en la indústria 🔎 ferranJS",
     "Get in touch !": "Posa't en contacte",
     "Or send me an email:": "O envia'm un email:",
   },
