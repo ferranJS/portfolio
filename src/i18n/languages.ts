@@ -13,6 +13,7 @@ export const defaultLang = "en"
 
 export const uiTranslations = {
   en: {
+    "your ideas": "your ideas ",
     phrase1: "Committed to delivering top-notch solutions by following industry best practices.",
     phrase2:
       "Actively dedicated to expanding my skill set by staying at the forefront of technological advances.",
@@ -53,9 +54,9 @@ export const uiTranslations = {
     "min read": "minutos de lectura",
     "go back": "volver",
     Language: "Idioma",
-    "If you like my work and want to bring": "Si te gusta mi trabajo y quieres llevar",
+    "If you like my work and want to bring": "Si te gusta mi trabajo y quieres dar vida a",
     "your ideas": "tus ideas",
-    "to life online, let's collaborate!": "a la vida online, ¡colaboremos!",
+    "to life online, let's collaborate!": ", ¡colaboremos!",
     "Contact me to let me know and discuss your app or website needs.":
       "Contáctame para hacérmelo saber y discutir tus necesidades de aplicación o sitio web.",
     Home: "Inicio",
@@ -105,9 +106,9 @@ export const uiTranslations = {
     "min read": "minuts de lectura",
     "go back": "tornar",
     Language: "Idioma",
-    "If you like my work and want to bring": "Si t'agrada la meva feina i vols portar",
+    "If you like my work and want to bring": "Si t'agrada la meva feina i vols donar vida a",
     "your ideas": "les teves idees",
-    "to life online, let's collaborate!": "a la vida online, col·laborem!",
+    "to life online, let's collaborate!": ", col·laborem!",
     "Contact me to let me know and discuss your app or website needs.":
       "Contacta'm per fer-m'ho saber i discutir les teves necessitats d'aplicació o lloc web.",
     Home: "Inici",

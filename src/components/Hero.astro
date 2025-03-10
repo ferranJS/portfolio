@@ -88,16 +88,15 @@ const t = useTranslations(lang)
               </>
             )
           }
-          <span class="indigo-wavy !no-underline md:!underline md:!decoration-red-400">Angular</span>,
+          <span class="text-red-500">Angular</span>,
           <span
-            class="indigo-wavy !no-underline md:!underline md:!decoration-orange-400 md:dark:!decoration-orange-200"
+            class="text-orange-500 dark:text-orange-300"
             >Astro</span
           >,
           <span
-            class="indigo-wavy !no-underline md:!underline md:!decoration-sky-400 md:dark:!decoration-sky-200"
-            >React</span
-          >, Vercel, Firebase, Ionic, Capacitor
-          {t("and")} Tailwind.
+            class="text-sky-400 dark:text-sky-300"
+            >Tailwind</span
+          >, Vercel, Firebase, {t("and")} Capacitor.
         </p>
         <p>
           <Fragment set:html={t("phrase1")} />
