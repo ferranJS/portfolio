@@ -3,7 +3,7 @@ import Background from "../components/Background.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 import { useTranslations } from "../i18n/utils"
-import { ViewTransitions } from "astro:transitions"
+import Analytics from "@vercel/analytics/astro"
 
 const lang = Astro.params.language
 const t = useTranslations(lang)
@@ -27,6 +27,7 @@ let {
 <!doctype html>
 <html lang={lang} class="bg-base selection:bg-indigo-500 selection:text-white">
   <head>
+    <Analytics />
     <meta charset="UTF-8" />
     <meta name="description" content={t(description)} />
     <meta name="viewport" content="width=device-width" />
@@ -136,7 +137,7 @@ let {
       }
       /* inline wavy span text underline */
       .indigo-wavy {
-        @apply underline decoration-indigo-400 /* decoration-wavy */  decoration-[1.1px] underline-offset-[3px];
+        @apply /* */ underline decoration-indigo-400 decoration-wavy  decoration-[1.1px] underline-offset-[3px];
       }
       /* anchor simple underlines */
       .underlined {
